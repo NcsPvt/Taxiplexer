@@ -28017,7 +28017,7 @@ public class TaxiPlexer extends Activity
                             dialogFontSize(alert);
 
                             if (TTS)
-                                onRadioClick(getDataFromResourse(msg)); // Drop all pending entries in the playback queue.
+                                onRadioClick(getDataFromResourse(msg)); // Drop all pending entries .
                             else
                                 manifestSound.start();
                         }
