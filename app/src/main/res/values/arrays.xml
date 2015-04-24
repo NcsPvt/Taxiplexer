@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="listArray" translatable="false">
+        <item name="No Charge Up">No Charge Up</item>
+        <item name="0.6">0.6 seconds</item>
+        <item name="1.2">1.2 seconds</item>
+    </string-array>
+    <string-array name="listValues" translatable="false">
+        <item name="No Charge Up">0</item>
+        <item name="0.6">0.6</item>
+        <item name="1.2">1.2</item>
+    </string-array>
+
+    <string-array name="timeoutListArray" translatable="false">
+        <item name="No Timeout">No Timeout</item>
+        <item name="60">60 seconds</item>
+        <item name="120">120 seconds</item>
+    </string-array>
+    <string-array name="timeoutListValues" translatable="false">
+        <item name="No Timeout">-1</item>
+        <item name="60">60</item>
+        <item name="120">120</item>
+    </string-array>
+</resources>

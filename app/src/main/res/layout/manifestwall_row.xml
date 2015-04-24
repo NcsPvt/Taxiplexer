@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="?android:attr/listPreferredItemHeight"
+    android:padding="6dip"
+>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+
+        >
+
+        	        <LinearLayout
+		        android:orientation="horizontal"
+		        android:layout_width="fill_parent"
+		        android:layout_height="wrap_content"
+		        android:layout_weight="0.25"
+		        >
+		
+		        <TextView
+		            android:id="@+id/manifestNumber"
+		            android:layout_width="fill_parent"
+		            android:layout_height="wrap_content"
+		            android:layout_weight="0.33"
+					android:textColor="@color/yellow"
+		            android:singleLine="true"
+		            android:gravity="left|center_vertical"
+		            android:hint="Manifest Number"
+		        />
+
+		    </LinearLayout>
+		    <LinearLayout
+		        android:orientation="horizontal"
+		        android:layout_width="fill_parent"
+		        android:layout_height="wrap_content"
+		        android:layout_weight="0.25"
+		        >
+		
+		        <TextView
+		            android:id="@+id/startTime"
+		            android:layout_width="fill_parent"
+		            android:layout_height="wrap_content"
+		            android:layout_weight="0.70"
+					android:textColor="@color/cyan"
+		            android:gravity="left|center_vertical"
+	           		android:hint="04| 18:03"
+		        />
+		        <TextView
+		            android:id="@+id/startZone"
+		            android:layout_width="fill_parent"
+		            android:layout_height="wrap_content"
+		            android:layout_weight="0.73"
+					android:textColor="@color/green"
+		            android:gravity="left|center_vertical"
+	           		android:hint="StartZone"
+		        />
+		        <TextView
+		            android:layout_width="fill_parent"
+		            android:layout_height="wrap_content"
+		            android:layout_weight="0.82" 
+		            android:id="@+id/amulatory"
+		            android:singleLine="true"
+		            android:gravity="left|center_vertical"
+	           		android:hint="A:XX"
+		        />
+		        
+			    <TextView
+			            android:id="@+id/totalTrips"
+			            android:layout_width="fill_parent"
+			            android:layout_height="wrap_content"
+			            android:singleLine="true"
+			            android:layout_weight="0.75"
+			            android:textColor="@color/yellow"
+			            android:gravity="center"
+	            		android:hint="xx trip"
+			    />
+		        		
+		    </LinearLayout>
+			<LinearLayout
+		        android:orientation="horizontal"
+		        android:layout_width="fill_parent"
+		        android:layout_height="wrap_content"
+		        android:layout_weight="0.25"
+		        >
+		        <TextView
+		            android:id="@+id/endTime"
+		            android:layout_width="fill_parent"
+		            android:layout_height="wrap_content"
+		            android:layout_weight="0.70"
+		            android:gravity="left|center_vertical"
+	           		android:hint="10| 22:21"
+		        />
+		        <TextView
+		            android:layout_width="fill_parent"
+		            android:layout_height="wrap_content"
+		            android:layout_weight="0.73" 
+		            android:id="@+id/endZone"
+		            android:textColor="@color/green"
+		            android:gravity="left|center_vertical"
+	           		android:hint="EndZone"
+		        />
+		        
+		        <TextView
+		            android:layout_width="fill_parent"
+		            android:layout_height="wrap_content"
+		            android:layout_weight="0.82" 
+		            android:id="@+id/weelchair"
+		            android:singleLine="true"
+		            android:gravity="left|center_vertical"
+	           		android:hint="W:YY"
+		        />
+		        
+			    <TextView
+			            android:id="@+id/totalDistance"
+			            android:layout_width="fill_parent"
+			            android:layout_height="wrap_content"
+			            android:layout_weight="0.75"
+			            android:singleLine="true"
+			            android:textColor="@color/green"
+			            android:gravity="center"
+	            		android:hint="yyy mi"
+			    />
+			</LinearLayout>
+    
+	</LinearLayout>
+</LinearLayout>

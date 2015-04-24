@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AbsoluteLayout xmlns:android="http://schemas.android.com/apk/res/android"
+				android:layout_width="fill_parent"
+				android:layout_height="fill_parent"
+				android:id="@+id/av_full_screen3">
+	<LinearLayout android:layout_width="fill_parent"
+				  android:layout_height="fill_parent"
+				  android:orientation="vertical">
+
+		<ScrollView android:layout_width="fill_parent"
+					android:layout_height="fill_parent"
+					android:id="@+id/av_main_layout">
+			<LinearLayout android:layout_width="fill_parent"
+						  android:layout_height="wrap_content"
+						  android:orientation="vertical">
+
+				<LinearLayout android:layout_width="wrap_content"
+							  android:layout_height="wrap_content"
+							  android:orientation="horizontal"
+							  android:layout_gravity="center_horizontal"
+							  android:layout_marginTop="45dip"
+							  android:id="@+id/all_video_layout">
+
+					<LinearLayout android:layout_width="80dip"
+								  android:layout_height="80dip"
+								  android:layout_gravity="bottom"
+								  android:id="@+id/my_video_layout"
+								  android:layout_marginLeft="10dip"
+								  android:orientation="horizontal"
+								  android:visibility="gone">
+					</LinearLayout>
+
+					<LinearLayout android:layout_width="144dip"
+								  android:layout_height="144dip"
+								  android:visibility="invisible"
+								  android:layout_gravity="center_horizontal"
+								  android:id="@+id/av_video_layout">
+
+						<ImageView android:layout_width="fill_parent"
+								   android:layout_height="fill_parent"
+								   android:background="@drawable/avatar_default">
+						</ImageView>
+					</LinearLayout>
+
+				</LinearLayout>
+				<TextView android:layout_width="wrap_content"
+						  android:layout_height="wrap_content"
+						  android:layout_marginTop="5dip"
+						  android:textColor="@android:color/white"
+						  android:textSize="30dip"
+						  android:layout_gravity="center_horizontal"
+						  android:id="@+id/caller_contact_name">
+				</TextView>
+
+				<TextView android:layout_width="wrap_content"
+						  android:layout_height="wrap_content"
+						  android:layout_marginTop="5dip"
+						  android:textColor="@android:color/darker_gray"
+						  android:textSize="25dip"
+						  android:id="@+id/caller_call_status"
+						  android:layout_gravity="center_horizontal">
+				</TextView>
+
+				<LinearLayout android:layout_width="250dip"
+							  android:layout_height="80dip"
+							  android:orientation="horizontal"
+							  android:layout_gravity="center_horizontal"
+							  android:layout_marginTop="15dip">
+
+					<Button android:layout_height="fill_parent"
+								 android:layout_width="0dip"
+								 android:layout_weight="1"
+								 android:text="Hangup"
+							 	android:id="@+id/caller_hang_up_button"
+								 android:layout_marginRight="5dip"/>
+					
+					<ToggleButton android:layout_height="fill_parent"
+								 android:layout_width="0dip"
+								 android:layout_weight="1"
+								 android:textOff="Speaker"
+								 android:textOn="Speaker"
+							 	 android:id="@+id/caller_speaker_button"
+								 android:layout_marginRight="5dip"/>
+				</LinearLayout>
+
+			</LinearLayout>
+		</ScrollView>
+	</LinearLayout>
+	<LinearLayout android:layout_width="fill_parent"
+				  android:layout_height="fill_parent"
+				  android:id="@+id/dtmf_keyboard"
+				  android:visibility="invisible">
+		<LinearLayout android:layout_width="fill_parent"
+					  android:layout_height="fill_parent"
+					  android:padding="30dip"
+					  android:id="@+id/keyboard">
+			<TableLayout android:layout_width="fill_parent"
+						 android:layout_height="fill_parent"
+						 android:padding="5dip">
+				<TableRow android:layout_width="fill_parent"
+						  android:layout_height="fill_parent"
+						  android:layout_weight="1">
+					<Button android:id="@+id/dtmf_1"
+							android:onClick="dtmfOnClick"
+							android:layout_width="fill_parent"
+							android:layout_height="fill_parent"
+							android:layout_weight="1"/>
+					<Button android:id="@+id/dtmf_2"
+							android:onClick="dtmfOnClick"
+							android:layout_width="fill_parent"
+							android:layout_height="fill_parent"
+							android:layout_weight="1"/>
+					<Button android:id="@+id/dtmf_3"
+							android:onClick="dtmfOnClick"
+							android:layout_width="fill_parent"
+							android:layout_height="fill_parent"
+							android:layout_weight="1"/>
+				</TableRow>
+				<TableRow android:layout_width="fill_parent"
+						  android:layout_height="fill_parent"
+						  android:layout_weight="1">
+					<Button android:id="@+id/dtmf_4"
+							android:onClick="dtmfOnClick"
+							android:layout_width="fill_parent"
+							android:layout_height="fill_parent"
+							android:layout_weight="1"/>
+					<Button android:id="@+id/dtmf_5"
+							android:onClick="dtmfOnClick"
+							android:layout_width="fill_parent"
+							android:layout_height="fill_parent"
+							android:layout_weight="1"/>
+					<Button android:id="@+id/dtmf_6"
+							android:onClick="dtmfOnClick"
+							android:layout_width="fill_parent"
+							android:layout_height="fill_parent"
+							android:layout_weight="1"/>
+				</TableRow>
+				<TableRow android:layout_width="fill_parent"
+						  android:layout_height="fill_parent"
+						  android:layout_weight="1">
+					<Button android:id="@+id/dtmf_7"
+							android:onClick="dtmfOnClick"
+							android:layout_width="fill_parent"
+							android:layout_height="fill_parent"
+							android:layout_weight="1"/>
+					<Button android:id="@+id/dtmf_8"
+							android:onClick="dtmfOnClick"
+							android:layout_width="fill_parent"
+							android:layout_height="fill_parent"
+							android:layout_weight="1"/>
+					<Button android:id="@+id/dtmf_9"
+							android:onClick="dtmfOnClick"
+							android:layout_width="fill_parent"
+							android:layout_height="fill_parent"
+							android:layout_weight="1"/>
+				</TableRow>
+				<TableRow android:layout_width="fill_parent"
+						  android:layout_height="fill_parent"
+						  android:layout_weight="1">
+					<Button android:id="@+id/dtmf_10"
+							android:onClick="dtmfOnClick"
+							android:layout_width="fill_parent"
+							android:layout_height="fill_parent"
+							android:layout_weight="1"/>
+					<Button android:id="@+id/dtmf_0"
+							android:onClick="dtmfOnClick"
+							android:layout_width="fill_parent"
+							android:layout_height="fill_parent"
+							android:layout_weight="1"/>
+					<Button android:id="@+id/dtmf_11"
+							android:onClick="dtmfOnClick"
+							android:layout_width="fill_parent"
+							android:layout_height="fill_parent"
+							android:layout_weight="1"/>
+				</TableRow>
+			</TableLayout>
+
+		</LinearLayout>
+	</LinearLayout>
+</AbsoluteLayout>

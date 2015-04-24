@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="label_font">16sp</dimen>
+    <dimen name="address_font">11sp</dimen>
+        <dimen name="button_font">11sp</dimen>
+</resources>

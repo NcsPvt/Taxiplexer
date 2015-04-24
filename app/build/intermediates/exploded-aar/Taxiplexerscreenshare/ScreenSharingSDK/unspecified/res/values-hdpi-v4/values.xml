@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+ ~ Copyright 2013-2014 TeamViewer (www.teamviewer.com).  All rights reserved.
+ ~
+ ~ Please refer to the end user license agreement (EULA), the app developer agreement and license 
+ ~ information associated with this source code for terms and 
+ ~ conditions that govern your use of this software. 
+ -->
+<resources>
+
+    
+    
+
+    <dimen name="tv_show_marker_hotspot_x">29px</dimen>
+    <dimen name="tv_show_marker_hotspot_y">15px</dimen>
+    <dimen name="tv_widget_teamviewer_offset_y">80px</dimen>
+
+</resources>

@@ -1,0 +1,44 @@
+apply plugin: 'com.android.application'
+
+android {
+    signingConfigs {
+        Production {
+            keyAlias 'ncs_pakistan'
+            keyPassword 'Regency1'
+            storeFile file('D:/Old PC Data/Documents/booking_app.keystore')
+            storePassword 'Regency1'
+        }
+    }
+    compileSdkVersion 'Google Inc.:Google APIs:21'
+    buildToolsVersion "21.1.2"
+    defaultConfig {
+        applicationId "itcurves.infonetmytaxi"
+        minSdkVersion 9
+        targetSdkVersion 21
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+        }
+    }
+
+        lintOptions {
+            abortOnError false
+        }
+}
+
+dependencies {
+    compile 'com.android.support:support-v4:21.0.3'
+    compile files('libs/abto_android_voip_sdk.jar')
+    compile files('libs/android-viewbadger.jar')
+    compile files('libs/chargeanywheresdk.jar')
+    compile files('libs/com.mjminnovations.jar')
+    compile files('libs/ksoap2-android-assembly-2.4-jar-with-dependencies.jar')
+    compile files('libs/ROAMpayAPI41.jar')
+    compile files('libs/slimcd.jar')
+    compile files('libs/swiperapi-android-4.3.0.jar')
+    compile project(':ScreenSharingSDK')
+    compile 'com.google.android.gms:play-services:6.5.87'
+
+}

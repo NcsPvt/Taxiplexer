@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent" android:layout_height="fill_parent"
+    android:background="#00B1B0B0">
+
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:id="@+id/RA1">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" GPS"
+            android:id="@+id/textView5"
+            android:textSize="25sp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:textColor="#6DC04D"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView"
+           android:layout_toLeftOf="@+id/textView5"
+            android:layout_alignParentTop="true"
+            android:src="@drawable/gps"/>
+
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:id="@+id/RA2"
+        android:layout_below="@+id/RA1"
+        android:layout_centerVertical="true">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Fare"
+        android:id="@+id/textView"
+        android:textSize="30sp"
+        android:textColor="#F9FF00"
+
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="  $"
+        android:id="@+id/textView1"
+        android:textColor="#FF0000"
+        android:textSize="30sp"
+        android:layout_toRightOf="@+id/textView"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Extras"
+        android:id="@+id/textView3"
+        android:textColor="#F9FF00"
+        android:textSize="30sp"
+        android:layout_toLeftOf="@+id/textView4"
+         />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="  $"
+        android:id="@+id/textView4"
+        android:textColor="#FF0000"
+        android:textSize="30sp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="25dp"
+        />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1.45"
+            android:id="@+id/textView7"
+            android:textColor="#F9FF00"
+            android:textSize="40sp"
+            android:layout_alignLeft="@+id/textView4"
+            android:layout_below="@+id/textView4" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="123.45"
+            android:id="@+id/textView8"
+            android:textColor="#F9FF00"
+            android:textSize="40sp"
+            android:layout_alignLeft="@+id/textView1"
+            android:layout_below="@+id/textView1" />
+
+
+
+    </RelativeLayout>
+
+
+
+
+</RelativeLayout>

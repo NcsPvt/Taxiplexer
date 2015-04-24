@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2008 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+  
+          http://www.apache.org/licenses/LICENSE-2.0
+  
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:gravity="left"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/serverip_label"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dip"
+        android:layout_marginRight="10dip"
+        android:gravity="center"
+        android:text="Server IP address"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dip"
+        android:gravity="left"
+        >
+
+    <EditText
+        android:id="@+id/serverip_edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="2dip"
+        android:layout_marginRight="2dip"
+        android:autoText="false"
+        android:capitalize="none"
+        android:layout_weight="0.5"
+        android:gravity="fill_horizontal"
+        android:scrollHorizontally="true"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+    
+    <EditText
+        android:id="@+id/port_edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="2dip"
+        android:layout_marginRight="2dip"
+        android:autoText="false"
+        android:capitalize="none"
+        android:layout_weight="0.3"
+        android:gravity="fill_horizontal"
+        android:scrollHorizontally="true"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <Button
+        android:id="@+id/serverip_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.2"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+    
+ </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dip"
+        android:gravity="left"
+        android:orientation="vertical" >
+
+        <CheckBox
+            android:id="@+id/bluetoothMeter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:text="Enable Bluetooth Device" >
+        </CheckBox>
+        
+        <CheckBox
+            android:id="@+id/pulsarMeter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dip"
+            android:checked="false"
+            android:text="Pulsar Meter Available" >
+        </CheckBox>
+
+        <CheckBox
+            android:id="@+id/centrodyneMeter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dip"
+            android:checked="false"
+            android:text="Centrodyne Meter Available" >
+        </CheckBox>
+
+        <CheckBox
+            android:id="@+id/verifoneDevice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dip"
+            android:checked="true"
+            android:text="VeriFone Available" >
+        </CheckBox>
+
+        <CheckBox
+            android:id="@+id/vivotechDevice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dip"
+            android:checked="false"
+            android:text="CMT Vivotech Available" >
+        </CheckBox>
+
+        <CheckBox
+            android:id="@+id/blueBambooDevice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:text="Blue Bamboo Available" >
+        </CheckBox>
+
+        <CheckBox
+            android:id="@+id/audioCommands"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:text="Enable Audio Commands" >
+        </CheckBox>
+
+        <CheckBox
+            android:id="@+id/audiojackperipheral"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:text="Audio-Jack Peripheral" >
+        </CheckBox>
+        
+                <CheckBox
+            android:id="@+id/ventiveAJR"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:text="Ventive AJR" >
+        </CheckBox>
+
+        <CheckBox
+            android:id="@+id/IDTech"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:text="IDTech" >
+        </CheckBox>
+
+        <CheckBox
+            android:id="@+id/SoftMeter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:text="SoftMeter" >
+        </CheckBox>
+    </LinearLayout>
+
+</LinearLayout>

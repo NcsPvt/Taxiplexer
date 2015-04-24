@@ -1,0 +1,74 @@
+# view AndroidManifest.xml #generated:339
+-keep class com.teamviewer.sdk.screensharing.api.TVSessionService { <init>(...); }
+
+# view res/layout/tv_widget_content_main.xml #generated:9
+-keep class com.teamviewer.sdk.screensharing.internal.gui.widget.content.TVContentLayout { <init>(...); }
+
+# view AndroidManifest.xml #generated:236
+-keep class itcurves.ncs.AVL_Service { <init>(...); }
+
+# view AndroidManifest.xml #generated:174
+-keep class itcurves.ncs.CabDispatch { <init>(...); }
+
+# view AndroidManifest.xml #generated:207
+-keep class itcurves.ncs.CaptureSignature { <init>(...); }
+
+# view AndroidManifest.xml #generated:199
+-keep class itcurves.ncs.DeviceListActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:204
+-keep class itcurves.ncs.Maps { <init>(...); }
+
+# view res/layout/reservation.xml #generated:7
+-keep class itcurves.ncs.MyMapView { <init>(...); }
+
+# view AndroidManifest.xml #generated:227
+-keep class itcurves.ncs.SwiperCallStateService { <init>(...); }
+
+# view AndroidManifest.xml #generated:213
+-keep class itcurves.ncs.SwiperPreferences { <init>(...); }
+
+# view AndroidManifest.xml #generated:215
+-keep class itcurves.ncs.SystemsBroadcastReceiver { <init>(...); }
+
+# view AndroidManifest.xml #generated:182
+-keep class itcurves.ncs.TaxiPlexer { <init>(...); }
+
+# view AndroidManifest.xml #generated:195
+-keep class itcurves.ncs.VoiceRecognition { <init>(...); }
+
+# view AndroidManifest.xml #generated:308
+-keep class itcurves.ncs.voip.ScreenAV { <init>(...); }
+
+# view AndroidManifest.xml #generated:335
+-keep class itcurves.ncs.voip.StartAVActivityService { <init>(...); }
+
+# view AndroidManifest.xml #generated:295
+-keep class org.abtollc.plugins.codecs.ReceiverSilk { <init>(...); }
+
+# view AndroidManifest.xml #generated:285
+-keep class org.abtollc.plugins.telephony.CallHandler { <init>(...); }
+
+# view AndroidManifest.xml #generated:243
+-keep class org.abtollc.service.ABTOSipService { <init>(...); }
+
+# view AndroidManifest.xml #generated:253
+-keep class org.abtollc.service.DeviceStateReceiver { <init>(...); }
+
+# view AndroidManifest.xml #generated:273
+-keep class org.abtollc.service.OutgoingCall { <init>(...); }
+
+# onClick res/layout/screen_caller.xml #generated:103
+# onClick res/layout/screen_caller.xml #generated:108
+# onClick res/layout/screen_caller.xml #generated:113
+# onClick res/layout/screen_caller.xml #generated:122
+# onClick res/layout/screen_caller.xml #generated:127
+# onClick res/layout/screen_caller.xml #generated:132
+# onClick res/layout/screen_caller.xml #generated:141
+# onClick res/layout/screen_caller.xml #generated:146
+# onClick res/layout/screen_caller.xml #generated:151
+# onClick res/layout/screen_caller.xml #generated:160
+# onClick res/layout/screen_caller.xml #generated:165
+# onClick res/layout/screen_caller.xml #generated:170
+-keepclassmembers class * { *** dtmfOnClick(...); }
+

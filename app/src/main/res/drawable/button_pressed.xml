@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape      xmlns:android="http://schemas.android.com/apk/res/android"
+            android:shape="rectangle">
+        <!-- Regency #3c5077, E2Taxi #056839, Sacramento #eab006, valley-pwc-Frederick-memphis-C&HTaxi #f39613 -->
+        <!-- united #7687B7, Exec2000 #490000, KC #b0c6af -->
+    
+    <solid   android:color="#FFA51B"/>
+    
+    <corners    android:bottomLeftRadius="8dip"
+                android:topRightRadius="8dip"
+                android:topLeftRadius="8dip"
+                android:bottomRightRadius="8dip"
+                />
+</shape>

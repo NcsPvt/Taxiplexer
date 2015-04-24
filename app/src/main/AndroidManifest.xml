@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="itcurves.regencycab"
+    android:versionCode="100"
+    android:versionName="6.39" >
+
+    <uses-sdk
+        android:minSdkVersion="10"
+        android:targetSdkVersion="19"
+        tools:overrideLibrary="com.teamviewer.sdk.screensharing" />
+
+    <uses-permission
+        android:name="android.permission.RECEIVE_BOOT_COMPLETED"
+        android:required="false" />
+    <uses-permission
+        android:name="android.permission.WRITE_SETTINGS"
+        android:required="false" />
+    <uses-permission
+        android:name="android.permission.CLEAR_APP_CACHE"
+        android:required="false" />
+    <uses-permission
+        android:name="android.permission.INTERNET"
+        android:required="false" />
+    <uses-permission
+        android:name="android.permission.ACCESS_COARSE_LOCATION"
+        android:required="false" />
+    <uses-permission
+        android:name="android.permission.ACCESS_FINE_LOCATION"
+        android:required="false" />
+    <uses-permission
+        android:name="android.permission.CHANGE_WIFI_STATE"
+        android:required="false" />
+    <uses-permission
+        android:name="android.permission.ACCESS_WIFI_STATE"
+        android:required="false" />
+    <uses-permission
+        android:name="android.permission.ACCESS_NETWORK_STATE"
+        android:required="false" />
+    <uses-permission
+        android:name="android.permission.BLUETOOTH"
+        android:required="false" />
+    <uses-permission
+        android:name="android.permission.BLUETOOTH_ADMIN"
+        android:required="false" />
+    <uses-permission
+        android:name="android.permission.READ_PHONE_STATE"
+        android:required="false" />
+    <uses-permission
+        android:name="android.permission.RECORD_AUDIO"
+        android:required="false" />
+    <uses-permission
+        android:name="android.permission.RESTART_PACKAGES"
+        android:required="false" />
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:required="false" />
+    <uses-permission
+        android:name="android.permission.GET_TASKS"
+        android:required="false" />
+    <uses-permission
+        android:name="android.permission.READ_LOGS"
+        android:required="false" />
+    <uses-permission
+        android:name="android.permission.CALL_PHONE"
+        android:required="false" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission
+        android:name="android.permission.MODIFY_AUDIO_SETTINGS"
+        android:required="false" />
+    <uses-permission
+        android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"
+        android:required="false" />
+    <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.WRITE_CONTACTS" />
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.USE_SIP" />
+    <uses-permission android:name="android.permission.CONFIGURE_SIP" />
+    <uses-permission android:name="android.permission.BROADCAST_STICKY" />
+    <uses-permission android:name="android.permission.READ_PROFILE" />
+
+    <!-- COMMENT THIS if you plan to use in library mode -->
+    <permission
+        android:name="android.permission.USE_SIP"
+        android:label="Use sip"
+        android:permissionGroup="android.permission-group.COST_MONEY"
+        android:protectionLevel="dangerous" />
+    <permission
+        android:name="android.permission.CONFIGURE_SIP"
+        android:label="Use sip"
+        android:permissionGroup="android.permission-group.COST_MONEY"
+        android:protectionLevel="dangerous" />
+
+    <!-- END OF COMMENT THIS -->
+
+    <uses-feature
+        android:name="android.hardware.wifi"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.telephony"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.microphone"
+        android:required="true" />
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
+
+    <compatible-screens>
+        <screen
+            android:screenDensity="480"
+            android:screenSize="small" />
+        <screen
+            android:screenDensity="480"
+            android:screenSize="normal" />
+        <screen
+            android:screenDensity="480"
+            android:screenSize="large" />
+        <screen
+            android:screenDensity="480"
+            android:screenSize="xlarge" />
+        <screen
+            android:screenDensity="ldpi"
+            android:screenSize="small" />
+        <screen
+            android:screenDensity="mdpi"
+            android:screenSize="small" />
+        <screen
+            android:screenDensity="hdpi"
+            android:screenSize="small" />
+        <screen
+            android:screenDensity="xhdpi"
+            android:screenSize="small" />
+        <screen
+            android:screenDensity="ldpi"
+            android:screenSize="normal" /> <!-- all normal size screens -->
+        <screen
+            android:screenDensity="mdpi"
+            android:screenSize="normal" />
+        <screen
+            android:screenDensity="hdpi"
+            android:screenSize="normal" />
+        <screen
+            android:screenDensity="xhdpi"
+            android:screenSize="normal" />
+        <screen
+            android:screenDensity="ldpi"
+            android:screenSize="large" /> <!-- all large size screens -->
+        <screen
+            android:screenDensity="mdpi"
+            android:screenSize="large" />
+        <screen
+            android:screenDensity="hdpi"
+            android:screenSize="large" />
+        <screen
+            android:screenDensity="xhdpi"
+            android:screenSize="large" />
+        <screen
+            android:screenDensity="ldpi"
+            android:screenSize="xlarge" /> <!-- all xlarge size screens -->
+        <screen
+            android:screenDensity="mdpi"
+            android:screenSize="xlarge" />
+        <screen
+            android:screenDensity="hdpi"
+            android:screenSize="xlarge" />
+        <screen
+            android:screenDensity="xhdpi"
+            android:screenSize="xlarge" />
+        <screen
+            android:screenDensity="213"
+            android:screenSize="large" /> <!-- Special case for Nexus 7 -->
+    </compatible-screens>
+
+    <supports-screens android:requiresSmallestWidthDp="320" />
+
+    <application
+        android:name="itcurves.ncs.CabDispatch"
+        android:allowBackup="true"
+        android:icon="@drawable/icon"
+        android:label="Cab Dispatch"
+        android:theme="@style/Theme.NCSTheme" >
+        <uses-library android:name="com.google.android.maps" />
+
+        <activity
+            android:name="itcurves.ncs.TaxiPlexer"
+            android:allowTaskReparenting="false"
+            android:alwaysRetainTaskState="true"
+            android:configChanges="orientation|screenSize"
+            android:label="@string/app_name"
+            android:launchMode="singleTask" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="itcurves.ncs.VoiceRecognition"
+            android:theme="@android:style/Theme.Translucent" >
+        </activity>
+        <activity
+            android:name="itcurves.ncs.DeviceListActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="select a device to connect"
+            android:theme="@android:style/Theme.Dialog" />
+        <activity
+            android:name="itcurves.ncs.Maps"
+            android:configChanges="keyboardHidden|orientation|screenSize" />
+        <activity
+            android:name="itcurves.ncs.CaptureSignature"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:label="Signature Confirmation"
+            android:screenOrientation="landscape"
+            android:theme="@android:style/Theme.Light.NoTitleBar" />
+        <activity android:name="itcurves.ncs.SwiperPreferences" />
+
+        <receiver
+            android:name="itcurves.ncs.SystemsBroadcastReceiver"
+            android:enabled="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.ACTION_POWER_CONNECTED" />
+                <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED" />
+                <action android:name="android.intent.action.ACTION_SHUTDOWN" />
+                <action android:name="android.intent.action.ACTION_REBOOT" />
+            </intent-filter>
+        </receiver>
+
+        <service
+            android:name="itcurves.ncs.SwiperCallStateService"
+            android:enabled="true" >
+            <intent-filter>
+                <action android:name="com.bbpos.swiper.CALL_STATE" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </service>
+        <service
+            android:name="itcurves.ncs.AVL_Service"
+            android:enabled="true" >
+            <intent-filter>
+                <action android:name="itcurves.ncs.AVL_Service" />
+            </intent-filter>
+        </service>
+        <service
+            android:name="org.abtollc.service.ABTOSipService"
+            android:exported="true"
+            android:permission="android.permission.CONFIGURE_SIP" >
+            <intent-filter>
+                <action android:name="org.abtollc.service.ABTOSipService" />
+                <action android:name="org.abtollc.service.SipConfiguration" />
+            </intent-filter>
+        </service>
+
+        <receiver android:name="org.abtollc.service.DeviceStateReceiver" >
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+
+                <!-- Remove that too fine change trigger <action android:name="android.intent.action.ANY_DATA_STATE" /> -->
+
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="org.abtollc.accounts.activate" >
+                </action>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED" />
+                <action android:name="android.intent.action.PACKAGE_REMOVED" />
+
+                <data android:scheme="package" />
+            </intent-filter>
+        </receiver>
+
+        <!-- Call management -->
+
+        <receiver android:name="org.abtollc.service.OutgoingCall" >
+            <intent-filter android:priority="10" >
+                <action android:name="android.intent.action.NEW_OUTGOING_CALL" >
+                </action>
+            </intent-filter>
+        </receiver>
+
+        <!-- Embedded plugins -->
+
+
+        <!-- Call handlers -->
+
+        <receiver
+            android:name="org.abtollc.plugins.telephony.CallHandler"
+            android:permission="android.permission.PROCESS_OUTGOING_CALLS" >
+            <intent-filter>
+                <action android:name="org.abtollc.phone.action.HANDLE_CALL" />
+            </intent-filter>
+        </receiver>
+
+        <!-- SILK -->
+
+        <receiver android:name="org.abtollc.plugins.codecs.ReceiverSilk" >
+            <meta-data
+                android:name="lib_name"
+                android:value="libpj_silk_codec.so" />
+            <meta-data
+                android:name="init_factory"
+                android:value="pjmedia_codec_silk_init" />
+-
+            <intent-filter>
+                <action android:name="corg.abtollc.codecs.action.REGISTER_CODEC" />
+            </intent-filter>
+        </receiver>
+
+        <activity
+            android:name="itcurves.ncs.voip.ScreenAV"
+            android:allowTaskReparenting="false"
+            android:excludeFromRecents="true"
+            android:launchMode="singleTask"
+            android:permission="android.permission.USE_SIP"
+            android:taskAffinity="" >
+            <intent-filter>
+                <action android:name="android.intent.action.CALL" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:scheme="csip" />
+                <data android:scheme="sip" />
+                <data android:scheme="sips" />
+            </intent-filter>
+            <intent-filter android:priority="10" >
+                <action android:name="android.phone.extra.NEW_CALL_INTENT" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:scheme="csip" />
+                <data android:scheme="sip" />
+                <data android:scheme="sips" />
+            </intent-filter>
+        </activity>
+
+        <service
+            android:name="itcurves.ncs.voip.StartAVActivityService"
+            android:enabled="true" >
+        </service>
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+        <meta-data
+            android:name="com.google.android.maps.v2.API_KEY"
+            android:value="AIzaSyDh9J71Tu8i30oc3-xiQfBVBcarCITPIxQ" />
+
+
+    </application>
+
+</manifest>

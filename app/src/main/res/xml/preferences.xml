@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <PreferenceCategory android:title="Swiper Detection" >
+        <CheckBoxPreference
+            android:key="setDetectDeviceChangePref"
+            android:defaultValue="true"
+            android:summaryOn="Detect Swiper plug/unplug"
+            android:summaryOff="Do not detect swiper plug/unplug (Default)"
+            android:title="Detect Device Change" />
+        
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="Card Data Output" >
+        <CheckBoxPreference
+            android:key="setFskRequiredPref"
+            android:defaultValue="false"
+            android:summaryOn="Has FSK card data output"
+            android:summaryOff="No FSK card data output (Default)"
+            android:title="Require FSK Output" />
+        <ListPreference
+            android:key="setTimeoutlistPref"
+            android:defaultValue="-1"
+            android:entries="@array/timeoutListArray"
+            android:entryValues="@array/timeoutListValues"
+            android:summary="Set timeout when no swipe is detected"
+            android:title="Timeout" />
+    </PreferenceCategory>
+    
+    <PreferenceCategory android:title="Swiper Charge Up Time" >
+        <ListPreference
+            android:key="setKsnChargeUplistPref"
+            android:defaultValue="0.6"
+            android:entries="@array/listArray"
+            android:entryValues="@array/listValues"
+            android:summary="Charge up time before getting KSN from Swiper"
+            android:title="Get KSN" />
+        <ListPreference
+            android:key="setSwipeChargeUplistPref"
+            android:defaultValue="0.6"
+            android:entries="@array/listArray"
+            android:entryValues="@array/listValues"
+            android:summary="Charge up time before swipe is ready"
+            android:title="Swipe" />
+    </PreferenceCategory>
+    
+    <PreferenceCategory android:title="Versions">
+        <Preference 
+            android:key="apiVersionPref"
+            android:summary=""
+            android:title="Swiper API Version" />
+       	<Preference 
+       	    android:key="firmwareVersionPref"
+            android:summary=""
+            android:title="Swiper Firmware Version" />
+    </PreferenceCategory>
+</PreferenceScreen>

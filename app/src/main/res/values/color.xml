@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <color name="black">#000000</color>
+  <color name="white">#FFFFFFFF</color>
+  <color name="blue">#0000FF</color>
+  <color name="cyan">#00FFFF</color>
+  <color name="magenta">#FF00FF</color>
+  <color name="gray">#181818</color>
+  <color name="graytext">#b2b2b2</color>
+  <color name="red">#ff0000</color>
+  <color name="yellow">#ffff00</color>
+  <color name="orange">#ff8000</color>
+  <color name="green">#00ff00</color>
+  <color name="light_green">#ffe1df9e</color>
+  <color name="purple">#8000ff</color>
+  <color name="translucent_white">#99ffffff</color>
+  <color name="signature_Border">#ff0099ff</color>
+</resources>

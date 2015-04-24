@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+	<style name="Label_Style">
+		<item name="android:layout_weight">1.5</item>
+		<item name="android:layout_width">fill_parent</item>
+		<item name="android:layout_height">wrap_content</item>
+		<item name="android:layout_gravity">center_vertical</item>
+		<item name="android:textStyle">bold</item>
+		<item name="android:textColor">#FFFFFFFF</item>
+		<item name="android:focusable">false</item>
+	</style>
+	<style name="Edit_Style">
+		<item name="android:layout_weight">1</item>
+		<item name="android:layout_width">fill_parent</item>
+		<item name="android:layout_height">wrap_content</item>
+		<item name="android:layout_gravity">center_vertical</item>
+		<item name="android:gravity">right</item>
+		<item name="android:scrollHorizontally">true</item>
+	</style>
+	
+	<style name="DialogAnimation1">
+        <item name="android:windowEnterAnimation">@anim/slide_out_down</item>
+        <item name="android:windowExitAnimation">@anim/slide_in_down</item>
+</style>
+
+		<style name="DialogAnimation2">
+        <item name="android:windowEnterAnimation">@anim/slide_out_right</item>
+        <item name="android:windowExitAnimation">@anim/slide_in_right</item>
+</style>
+
+	<!-- Animation for dialog box -->
+    <style name="DialogSlideAnim1" parent="@android:style/Theme.Dialog">
+        <item name="android:windowAnimationStyle">@style/DialogAnimation1</item>
+    </style>
+    
+    	<!-- Animation for dialog box -->
+    <style name="DialogSlideAnim2" parent="@android:style/Theme.Dialog">
+        <item name="android:windowAnimationStyle">@style/DialogAnimation2</item>
+    </style>
+
+    <style name="DialogTheme" parent="android:Theme.Dialog">
+
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">fill_parent</item>
+
+
+        <!-- No backgrounds, titles or window float -->
+
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+    </style>
+	
+</resources>
+

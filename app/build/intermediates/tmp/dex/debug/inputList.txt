@@ -1,0 +1,14 @@
+D:\AndroidStudioWorkspace\Taxiplexerscreenshare\app\build\intermediates\classes\debug
+D:\AndroidStudioWorkspace\Taxiplexerscreenshare\app\build\intermediates\pre-dexed\debug\support-annotations-21.0.3-31f3d8906b1aea5d15872d39c57ae5df179ff3cc.jar
+D:\AndroidStudioWorkspace\Taxiplexerscreenshare\app\build\intermediates\pre-dexed\debug\android-viewbadger-3d7e93148f6be353a8da749215b9f5e43dc00051.jar
+D:\AndroidStudioWorkspace\Taxiplexerscreenshare\app\build\intermediates\pre-dexed\debug\com.mjminnovations-9af7ef5374a14bdd28fe0db227fb2fdc2e4df25f.jar
+D:\AndroidStudioWorkspace\Taxiplexerscreenshare\app\build\intermediates\pre-dexed\debug\swiperapi-android-4.3.0-e75499ab247808dd055b31f3e5fc5939a4befeb4.jar
+D:\AndroidStudioWorkspace\Taxiplexerscreenshare\app\build\intermediates\pre-dexed\debug\ROAMpayAPI41-ad9174a38efccc37b900ad78ec7ddad5feef7790.jar
+D:\AndroidStudioWorkspace\Taxiplexerscreenshare\app\build\intermediates\pre-dexed\debug\internal_impl-21.0.3-240a2b471d1fed7bc59174bd80079eb817948f42.jar
+D:\AndroidStudioWorkspace\Taxiplexerscreenshare\app\build\intermediates\pre-dexed\debug\ksoap2-android-assembly-2.4-jar-with-dependencies-4f4985e2fb54b8d7aa3e6918351c312cbf46628d.jar
+D:\AndroidStudioWorkspace\Taxiplexerscreenshare\app\build\intermediates\pre-dexed\debug\slimcd-b5491ef1bcf5735ff34d02fb827191da2ffdf4a5.jar
+D:\AndroidStudioWorkspace\Taxiplexerscreenshare\app\build\intermediates\pre-dexed\debug\chargeanywheresdk-29c5cc71c062e6e6896cc16cea51a0fae3ce56ea.jar
+D:\AndroidStudioWorkspace\Taxiplexerscreenshare\app\build\intermediates\pre-dexed\debug\abto_android_voip_sdk-abc384c97052351d6cffdffdba9b23e7692e2c75.jar
+D:\AndroidStudioWorkspace\Taxiplexerscreenshare\app\build\intermediates\pre-dexed\debug\classes-64e792609dbd68eb3771f5724d54a53470a15ea0.jar
+D:\AndroidStudioWorkspace\Taxiplexerscreenshare\app\build\intermediates\pre-dexed\debug\classes-147a55f3c8842cf7b9399221c9c648e16cb06f19.jar
+D:\AndroidStudioWorkspace\Taxiplexerscreenshare\app\build\intermediates\pre-dexed\debug\classes-296455cf31775037a8fc39ac6eb5a3987730b606.jar
