@@ -257,7 +257,7 @@ public final class R {
         public static final int disclaimer=0x7f060001;
         public static final int eula=0x7f060002;
         public static final int manifest=0x7f060003;
-        public static final int trip_offer=0x7f060004;
+
         public static final int tripdetail=0x7f060005;
     }
     public static final class string {

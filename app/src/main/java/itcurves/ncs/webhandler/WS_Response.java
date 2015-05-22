@@ -1157,6 +1157,7 @@ public class WS_Response {
         private int _WallRefreshTimer;
         private int _SDEnableOdometerInput;
         private boolean _SDEnableReceiptEmail;
+        private boolean _SDEnableStatsForVoip;
 
 		public GeneralSettings() {
 			this._AllowBTMeterOnSDStartUp = false;
@@ -1269,6 +1270,7 @@ public class WS_Response {
             this._WallRefreshTimer = 40;
             this._SDEnableOdometerInput = 0;
             this._SDEnableReceiptEmail = false;
+            this._SDEnableStatsForVoip = true;
 		}
 		public boolean get_AllowBTMeterOnSDStartUp() {
 			return _AllowBTMeterOnSDStartUp;
@@ -2156,6 +2158,14 @@ public class WS_Response {
 
         public void set_SDEnableReceiptEmail(Boolean SDEnableReceiptEmail) {
             this._SDEnableReceiptEmail = SDEnableReceiptEmail;
+        }
+
+        public boolean get_SDEnableStatsForVoip() {
+            return _SDEnableStatsForVoip;
+        }
+
+        public void set_SDEnableStatsForVoip(Boolean SDEnableStatsForVoip) {
+            this._SDEnableStatsForVoip = SDEnableStatsForVoip;
         }
 
 

@@ -636,5 +636,8 @@
     <string name="Processing_Dialie_Payment">Processing Dialie Payment...</string>
     <string name="Processing_Payment">Processing Payment...</string>
     <string name="Registering_With_Caw">Processing with CAW...</string>
+    <string name="TopUpView">TopUp View</string>
+    <string name="Install_Try_Again">Install Soft Meter Application and try again</string>
+    <string name="Customer_Account">Customer Account</string>
 
 </resources>

@@ -705,7 +705,8 @@ public class XMLPullParserHandler {
                             }
                         else if (tagname.equalsIgnoreCase("SDEnableReceiptEmail"))
                             tempResponsePullParser.generalSettings.set_SDEnableReceiptEmail(Boolean.parseBoolean(textBtwTags));
-
+                        else if (tagname.equalsIgnoreCase("SDEnableStatsForVoip"))
+                            tempResponsePullParser.generalSettings.set_SDEnableStatsForVoip(Boolean.parseBoolean(textBtwTags));
 
 					}// if CalculateRouteByStreetAddressResult
 					else if (tempResponsePullParser.responseType.equalsIgnoreCase("TopupCustomerBalanceFromBookinAppResult")) {

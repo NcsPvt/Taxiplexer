@@ -1,6 +1,8 @@
 package itcurves.ncs.voip;
 
 import itcurves.ncs.AVL_Service;
+import itcurves.ncs.Farsi;
+import itcurves.ncs.TaxiPlexer;
 import itcurves.regencycab.R;
 
 import java.io.File;
@@ -13,12 +15,19 @@ import java.util.concurrent.TimeUnit;
 
 import org.abtollc.sdk.AbtoApplication;
 import org.abtollc.sdk.AbtoPhone;
+import org.abtollc.sdk.AbtoPhoneCfg;
 import org.abtollc.sdk.OnCallConnectedListener;
 import org.abtollc.sdk.OnCallDisconcectedListener;
 import org.abtollc.sdk.OnCallHeldListener;
 import org.abtollc.sdk.OnRemoteAlertingListener;
+import org.abtollc.utils.codec.Codec;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.pm.ApplicationInfo;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.RemoteException;
@@ -34,7 +43,7 @@ import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.ToggleButton;
-
+import android.net.TrafficStats;
 /**
  * class implements communication activity;
  * 
@@ -68,7 +77,18 @@ public class ScreenAV extends Activity {
 
 	ScheduledExecutorService scheduler;
 	ScheduledExecutorService pickupScheduler;
+    protected PackageManager pm;
+    public static long connectionSentBytes = 0;
+    public static long connectionReceivedBytes = 0;
+    public static long disconnectionSentBytes = 0;
+    public static long disconnectionReceivedBytes = 0;
 
+
+
+    TextView stats;
+    TextView Codecs;
+    Handler handlerForTripDetail = null;
+    Runnable tripDetailSound = null;
 	/**
 	 * executes when activity have been created;
 	 */
@@ -85,6 +105,7 @@ public class ScreenAV extends Activity {
 		scheduler = Executors.newSingleThreadScheduledExecutor();
 		pickupScheduler = Executors.newSingleThreadScheduledExecutor();
 
+        pm = this.getPackageManager();
 		Runnable temp = new Runnable() {
 
 			@Override
@@ -123,9 +144,17 @@ public class ScreenAV extends Activity {
 		setContentView(R.layout.screen_caller);
 
 		name = (TextView) findViewById(R.id.caller_contact_name);
+        stats = (TextView) findViewById(R.id.stats);
+        Codecs = (TextView) findViewById(R.id.Codecs);
 		activeContact = getIntent().getStringExtra(AbtoPhone.REMOTE_CONTACT);
-		if (bIsIncoming)
-			name.setText(activeContact);
+
+		if (bIsIncoming) {
+            String [] activecontact1=activeContact.split(":");
+			String [] name1 = activecontact1[0].split("<");
+            activecontact1 = activecontact1[1].split("@");
+            activeContact = activecontact1[0];
+            name.setText(name1[0] + activeContact);
+        }
 		mTotalTime = getIntent().getLongExtra(TOTAL_TIME, 0);
 		mPointTime = getIntent().getLongExtra(POINT_TIME, 0);
 		if (mTotalTime != 0) {
@@ -225,18 +254,69 @@ public class ScreenAV extends Activity {
 
 					}
 				}, Long.parseLong(AVL_Service.SDAsteriskHangUpTime), TimeUnit.SECONDS);
+
+                try {
+                    ApplicationInfo appinfo = pm.getApplicationInfo("itcurves.regencycab", PackageManager.GET_META_DATA);
+                    connectionSentBytes=TrafficStats.getUidTxBytes(appinfo.uid);
+                    connectionReceivedBytes=TrafficStats.getUidRxBytes(appinfo.uid);
+                    if(AVL_Service.SDEnableStatsForVoip) {
+                        stats.setText("Sent KiloBytes: 0 \nReceived KiloBytes: 0");
+                        int priority = phone.getConfig().getCodecPriority(Codec.G729, AbtoPhoneCfg.CODEC_WB, (short) 2);
+                        int priority1 = phone.getConfig().getCodecPriority(Codec.G722, AbtoPhoneCfg.CODEC_WB, (short) 3);
+
+                        Codecs.setText("Codec G729 Priority: "+priority + "\nCodec G722 Priority: " + priority1);
+                        handlerForTripDetail = new Handler();
+                        handlerForTripDetail.postDelayed(tripDetailSound, 50);
+                    }
+                } catch (PackageManager.NameNotFoundException e) {
+                    e.printStackTrace();
+                }
+
 			}
 		});
+
+        tripDetailSound = new Runnable() {
+
+            @Override
+            public void run() {
+                try {
+                    ApplicationInfo appinfo = pm.getApplicationInfo("itcurves.regencycab", PackageManager.GET_META_DATA);
+                    disconnectionSentBytes=TrafficStats.getUidTxBytes(appinfo.uid);
+                    disconnectionReceivedBytes=TrafficStats.getUidRxBytes(appinfo.uid);
+                    final long sent = (disconnectionSentBytes-connectionSentBytes)/1024;
+                    final long received = (disconnectionReceivedBytes-connectionReceivedBytes)/1024;
+                    runOnUiThread(new Runnable() {
+                        public void run() {
+                            stats.setText("Sent KiloBytes: " + sent + "\nReceived KiloBytes: " + received);
+                        }
+                    });
+
+                    handlerForTripDetail.postDelayed(tripDetailSound, 50);
+                } catch (PackageManager.NameNotFoundException e) {
+                    e.printStackTrace();
+                }
+
+            }
+        };
+
+
+
 
 		OnCallDisconcectedListener disconcectedListener = new OnCallDisconcectedListener() {
 
 			@Override
 			public void onCallDisconcected(String remoteContact, int callId) {
-				if (callId == phone.getActiveCallId()) {
-					ScreenAV.this.finish();
-					mTotalTime = 0;
-				}
-			}
+
+                if(handlerForTripDetail!=null) {
+                    handlerForTripDetail.removeCallbacks(tripDetailSound);
+                }
+                if (callId == phone.getActiveCallId()) {
+                    ScreenAV.this.finish();
+                    mTotalTime = 0;
+                }
+
+
+            }
 		};
 		phone.setCallDisconnectedListener(disconcectedListener);
 

@@ -591,27 +591,28 @@ containing a value of this type.
         public static final int zones=0x7f02007e;
     }
     public static final class id {
-        public static final int IDTech=0x7f0f005d;
-        public static final int RA1=0x7f0f0070;
-        public static final int RA2=0x7f0f0073;
-        public static final int SoftMeter=0x7f0f005e;
-        public static final int action_settings=0x7f0f00a4;
+        public static final int Codecs=0x7f0f0043;
+        public static final int IDTech=0x7f0f005f;
+        public static final int RA1=0x7f0f0072;
+        public static final int RA2=0x7f0f0075;
+        public static final int SoftMeter=0x7f0f0060;
+        public static final int action_settings=0x7f0f00a6;
         public static final int adjust_height=0x7f0f0000;
         public static final int adjust_width=0x7f0f0001;
         public static final int all_video_layout=0x7f0f003b;
         public static final int amulatory=0x7f0f0025;
-        public static final int audioCommands=0x7f0f005a;
-        public static final int audiojackperipheral=0x7f0f005b;
+        public static final int audioCommands=0x7f0f005c;
+        public static final int audiojackperipheral=0x7f0f005d;
         public static final int av_full_screen3=0x7f0f0039;
         public static final int av_main_layout=0x7f0f003a;
         public static final int av_video_layout=0x7f0f003d;
-        public static final int blueBambooDevice=0x7f0f0059;
-        public static final int bluetoothMeter=0x7f0f0054;
+        public static final int blueBambooDevice=0x7f0f005b;
+        public static final int bluetoothMeter=0x7f0f0056;
         public static final int book_now=0x7f0f0010;
         public static final int btnNo=0x7f0f0021;
         public static final int btnYES=0x7f0f0020;
-        public static final int button1=0x7f0f007f;
-        public static final int button2=0x7f0f0080;
+        public static final int button1=0x7f0f0081;
+        public static final int button2=0x7f0f0082;
         public static final int button_scan=0x7f0f001b;
         public static final int buyButton=0x7f0f000c;
         public static final int buy_now=0x7f0f0011;
@@ -620,142 +621,143 @@ containing a value of this type.
         public static final int caller_contact_name=0x7f0f003e;
         public static final int caller_hang_up_button=0x7f0f0040;
         public static final int caller_speaker_button=0x7f0f0041;
-        public static final int cancel=0x7f0f0061;
-        public static final int centrodyneMeter=0x7f0f0056;
+        public static final int cancel=0x7f0f0063;
+        public static final int centrodyneMeter=0x7f0f0058;
         public static final int classic=0x7f0f0014;
-        public static final int clear=0x7f0f0062;
-        public static final int collapse_icon=0x7f0f0089;
+        public static final int clear=0x7f0f0064;
+        public static final int collapse_icon=0x7f0f008b;
         public static final int container=0x7f0f0032;
         public static final int dateTime=0x7f0f002d;
-        public static final int dialogBtn1=0x7f0f00a2;
-        public static final int dialogBtn2=0x7f0f00a3;
-        public static final int dialogText=0x7f0f00a1;
-        public static final int dialogTitle=0x7f0f00a0;
+        public static final int dialogBtn1=0x7f0f00a4;
+        public static final int dialogBtn2=0x7f0f00a5;
+        public static final int dialogText=0x7f0f00a3;
+        public static final int dialogTitle=0x7f0f00a2;
         public static final int dialog_editText=0x7f0f001f;
         public static final int dialog_layout_root=0x7f0f001c;
         public static final int dialog_text=0x7f0f001e;
-        public static final int distanceFromPickUpLocation=0x7f0f009f;
+        public static final int distanceFromPickUpLocation=0x7f0f00a1;
         public static final int domain=0x7f0f0030;
         public static final int donate_with_google=0x7f0f0013;
-        public static final int dropzone=0x7f0f0087;
-        public static final int dtmf_0=0x7f0f004e;
-        public static final int dtmf_1=0x7f0f0044;
-        public static final int dtmf_10=0x7f0f004d;
-        public static final int dtmf_11=0x7f0f004f;
-        public static final int dtmf_2=0x7f0f0045;
-        public static final int dtmf_3=0x7f0f0046;
-        public static final int dtmf_4=0x7f0f0047;
-        public static final int dtmf_5=0x7f0f0048;
-        public static final int dtmf_6=0x7f0f0049;
-        public static final int dtmf_7=0x7f0f004a;
-        public static final int dtmf_8=0x7f0f004b;
-        public static final int dtmf_9=0x7f0f004c;
-        public static final int dtmf_keyboard=0x7f0f0042;
+        public static final int dropzone=0x7f0f0089;
+        public static final int dtmf_0=0x7f0f0050;
+        public static final int dtmf_1=0x7f0f0046;
+        public static final int dtmf_10=0x7f0f004f;
+        public static final int dtmf_11=0x7f0f0051;
+        public static final int dtmf_2=0x7f0f0047;
+        public static final int dtmf_3=0x7f0f0048;
+        public static final int dtmf_4=0x7f0f0049;
+        public static final int dtmf_5=0x7f0f004a;
+        public static final int dtmf_6=0x7f0f004b;
+        public static final int dtmf_7=0x7f0f004c;
+        public static final int dtmf_8=0x7f0f004d;
+        public static final int dtmf_9=0x7f0f004e;
+        public static final int dtmf_keyboard=0x7f0f0044;
         public static final int endTime=0x7f0f0027;
         public static final int endZone=0x7f0f0028;
-        public static final int extras=0x7f0f006b;
-        public static final int extras1=0x7f0f006e;
-        public static final int fare=0x7f0f006a;
-        public static final int getsign=0x7f0f0063;
+        public static final int extras=0x7f0f006d;
+        public static final int extras1=0x7f0f0070;
+        public static final int fare=0x7f0f006c;
+        public static final int getsign=0x7f0f0065;
         public static final int grayscale=0x7f0f0015;
-        public static final int hired=0x7f0f006c;
+        public static final int hired=0x7f0f006e;
         public static final int holo_dark=0x7f0f0007;
         public static final int holo_light=0x7f0f0008;
         public static final int hybrid=0x7f0f0003;
         public static final int imageLayout=0x7f0f0034;
         public static final int imageLayout1=0x7f0f0035;
         public static final int imageRequest=0x7f0f0038;
-        public static final int imageView=0x7f0f0072;
+        public static final int imageView=0x7f0f0074;
         public static final int imageView3=0x7f0f0037;
-        public static final int keyboard=0x7f0f0043;
-        public static final int linearLayout=0x7f0f0069;
-        public static final int linearLayout1=0x7f0f005f;
-        public static final int linearLayout2=0x7f0f0060;
-        public static final int list=0x7f0f007a;
-        public static final int llback=0x7f0f009b;
+        public static final int keyboard=0x7f0f0045;
+        public static final int linearLayout=0x7f0f006b;
+        public static final int linearLayout1=0x7f0f0061;
+        public static final int linearLayout2=0x7f0f0062;
+        public static final int list=0x7f0f007c;
+        public static final int llback=0x7f0f009d;
         public static final int login=0x7f0f002e;
-        public static final int los=0x7f0f009e;
+        public static final int los=0x7f0f00a0;
         public static final int manifestNumber=0x7f0f0022;
-        public static final int map=0x7f0f006f;
+        public static final int map=0x7f0f0071;
         public static final int match_parent=0x7f0f000e;
         public static final int message=0x7f0f002c;
-        public static final int mileage=0x7f0f0088;
+        public static final int mileage=0x7f0f008a;
         public static final int monochrome=0x7f0f0016;
         public static final int my_video_layout=0x7f0f003c;
-        public static final int name=0x7f0f009c;
+        public static final int name=0x7f0f009e;
         public static final int new_devices=0x7f0f001a;
         public static final int none=0x7f0f0002;
         public static final int normal=0x7f0f0004;
         public static final int paired_devices=0x7f0f0018;
         public static final int password=0x7f0f002f;
-        public static final int phone=0x7f0f009d;
-        public static final int pickdate=0x7f0f0086;
-        public static final int pickupTime=0x7f0f0083;
-        public static final int pickzone=0x7f0f0084;
-        public static final int port_edit=0x7f0f0052;
+        public static final int phone=0x7f0f009f;
+        public static final int pickdate=0x7f0f0088;
+        public static final int pickupTime=0x7f0f0085;
+        public static final int pickzone=0x7f0f0086;
+        public static final int port_edit=0x7f0f0054;
         public static final int production=0x7f0f0009;
-        public static final int pulsarMeter=0x7f0f0055;
+        public static final int pulsarMeter=0x7f0f0057;
         public static final int register_button=0x7f0f0031;
         public static final int reservationMaps=0x7f0f0033;
         public static final int sandbox=0x7f0f000a;
         public static final int satellite=0x7f0f0005;
         public static final int selectionDetails=0x7f0f000d;
-        public static final int serverip_btn=0x7f0f0053;
-        public static final int serverip_edit=0x7f0f0051;
-        public static final int serverip_label=0x7f0f0050;
-        public static final int sharedKey=0x7f0f0085;
+        public static final int serverip_btn=0x7f0f0055;
+        public static final int serverip_edit=0x7f0f0053;
+        public static final int serverip_label=0x7f0f0052;
+        public static final int sharedKey=0x7f0f0087;
         public static final int startTime=0x7f0f0023;
         public static final int startZone=0x7f0f0024;
+        public static final int stats=0x7f0f0042;
         public static final int street_tv=0x7f0f0036;
         public static final int strict_sandbox=0x7f0f000b;
-        public static final int tableLayout1=0x7f0f0064;
-        public static final int tableRow1=0x7f0f0065;
-        public static final int tableRow3=0x7f0f0067;
+        public static final int tableLayout1=0x7f0f0066;
+        public static final int tableRow1=0x7f0f0067;
+        public static final int tableRow3=0x7f0f0069;
         public static final int terrain=0x7f0f0006;
-        public static final int textView=0x7f0f0074;
-        public static final int textView1=0x7f0f0075;
-        public static final int textView2=0x7f0f0068;
-        public static final int textView3=0x7f0f0076;
-        public static final int textView4=0x7f0f0077;
-        public static final int textView5=0x7f0f0071;
-        public static final int textView7=0x7f0f0078;
-        public static final int textView8=0x7f0f0079;
-        public static final int timeoff=0x7f0f006d;
+        public static final int textView=0x7f0f0076;
+        public static final int textView1=0x7f0f0077;
+        public static final int textView2=0x7f0f006a;
+        public static final int textView3=0x7f0f0078;
+        public static final int textView4=0x7f0f0079;
+        public static final int textView5=0x7f0f0073;
+        public static final int textView7=0x7f0f007a;
+        public static final int textView8=0x7f0f007b;
+        public static final int timeoff=0x7f0f006f;
         public static final int title_new_devices=0x7f0f0019;
         public static final int title_paired_devices=0x7f0f0017;
         public static final int title_text=0x7f0f001d;
-        public static final int toast_image=0x7f0f007c;
-        public static final int toast_layout_root=0x7f0f007b;
-        public static final int toast_text=0x7f0f007d;
+        public static final int toast_image=0x7f0f007e;
+        public static final int toast_layout_root=0x7f0f007d;
+        public static final int toast_text=0x7f0f007f;
         public static final int totalDistance=0x7f0f002a;
         public static final int totalTrips=0x7f0f0026;
-        public static final int tripID=0x7f0f0082;
-        public static final int trip_icon=0x7f0f0081;
-        public static final int tv=0x7f0f007e;
-        public static final int tv_dialog_button_negative=0x7f0f0094;
-        public static final int tv_dialog_button_neutral=0x7f0f0096;
-        public static final int tv_dialog_button_positive=0x7f0f0098;
-        public static final int tv_dialog_custom_container=0x7f0f0092;
-        public static final int tv_dialog_message=0x7f0f0091;
-        public static final int tv_dialog_separator_but_neg_neut=0x7f0f0095;
-        public static final int tv_dialog_separator_but_neut_pos=0x7f0f0097;
-        public static final int tv_dialog_separator_but_top=0x7f0f0093;
-        public static final int tv_dialog_separator_title=0x7f0f0090;
-        public static final int tv_dialog_title=0x7f0f008f;
-        public static final int tv_overlay_session_imageview=0x7f0f008b;
-        public static final int tv_overlay_session_trash=0x7f0f008c;
-        public static final int tv_overlay_session_trash_hovered=0x7f0f008d;
-        public static final int tv_widget_content_layout=0x7f0f008e;
-        public static final int tv_widget_content_main=0x7f0f0099;
-        public static final int tv_widget_website_url=0x7f0f009a;
-        public static final int tvtripno=0x7f0f008a;
+        public static final int tripID=0x7f0f0084;
+        public static final int trip_icon=0x7f0f0083;
+        public static final int tv=0x7f0f0080;
+        public static final int tv_dialog_button_negative=0x7f0f0096;
+        public static final int tv_dialog_button_neutral=0x7f0f0098;
+        public static final int tv_dialog_button_positive=0x7f0f009a;
+        public static final int tv_dialog_custom_container=0x7f0f0094;
+        public static final int tv_dialog_message=0x7f0f0093;
+        public static final int tv_dialog_separator_but_neg_neut=0x7f0f0097;
+        public static final int tv_dialog_separator_but_neut_pos=0x7f0f0099;
+        public static final int tv_dialog_separator_but_top=0x7f0f0095;
+        public static final int tv_dialog_separator_title=0x7f0f0092;
+        public static final int tv_dialog_title=0x7f0f0091;
+        public static final int tv_overlay_session_imageview=0x7f0f008d;
+        public static final int tv_overlay_session_trash=0x7f0f008e;
+        public static final int tv_overlay_session_trash_hovered=0x7f0f008f;
+        public static final int tv_widget_content_layout=0x7f0f0090;
+        public static final int tv_widget_content_main=0x7f0f009b;
+        public static final int tv_widget_website_url=0x7f0f009c;
+        public static final int tvtripno=0x7f0f008c;
         public static final int type=0x7f0f002b;
-        public static final int ventiveAJR=0x7f0f005c;
-        public static final int verifoneDevice=0x7f0f0057;
-        public static final int vivotechDevice=0x7f0f0058;
+        public static final int ventiveAJR=0x7f0f005e;
+        public static final int verifoneDevice=0x7f0f0059;
+        public static final int vivotechDevice=0x7f0f005a;
         public static final int weelchair=0x7f0f0029;
         public static final int wrap_content=0x7f0f000f;
-        public static final int yourName=0x7f0f0066;
+        public static final int yourName=0x7f0f0068;
     }
     public static final class integer {
         public static final int google_play_services_version=0x7f0b0000;
@@ -804,7 +806,8 @@ containing a value of this type.
         public static final int idt_unimagcfg_default=0x7f060004;
         public static final int manifest=0x7f060005;
         public static final int trip_offer=0x7f060006;
-        public static final int tripdetail=0x7f060007;
+        public static final int trip_offer1=0x7f060007;
+        public static final int tripdetail=0x7f060008;
     }
     public static final class string {
         public static final int AVLUpdated=0x7f0c0000;
@@ -928,802 +931,805 @@ containing a value of this type.
         public static final int Credit_Card_processing_Failed=0x7f0c0076;
         public static final int Current=0x7f0c0077;
         public static final int CurrentlyInUseToDriver=0x7f0c0078;
-        public static final int Data_Processed=0x7f0c0079;
-        public static final int Decline=0x7f0c007a;
-        public static final int Decode_Completed=0x7f0c007b;
-        public static final int DefaultView=0x7f0c007c;
-        public static final int DeviceRegisteredSuccessfully=0x7f0c007d;
-        public static final int DevicefetchingBreakStats=0x7f0c007e;
-        public static final int DevicehasbeenDeactivatedByAdmin=0x7f0c007f;
-        public static final int DevicehasbeenLockedAdmin=0x7f0c0080;
-        public static final int DevicehasbeenRemovedByAdmin=0x7f0c0081;
-        public static final int DeviceisnotRegistered=0x7f0c0082;
-        public static final int DeviceonCradle=0x7f0c0083;
-        public static final int DirectDropforSlimCD=0x7f0c0084;
-        public static final int Discount=0x7f0c0085;
-        public static final int Distance_From_Pickup_Location=0x7f0c0086;
-        public static final int DownloadingFile=0x7f0c0087;
-        public static final int DoyouwanttoStartTrip=0x7f0c0088;
-        public static final int Doyouwanttoprintcustomerreceipt=0x7f0c0089;
-        public static final int Doyouwanttoprintmerchantreceipt=0x7f0c008a;
-        public static final int Doyouwanttoprintthisreceipt=0x7f0c008b;
-        public static final int DriverActivationRequired=0x7f0c008c;
-        public static final int DriverNo=0x7f0c008d;
-        public static final int Driverisalreadyinloginstate=0x7f0c008e;
-        public static final int Drop=0x7f0c008f;
-        public static final int DropOffAddress=0x7f0c0090;
-        public static final int DropOffCityNotEmpty=0x7f0c0091;
-        public static final int DropOffConfirmation=0x7f0c0092;
-        public static final int DropOffMessage=0x7f0c0093;
-        public static final int DropOffNavigate=0x7f0c0094;
-        public static final int DropOffStreetNotEmpty=0x7f0c0095;
-        public static final int Dropofftrip=0x7f0c0096;
-        public static final int Dropped=0x7f0c0097;
-        public static final int Edit=0x7f0c0098;
-        public static final int Email_Sent=0x7f0c0099;
-        public static final int EmergencyMessagesenttodispatchersuccessfully=0x7f0c009a;
-        public static final int EmptyString=0x7f0c009b;
-        public static final int EnableAJR=0x7f0c009c;
-        public static final int EnableAudioCommands=0x7f0c009d;
-        public static final int EnableGPS=0x7f0c009e;
-        public static final int EndShift=0x7f0c009f;
-        public static final int EndShiftConfirmation=0x7f0c00a0;
-        public static final int English=0x7f0c00a1;
-        public static final int EnterValidPassengers=0x7f0c00a2;
-        public static final int Enter_Some_Amount=0x7f0c00a3;
-        public static final int Enter_Some_End_Amount=0x7f0c00a4;
-        public static final int Enter_odometer_End=0x7f0c00a5;
-        public static final int Enter_odometer_Start=0x7f0c00a6;
-        public static final int EntervalidAmount=0x7f0c00a7;
-        public static final int EntervalidExpiryDate=0x7f0c00a8;
-        public static final int Error_Sending_Email=0x7f0c00a9;
-        public static final int EstimateCost=0x7f0c00aa;
-        public static final int EstimateTripcost=0x7f0c00ab;
-        public static final int Estimated=0x7f0c00ac;
-        public static final int EstimatingDrivingDistance=0x7f0c00ad;
-        public static final int EstimatingFare=0x7f0c00ae;
-        public static final int Estimating_Driving_Distance=0x7f0c00af;
-        public static final int Extras=0x7f0c00b0;
-        public static final int Extras1=0x7f0c00b1;
-        public static final int FailedConnectMeter=0x7f0c00b2;
-        public static final int FailedtoConnectBluetoothPrinter=0x7f0c00b3;
-        public static final int Fare=0x7f0c00b4;
-        public static final int Fare1=0x7f0c00b5;
-        public static final int FareVehicle=0x7f0c00b6;
-        public static final int FetchAdjacentZonesFailed=0x7f0c00b7;
-        public static final int FetchCCMappingFailed=0x7f0c00b8;
-        public static final int FetchCCProcessorsListFailed=0x7f0c00b9;
-        public static final int FetchGeneralSettingsFailed=0x7f0c00ba;
-        public static final int FetchingAppsList=0x7f0c00bb;
-        public static final int FetchingCCMapings=0x7f0c00bc;
-        public static final int FetchingCCProcessors=0x7f0c00bd;
-        public static final int FetchingCannedMessagesList=0x7f0c00be;
-        public static final int FetchingGeneralSettings=0x7f0c00bf;
-        public static final int FetchingMessageHistory=0x7f0c00c0;
-        public static final int FetchingWallTrips=0x7f0c00c1;
-        public static final int Fetching_Manifest_Wall=0x7f0c00c2;
-        public static final int Fetching_Trip_List=0x7f0c00c3;
-        public static final int FileDownload=0x7f0c00c4;
-        public static final int Filter=0x7f0c00c5;
-        public static final int FlaggerRequest=0x7f0c00c6;
-        public static final int FlaggerRequestFailed=0x7f0c00c7;
-        public static final int FlaggerSuccessfullyCreated=0x7f0c00c8;
-        public static final int FlaggerTripConfirmation=0x7f0c00c9;
-        public static final int FlaggerTripCostEstimation=0x7f0c00ca;
-        public static final int Font=0x7f0c00cb;
-        public static final int Free=0x7f0c00cc;
-        public static final int Funding=0x7f0c00cd;
-        public static final int FundingSource=0x7f0c00ce;
-        public static final int GenderNotMatched=0x7f0c00cf;
-        public static final int Hotspot_Name=0x7f0c00d0;
-        public static final int HowManyPassengers=0x7f0c00d1;
-        public static final int IDTech_Connected=0x7f0c00d2;
-        public static final int IDTech_DisConnected=0x7f0c00d3;
-        public static final int IDTech_Failure=0x7f0c00d4;
-        public static final int IDTech_PoweringUp=0x7f0c00d5;
-        public static final int IDTech_TimeOut=0x7f0c00d6;
-        public static final int IMEI=0x7f0c00d7;
-        public static final int IS_SWIPER_HERE=0x7f0c00d8;
-        public static final int ITCurves=0x7f0c00d9;
-        public static final int InActivitySystemMessage=0x7f0c00da;
-        public static final int InactiveMessage=0x7f0c00db;
-        public static final int Incoming_call_detected=0x7f0c00dc;
-        public static final int Info=0x7f0c00dd;
-        public static final int Installingnewversion=0x7f0c00de;
-        public static final int Insufficient_Card_Balance=0x7f0c00df;
-        public static final int Interrupted=0x7f0c00e0;
-        public static final int InvalidClearTripMessageRecieved=0x7f0c00e1;
-        public static final int Invalid_state=0x7f0c00e2;
-        public static final int KmAwayCanNotPerform=0x7f0c00e3;
-        public static final int KmAwayFromStand=0x7f0c00e4;
-        public static final int KmsAwayFromCallOut=0x7f0c00e5;
-        public static final int KmsAwayFromLocation=0x7f0c00e6;
-        public static final int KmsAwayFromNoShow=0x7f0c00e7;
-        public static final int Language=0x7f0c00e8;
-        public static final int Language1=0x7f0c00e9;
-        public static final int Language2=0x7f0c00ea;
-        public static final int Latitude=0x7f0c00eb;
-        public static final int Loading=0x7f0c00ec;
-        public static final int LoggedOffSuccessfully=0x7f0c00ed;
-        public static final int LoggedinSuccessfully=0x7f0c00ee;
-        public static final int LoginFailure=0x7f0c00ef;
-        public static final int Login_Balance_Check=0x7f0c00f0;
-        public static final int Login_Failed=0x7f0c00f1;
-        public static final int LongClickForList=0x7f0c00f2;
-        public static final int Longitude=0x7f0c00f3;
-        public static final int MRMSDV=0x7f0c00f4;
-        public static final int Manifest=0x7f0c00f5;
-        public static final int ManifestNumber=0x7f0c00f6;
-        public static final int ManifestOptions=0x7f0c00f7;
-        public static final int Manifest_Assignment=0x7f0c00f8;
-        public static final int Manifest_End_Time=0x7f0c00f9;
-        public static final int Manifest_End_Zone=0x7f0c00fa;
-        public static final int Manifest_Start_Time=0x7f0c00fb;
-        public static final int Manifest_Start_Zone=0x7f0c00fc;
-        public static final int Manifestcouldntbeassigned=0x7f0c00fd;
-        public static final int ManualStandBookinRestricted=0x7f0c00fe;
-        public static final int ManualZoneBookinRestricted=0x7f0c00ff;
-        public static final int ManualZoneRestricted=0x7f0c0100;
-        public static final int MarkAsNoShow=0x7f0c0101;
-        public static final int Me=0x7f0c0102;
-        public static final int Messagehasbeensentdispatch=0x7f0c0103;
-        public static final int MeterBusy=0x7f0c0104;
-        public static final int MeterMilage=0x7f0c0105;
-        public static final int MeterNotBusy=0x7f0c0106;
-        public static final int MeterOFF=0x7f0c0107;
-        public static final int MeterON=0x7f0c0108;
-        public static final int Meter_Locked=0x7f0c0109;
-        public static final int Meter_State=0x7f0c010a;
-        public static final int MeterasPrintingTerminal=0x7f0c010b;
-        public static final int Mileage=0x7f0c010c;
-        public static final int Miles=0x7f0c010d;
-        public static final int MilesAwayCanNotPerform=0x7f0c010e;
-        public static final int MilesAwayFromCallOut=0x7f0c010f;
-        public static final int MilesAwayFromDropOff=0x7f0c0110;
-        public static final int MilesAwayFromLocation=0x7f0c0111;
-        public static final int MilesAwayFromNoShow=0x7f0c0112;
-        public static final int MilesAwayFromPickup=0x7f0c0113;
-        public static final int MilesAwayFromStand=0x7f0c0114;
-        public static final int MoreRejections=0x7f0c0115;
-        public static final int Msgs=0x7f0c0116;
-        public static final int Mytaxi=0x7f0c0117;
-        public static final int NOSHOWForApproval=0x7f0c0118;
-        public static final int NTEPNumber=0x7f0c0119;
-        public static final int Navigation_Not_Supported=0x7f0c011a;
-        public static final int NearByZone=0x7f0c011b;
-        public static final int Newtriphasbeenadded=0x7f0c011c;
-        public static final int No=0x7f0c011d;
-        public static final int NoBid=0x7f0c011e;
-        public static final int NoDataConnection=0x7f0c011f;
-        public static final int NoDataConnectivity=0x7f0c0120;
-        public static final int NoNearByZone=0x7f0c0121;
-        public static final int NoNetworkConnectivity=0x7f0c0122;
-        public static final int NoShowApproved=0x7f0c0123;
-        public static final int NoShowConfirmation=0x7f0c0124;
-        public static final int NoShowMessage=0x7f0c0125;
-        public static final int NoShowNotApproved=0x7f0c0126;
-        public static final int NoShowReq=0x7f0c0127;
-        public static final int NoTripAssigned=0x7f0c0128;
-        public static final int NoTripinProgress=0x7f0c0129;
-        public static final int No_Trip_Assigned_Yet=0x7f0c012a;
-        public static final int NointernetConnectivity=0x7f0c012b;
-        public static final int None=0x7f0c012c;
-        public static final int NotAssigned=0x7f0c012d;
-        public static final int NotAtLocation=0x7f0c012e;
-        public static final int NotAtLocationKms=0x7f0c012f;
-        public static final int NotAtLocationMessage=0x7f0c0130;
-        public static final int NotAtLocationMiles=0x7f0c0131;
-        public static final int NotConnected=0x7f0c0132;
-        public static final int Not_Applicable=0x7f0c0133;
-        public static final int Not_Enough_Balance=0x7f0c0134;
-        public static final int Notassignedanddispatchedrequiredcapacitynotmatched=0x7f0c0135;
-        public static final int NotatPickupNoShow=0x7f0c0136;
-        public static final int Notdispatchedrequiredwheelchaircountnotmatched=0x7f0c0137;
-        public static final int Notification=0x7f0c0138;
-        public static final int Odo_End_Value=0x7f0c0139;
-        public static final int Odo_Start_Value=0x7f0c013a;
-        public static final int OtherDeviceAlreadyDriverCancelled=0x7f0c013b;
-        public static final int Override_Payment=0x7f0c013c;
-        public static final int PIN=0x7f0c013d;
-        public static final int PLeaseEntercorrectMeterReading=0x7f0c013e;
-        public static final int PTT=0x7f0c013f;
-        public static final int PassengerCount=0x7f0c0140;
-        public static final int Password=0x7f0c0141;
-        public static final int Payment=0x7f0c0142;
-        public static final int PaymentResponse=0x7f0c0143;
-        public static final int PaymentType=0x7f0c0144;
-        public static final int Payment_successfully_processed=0x7f0c0145;
-        public static final int PaywithCASH=0x7f0c0146;
-        public static final int PaywithCREDITCARD=0x7f0c0147;
-        public static final int PaywithVOUCHER=0x7f0c0148;
-        public static final int PerformManifestRequest=0x7f0c0149;
-        public static final int PerformTrip=0x7f0c014a;
-        public static final int PerformTripRequest=0x7f0c014b;
-        public static final int PickSort=0x7f0c014c;
-        public static final int PickUp=0x7f0c014d;
-        public static final int PickUpNavigate=0x7f0c014e;
-        public static final int PickUpStreetNotEmpty=0x7f0c014f;
-        public static final int PickedUp=0x7f0c0150;
-        public static final int PickupAddress=0x7f0c0151;
-        public static final int PickupCityNotEmpty=0x7f0c0152;
-        public static final int PickupConfirmation=0x7f0c0153;
-        public static final int PickupMessage=0x7f0c0154;
-        public static final int Pickuptrip=0x7f0c0155;
-        public static final int PleaseEnableGPS=0x7f0c0156;
-        public static final int PleaseSayYesOrNo=0x7f0c0157;
-        public static final int PleaseTryAgainAfterFortySeconds=0x7f0c0158;
-        public static final int PleaseUseValidDriverNumber=0x7f0c0159;
-        public static final int Please_Swipe_Card=0x7f0c015a;
-        public static final int Please_scan=0x7f0c015b;
-        public static final int PleasesayyestoAccept=0x7f0c015c;
-        public static final int Postauth=0x7f0c015d;
-        public static final int Preauth=0x7f0c015e;
-        public static final int Previous=0x7f0c015f;
-        public static final int Print=0x7f0c0160;
-        public static final int PrintInquiry=0x7f0c0161;
-        public static final int Print_Inquiry=0x7f0c0162;
-        public static final int PrinterIndentification=0x7f0c0163;
-        public static final int ProceedToPickup=0x7f0c0164;
-        public static final int Processing=0x7f0c0165;
-        public static final int ProcessingPayment=0x7f0c0166;
-        public static final int Processing_Credit_Card=0x7f0c0167;
-        public static final int Processing_Dialie_Payment=0x7f0c0168;
-        public static final int Processing_Payment=0x7f0c0169;
-        public static final int Promotion_Code_Not_Valid=0x7f0c016a;
-        public static final int PulsarMeterAvailable=0x7f0c016b;
-        public static final int PushToTalkunderdevelopment=0x7f0c016c;
-        public static final int Quit=0x7f0c016d;
-        public static final int REGISTEREDWITHSDHS=0x7f0c016e;
-        public static final int RankUpdated=0x7f0c016f;
-        public static final int Reading_card_data=0x7f0c0170;
-        public static final int Recognizer_not_present=0x7f0c0171;
-        public static final int ReconnectedtoMeter=0x7f0c0172;
-        public static final int RegisterDevice=0x7f0c0173;
-        public static final int Register_Device=0x7f0c0174;
-        public static final int Registering_Device=0x7f0c0175;
-        public static final int Registering_With_Caw=0x7f0c0176;
-        public static final int Registering_With_Vantiv=0x7f0c0177;
-        public static final int Registration_Failed=0x7f0c0178;
-        public static final int Registration_In_Progress=0x7f0c0179;
-        public static final int Registrationsuccessful=0x7f0c017a;
-        public static final int Regressionduetonoshoworcancellation=0x7f0c017b;
-        public static final int RejectTrip=0x7f0c017c;
-        public static final int RejectingAtrip=0x7f0c017d;
-        public static final int RejectingTripassignment=0x7f0c017e;
-        public static final int RejectionConfirmation=0x7f0c017f;
-        public static final int RemindLater=0x7f0c0180;
-        public static final int ReprintReceipt=0x7f0c0181;
-        public static final int Reprint_Receipt=0x7f0c0182;
-        public static final int RequestError=0x7f0c0183;
-        public static final int RequestIsNotAvailable=0x7f0c0184;
-        public static final int RequiredVehicleTypeNotMatched=0x7f0c0185;
-        public static final int RestartNow=0x7f0c0186;
-        public static final int Resume=0x7f0c0187;
-        public static final int Retry=0x7f0c0188;
-        public static final int ReverseGEOError=0x7f0c0189;
-        public static final int Riyal=0x7f0c018a;
-        public static final int SDHSMessageSplit=0x7f0c018b;
-        public static final int SDHSValueSplit=0x7f0c018c;
-        public static final int STOP=0x7f0c018d;
-        public static final int SWIPE=0x7f0c018e;
-        public static final int SaleWithCreditCard=0x7f0c018f;
-        public static final int SelectPrinter=0x7f0c0190;
-        public static final int SelectProperDeviceFromSettingsMenu=0x7f0c0191;
-        public static final int Select_Signature_Type=0x7f0c0192;
-        public static final int Select_Vivotech_Device=0x7f0c0193;
-        public static final int Select_the_Payment_Type=0x7f0c0194;
-        public static final int Send=0x7f0c0195;
-        public static final int SendMessage=0x7f0c0196;
-        public static final int Send_Fare=0x7f0c0197;
-        public static final int Sending_Email=0x7f0c0198;
-        public static final int ServerErrorEstimatedFare=0x7f0c0199;
-        public static final int ServerHandshakesuccessful=0x7f0c019a;
-        public static final int ServerIPaddress=0x7f0c019b;
-        public static final int ServerResponse=0x7f0c019c;
-        public static final int Server_Error=0x7f0c019d;
-        public static final int Service_Id=0x7f0c019e;
-        public static final int Settings=0x7f0c019f;
-        public static final int ShareScreen=0x7f0c01a0;
-        public static final int ShowCharacters=0x7f0c01a1;
-        public static final int ShuttingDown=0x7f0c01a2;
-        public static final int SignatureRequired=0x7f0c01a3;
-        public static final int SoftwareUpdateNotification=0x7f0c01a4;
-        public static final int StandBookinConfirmation=0x7f0c01a5;
-        public static final int StandBookinFailed=0x7f0c01a6;
-        public static final int StartFlaggerorFromList=0x7f0c01a7;
-        public static final int StartShift=0x7f0c01a8;
-        public static final int StartingFlaggerTrip=0x7f0c01a9;
-        public static final int State=0x7f0c01aa;
-        public static final int Status=0x7f0c01ab;
-        public static final int StatusSort=0x7f0c01ac;
-        public static final int Street=0x7f0c01ad;
-        public static final int Summary=0x7f0c01ae;
-        public static final int SurestartFlaggerTrip=0x7f0c01af;
-        public static final int SwipeCardOnP=0x7f0c01b0;
-        public static final int Swipe_Result=0x7f0c01b1;
-        public static final int Swipe_fail=0x7f0c01b2;
-        public static final int Swipecard=0x7f0c01b3;
-        public static final int Swiper_is_here=0x7f0c01b4;
-        public static final int Swiper_is_not_here=0x7f0c01b5;
-        public static final int Swiper_uplugged=0x7f0c01b6;
-        public static final int Tap_fail=0x7f0c01b7;
-        public static final int TaxiMeter=0x7f0c01b8;
-        public static final int TaxiMetertoStartFlagger=0x7f0c01b9;
-        public static final int TemporarilyBlacklisted=0x7f0c01ba;
-        public static final int ThisTriphasState=0x7f0c01bb;
-        public static final int This_device_does_not_have_desired_functionality=0x7f0c01bc;
-        public static final int TimeOFF=0x7f0c01bd;
-        public static final int TimeOfffromMeter=0x7f0c01be;
-        public static final int Timeout=0x7f0c01bf;
-        public static final int Tip=0x7f0c01c0;
-        public static final int Tip1=0x7f0c01c1;
-        public static final int TipAmountisgreater=0x7f0c01c2;
-        public static final int Tip_cannot_be_deducted=0x7f0c01c3;
-        public static final int Total=0x7f0c01c4;
-        public static final int Total1=0x7f0c01c5;
-        public static final int Transaction_Result=0x7f0c01c6;
-        public static final int TripAcceptancetimeExpired=0x7f0c01c7;
-        public static final int TripApprovedNOSHOW=0x7f0c01c8;
-        public static final int TripAssignment=0x7f0c01c9;
-        public static final int TripCancelledDispatcherReason=0x7f0c01ca;
-        public static final int TripCancelledbyCustomer=0x7f0c01cb;
-        public static final int TripCancelledbyDispatcher=0x7f0c01cc;
-        public static final int TripCleared=0x7f0c01cd;
-        public static final int TripClearedByDispatcher=0x7f0c01ce;
-        public static final int TripClearedBySDHS=0x7f0c01cf;
-        public static final int TripCompleted=0x7f0c01d0;
-        public static final int TripDetailsRecieved=0x7f0c01d1;
-        public static final int TripDetailsUpdatedforTripNumber=0x7f0c01d2;
-        public static final int TripList=0x7f0c01d3;
-        public static final int TripNNumber=0x7f0c01d4;
-        public static final int TripNotAssignedDispatched=0x7f0c01d5;
-        public static final int TripOptions=0x7f0c01d6;
-        public static final int TripStateCancelled=0x7f0c01d7;
-        public static final int TripSuccessfullyAssignedDispatched=0x7f0c01d8;
-        public static final int TripUnAssignedDispatcher=0x7f0c01d9;
-        public static final int Tripcouldntbeassigned=0x7f0c01da;
-        public static final int Tripcouldntbeassignedrequestnotavailable=0x7f0c01db;
-        public static final int Triphasbeencancelled=0x7f0c01dc;
-        public static final int Triphasbeensuccessfullyassigned=0x7f0c01dd;
-        public static final int Triphasbeenupdated=0x7f0c01de;
-        public static final int TripisClearedbyDispatcher=0x7f0c01df;
-        public static final int Tripnotassignedvehicletypenotmatched=0x7f0c01e0;
-        public static final int Tripntassigntripbelongsrestrictedaccount=0x7f0c01e1;
-        public static final int Tripntbeassignedrequiredgendernotmatched=0x7f0c01e2;
-        public static final int Try_Again=0x7f0c01e3;
-        public static final int UnKnownZone=0x7f0c01e4;
-        public static final int UnableToPerformCallOutKms=0x7f0c01e5;
-        public static final int UnableToPerformCallOutMiles=0x7f0c01e6;
-        public static final int UnableToPerformDropOffKms=0x7f0c01e7;
-        public static final int UnableToPerformDropOffMiles=0x7f0c01e8;
-        public static final int UnableToPerformNoShowKms=0x7f0c01e9;
-        public static final int UnableToPerformNoShowMiles=0x7f0c01ea;
-        public static final int UnableToPerformPickupKms=0x7f0c01eb;
-        public static final int UnableToPerformPickupMiles=0x7f0c01ec;
-        public static final int UnableToRequestNoShow=0x7f0c01ed;
-        public static final int UnavailableAddressEstimatedFare=0x7f0c01ee;
-        public static final int Unit=0x7f0c01ef;
-        public static final int Unknown=0x7f0c01f0;
-        public static final int UnknownGPSLocation=0x7f0c01f1;
-        public static final int UnknownPickupDropoffAddress=0x7f0c01f2;
-        public static final int Unknown_Address=0x7f0c01f3;
-        public static final int Unknown_GPS_Location=0x7f0c01f4;
-        public static final int Unknown_decode_error=0x7f0c01f5;
-        public static final int Update=0x7f0c01f6;
-        public static final int UpdateLater=0x7f0c01f7;
-        public static final int UpdateList=0x7f0c01f8;
-        public static final int UpdateMeterMilage=0x7f0c01f9;
-        public static final int UpdateNow=0x7f0c01fa;
-        public static final int UpdateofthisApplicationAvailable=0x7f0c01fb;
-        public static final int UpdatingServer=0x7f0c01fc;
-        public static final int UpdatingZoneList=0x7f0c01fd;
-        public static final int UpdatingZones=0x7f0c01fe;
-        public static final int Updating_Meter_Status=0x7f0c01ff;
-        public static final int Urdu=0x7f0c0200;
-        public static final int Use_Connect_Meter_Button_to_Establish_Connection=0x7f0c0201;
-        public static final int Usernotexist=0x7f0c0202;
-        public static final int VehTripDistance=0x7f0c0203;
-        public static final int VehicleActivationRequired=0x7f0c0204;
-        public static final int VehicleNo=0x7f0c0205;
-        public static final int Vehicle_Milage=0x7f0c0206;
-        public static final int VeriFoneAvailable=0x7f0c0207;
-        public static final int Verifone_Cash_Credit_Ignored=0x7f0c0208;
-        public static final int Verifone_Cash_Ignored=0x7f0c0209;
-        public static final int Verifone_Credit_Ignored=0x7f0c020a;
-        public static final int Verifone_cash_ignored=0x7f0c020b;
-        public static final int Verifone_credit_ignored=0x7f0c020c;
-        public static final int Verifying=0x7f0c020d;
-        public static final int Versions=0x7f0c020e;
-        public static final int Voucher=0x7f0c020f;
-        public static final int VoucherPaymentSuccessful=0x7f0c0210;
-        public static final int WARNING=0x7f0c0211;
-        public static final int WEBSERVICE=0x7f0c0212;
-        public static final int Wait_For_PickUp_Time=0x7f0c0213;
-        public static final int Waiting_card_swipe=0x7f0c0214;
-        public static final int Waiting_for_device=0x7f0c0215;
-        public static final int Wall=0x7f0c0216;
-        public static final int WantEndShift=0x7f0c0217;
-        public static final int WelcomeTo=0x7f0c0218;
-        public static final int Will_Call=0x7f0c0219;
-        public static final int WouldYouLikeToApplyTip=0x7f0c021a;
-        public static final int WrongDriverNumberorPin=0x7f0c021b;
-        public static final int WrongVehicleAssociation=0x7f0c021c;
-        public static final int WrongVehicleProvided=0x7f0c021d;
-        public static final int Yes=0x7f0c021e;
-        public static final int YouAreAllowedFor=0x7f0c021f;
-        public static final int YouAreBookedinbyDispatcher=0x7f0c0220;
-        public static final int You_are_Not_Logged_In=0x7f0c0221;
-        public static final int YourDevicehasbeenLocked=0x7f0c0222;
-        public static final int Youreceivedtripoffer=0x7f0c0223;
-        public static final int ZipCode=0x7f0c0224;
-        public static final int Zones=0x7f0c0225;
-        public static final int accept=0x7f0c0226;
-        public static final int action_settings=0x7f0c0227;
-        public static final int app_name=0x7f0c0228;
-        public static final int auth=0x7f0c0229;
-        public static final int avl=0x7f0c022a;
-        public static final int balanceWarning=0x7f0c022b;
-        public static final int bookedinstand=0x7f0c022c;
-        public static final int bookedinzone=0x7f0c022d;
-        public static final int bookedoutfromstand=0x7f0c022e;
-        public static final int bookedoutfromzone=0x7f0c022f;
-        public static final int bye=0x7f0c0230;
-        public static final int cab=0x7f0c0231;
-        public static final int calculating=0x7f0c0232;
-        public static final int cashsaleFailed=0x7f0c0233;
-        public static final int cashsaleSuccess=0x7f0c0234;
-        public static final int closeShareScreen=0x7f0c0235;
-        public static final int common_android_wear_notification_needs_update_text=0x7f0c0236;
-        public static final int common_android_wear_update_text=0x7f0c0237;
-        public static final int common_android_wear_update_title=0x7f0c0238;
-        public static final int common_google_play_services_enable_button=0x7f0c0239;
-        public static final int common_google_play_services_enable_text=0x7f0c023a;
-        public static final int common_google_play_services_enable_title=0x7f0c023b;
-        public static final int common_google_play_services_error_notification_requested_by_msg=0x7f0c023c;
-        public static final int common_google_play_services_install_button=0x7f0c023d;
-        public static final int common_google_play_services_install_text_phone=0x7f0c023e;
-        public static final int common_google_play_services_install_text_tablet=0x7f0c023f;
-        public static final int common_google_play_services_install_title=0x7f0c0240;
-        public static final int common_google_play_services_invalid_account_text=0x7f0c0241;
-        public static final int common_google_play_services_invalid_account_title=0x7f0c0242;
-        public static final int common_google_play_services_needs_enabling_title=0x7f0c0243;
-        public static final int common_google_play_services_network_error_text=0x7f0c0244;
-        public static final int common_google_play_services_network_error_title=0x7f0c0245;
-        public static final int common_google_play_services_notification_needs_installation_title=0x7f0c0246;
-        public static final int common_google_play_services_notification_needs_update_title=0x7f0c0247;
-        public static final int common_google_play_services_notification_ticker=0x7f0c0248;
-        public static final int common_google_play_services_unknown_issue=0x7f0c0249;
-        public static final int common_google_play_services_unsupported_text=0x7f0c024a;
-        public static final int common_google_play_services_unsupported_title=0x7f0c024b;
-        public static final int common_google_play_services_update_button=0x7f0c024c;
-        public static final int common_google_play_services_update_text=0x7f0c024d;
-        public static final int common_google_play_services_update_title=0x7f0c024e;
-        public static final int common_open_on_phone=0x7f0c024f;
-        public static final int common_signin_button_text=0x7f0c0250;
-        public static final int common_signin_button_text_long=0x7f0c0251;
-        public static final int couldnotBeAssignedAndDispatched=0x7f0c0252;
-        public static final int couldnotBeAssignedAndDispatchedTripNo1=0x7f0c0253;
-        public static final int couldnotBeAssignedAndDispatchedTripNo2=0x7f0c0254;
-        public static final int create_calendar_message=0x7f0c0255;
-        public static final int create_calendar_title=0x7f0c0256;
-        public static final int credit=0x7f0c0257;
-        public static final int decline=0x7f0c0258;
-        public static final int direction=0x7f0c0259;
-        public static final int disclaimer_accept=0x7f0c025a;
-        public static final int disclaimer_title=0x7f0c025b;
-        public static final int driver=0x7f0c025c;
-        public static final int driver1=0x7f0c025d;
-        public static final int drivername=0x7f0c025e;
-        public static final int enterpassword=0x7f0c025f;
-        public static final int error=0x7f0c0260;
-        public static final int eula_accept=0x7f0c0261;
-        public static final int eula_refuse=0x7f0c0262;
-        public static final int eula_title=0x7f0c0263;
-        public static final int extra=0x7f0c0264;
-        public static final int fare=0x7f0c0265;
-        public static final int favoritename=0x7f0c0266;
-        public static final int fetchAppsListFailed=0x7f0c0267;
-        public static final int fetchCannedMsgsListFailed=0x7f0c0268;
-        public static final int fieldempty=0x7f0c0269;
-        public static final int forZone=0x7f0c026a;
-        public static final int handshake=0x7f0c026b;
-        public static final int hello=0x7f0c026c;
-        public static final int hello_world=0x7f0c026d;
-        public static final int holdwithCREDITCARD=0x7f0c026e;
-        public static final int km=0x7f0c026f;
-        public static final int kmsAwayFromDropOff=0x7f0c0270;
-        public static final int kmsAwayFromPickup=0x7f0c0271;
-        public static final int last24=0x7f0c0272;
-        public static final int last8days=0x7f0c0273;
-        public static final int loginFailed=0x7f0c0274;
-        public static final int loginSuccess=0x7f0c0275;
-        public static final int meternotfound=0x7f0c0276;
-        public static final int miles=0x7f0c0277;
-        public static final int nMiles=0x7f0c0278;
-        public static final int nMiles1=0x7f0c0279;
-        public static final int notAuthorizedtoUseDevice=0x7f0c027a;
-        public static final int num=0x7f0c027b;
-        public static final int ok=0x7f0c027c;
-        public static final int override_payment=0x7f0c027d;
-        public static final int phone=0x7f0c027e;
-        public static final int phoneno=0x7f0c027f;
-        public static final int postVoucher=0x7f0c0280;
-        public static final int preVoucher=0x7f0c0281;
-        public static final int rank=0x7f0c0282;
-        public static final int signature=0x7f0c0283;
-        public static final int speed=0x7f0c0284;
-        public static final int stand=0x7f0c0285;
-        public static final int stands=0x7f0c0286;
-        public static final int store_picture_message=0x7f0c0287;
-        public static final int store_picture_title=0x7f0c0288;
-        public static final int swiper_unplugged=0x7f0c0289;
-        public static final int theTripHasStateCancelled=0x7f0c028a;
-        public static final int tip=0x7f0c028b;
-        public static final int tipApplied=0x7f0c028c;
-        public static final int title_activity_download=0x7f0c028d;
-        public static final int tv_Connection_lost=0x7f0c028e;
-        public static final int tv_IDS_ACCESS_ASKCONFIRMATION_FORREMOTECONTROL=0x7f0c028f;
-        public static final int tv_IDS_ACCESS_CONFIRMFOR=0x7f0c0290;
-        public static final int tv_IDS_AUTH_RETRY=0x7f0c0291;
-        public static final int tv_IDS_AUTH_RETRY_DYN_OR_FIXED_PWD=0x7f0c0292;
-        public static final int tv_IDS_AUTH_RETRY_PRES_PWD=0x7f0c0293;
-        public static final int tv_IDS_BUDDY_SERVERERROR_1=0x7f0c0294;
-        public static final int tv_IDS_BUDDY_SERVERERROR_10=0x7f0c0295;
-        public static final int tv_IDS_BUDDY_SERVERERROR_11=0x7f0c0296;
-        public static final int tv_IDS_BUDDY_SERVERERROR_12=0x7f0c0297;
-        public static final int tv_IDS_BUDDY_SERVERERROR_13=0x7f0c0298;
-        public static final int tv_IDS_BUDDY_SERVERERROR_14=0x7f0c0299;
-        public static final int tv_IDS_BUDDY_SERVERERROR_15=0x7f0c029a;
-        public static final int tv_IDS_BUDDY_SERVERERROR_16=0x7f0c029b;
-        public static final int tv_IDS_BUDDY_SERVERERROR_17=0x7f0c029c;
-        public static final int tv_IDS_BUDDY_SERVERERROR_18=0x7f0c029d;
-        public static final int tv_IDS_BUDDY_SERVERERROR_19=0x7f0c029e;
-        public static final int tv_IDS_BUDDY_SERVERERROR_2=0x7f0c029f;
-        public static final int tv_IDS_BUDDY_SERVERERROR_20=0x7f0c02a0;
-        public static final int tv_IDS_BUDDY_SERVERERROR_21=0x7f0c02a1;
-        public static final int tv_IDS_BUDDY_SERVERERROR_22=0x7f0c02a2;
-        public static final int tv_IDS_BUDDY_SERVERERROR_23=0x7f0c02a3;
-        public static final int tv_IDS_BUDDY_SERVERERROR_24=0x7f0c02a4;
-        public static final int tv_IDS_BUDDY_SERVERERROR_25=0x7f0c02a5;
-        public static final int tv_IDS_BUDDY_SERVERERROR_26=0x7f0c02a6;
-        public static final int tv_IDS_BUDDY_SERVERERROR_27=0x7f0c02a7;
-        public static final int tv_IDS_BUDDY_SERVERERROR_28=0x7f0c02a8;
-        public static final int tv_IDS_BUDDY_SERVERERROR_29=0x7f0c02a9;
-        public static final int tv_IDS_BUDDY_SERVERERROR_3=0x7f0c02aa;
-        public static final int tv_IDS_BUDDY_SERVERERROR_30=0x7f0c02ab;
-        public static final int tv_IDS_BUDDY_SERVERERROR_31=0x7f0c02ac;
-        public static final int tv_IDS_BUDDY_SERVERERROR_32=0x7f0c02ad;
-        public static final int tv_IDS_BUDDY_SERVERERROR_33=0x7f0c02ae;
-        public static final int tv_IDS_BUDDY_SERVERERROR_34=0x7f0c02af;
-        public static final int tv_IDS_BUDDY_SERVERERROR_35=0x7f0c02b0;
-        public static final int tv_IDS_BUDDY_SERVERERROR_36=0x7f0c02b1;
-        public static final int tv_IDS_BUDDY_SERVERERROR_37=0x7f0c02b2;
-        public static final int tv_IDS_BUDDY_SERVERERROR_38=0x7f0c02b3;
-        public static final int tv_IDS_BUDDY_SERVERERROR_39=0x7f0c02b4;
-        public static final int tv_IDS_BUDDY_SERVERERROR_4=0x7f0c02b5;
-        public static final int tv_IDS_BUDDY_SERVERERROR_40=0x7f0c02b6;
-        public static final int tv_IDS_BUDDY_SERVERERROR_41=0x7f0c02b7;
-        public static final int tv_IDS_BUDDY_SERVERERROR_42=0x7f0c02b8;
-        public static final int tv_IDS_BUDDY_SERVERERROR_43=0x7f0c02b9;
-        public static final int tv_IDS_BUDDY_SERVERERROR_44=0x7f0c02ba;
-        public static final int tv_IDS_BUDDY_SERVERERROR_45=0x7f0c02bb;
-        public static final int tv_IDS_BUDDY_SERVERERROR_46=0x7f0c02bc;
-        public static final int tv_IDS_BUDDY_SERVERERROR_47=0x7f0c02bd;
-        public static final int tv_IDS_BUDDY_SERVERERROR_48=0x7f0c02be;
-        public static final int tv_IDS_BUDDY_SERVERERROR_49=0x7f0c02bf;
-        public static final int tv_IDS_BUDDY_SERVERERROR_5=0x7f0c02c0;
-        public static final int tv_IDS_BUDDY_SERVERERROR_50=0x7f0c02c1;
-        public static final int tv_IDS_BUDDY_SERVERERROR_51=0x7f0c02c2;
-        public static final int tv_IDS_BUDDY_SERVERERROR_52=0x7f0c02c3;
-        public static final int tv_IDS_BUDDY_SERVERERROR_53=0x7f0c02c4;
-        public static final int tv_IDS_BUDDY_SERVERERROR_54=0x7f0c02c5;
-        public static final int tv_IDS_BUDDY_SERVERERROR_55=0x7f0c02c6;
-        public static final int tv_IDS_BUDDY_SERVERERROR_56=0x7f0c02c7;
-        public static final int tv_IDS_BUDDY_SERVERERROR_57=0x7f0c02c8;
-        public static final int tv_IDS_BUDDY_SERVERERROR_58=0x7f0c02c9;
-        public static final int tv_IDS_BUDDY_SERVERERROR_59=0x7f0c02ca;
-        public static final int tv_IDS_BUDDY_SERVERERROR_6=0x7f0c02cb;
-        public static final int tv_IDS_BUDDY_SERVERERROR_60=0x7f0c02cc;
-        public static final int tv_IDS_BUDDY_SERVERERROR_61=0x7f0c02cd;
-        public static final int tv_IDS_BUDDY_SERVERERROR_62=0x7f0c02ce;
-        public static final int tv_IDS_BUDDY_SERVERERROR_63=0x7f0c02cf;
-        public static final int tv_IDS_BUDDY_SERVERERROR_64=0x7f0c02d0;
-        public static final int tv_IDS_BUDDY_SERVERERROR_65=0x7f0c02d1;
-        public static final int tv_IDS_BUDDY_SERVERERROR_66=0x7f0c02d2;
-        public static final int tv_IDS_BUDDY_SERVERERROR_7=0x7f0c02d3;
-        public static final int tv_IDS_BUDDY_SERVERERROR_8=0x7f0c02d4;
-        public static final int tv_IDS_BUDDY_SERVERERROR_9=0x7f0c02d5;
-        public static final int tv_IDS_INCOMING_BLOCKED_DUE_MEETING=0x7f0c02d6;
-        public static final int tv_IDS_INCOMING_BLOCKED_DUE_MULTIPLE_CONNECTIONS=0x7f0c02d7;
-        public static final int tv_IDS_INCOMING_BLOCKED_DUE_REMOTECONTROL=0x7f0c02d8;
-        public static final int tv_IDS_NONCOMMERCIAL=0x7f0c02d9;
-        public static final int tv_IDS_NONCOMMERCIAL_TITLE=0x7f0c02da;
-        public static final int tv_IDS_QUICK_ACCESS_REJECTED=0x7f0c02db;
-        public static final int tv_IDS_SESSION_CODE_CREATION_FAILED=0x7f0c02dc;
-        public static final int tv_IDS_STATUS_AUTHENTICATIONREJECTED=0x7f0c02dd;
-        public static final int tv_IDS_STATUS_AUTHENTICATION_BLACKLISTED=0x7f0c02de;
-        public static final int tv_IDS_STATUS_AUTHENTICATION_BLOCKED=0x7f0c02df;
-        public static final int tv_IDS_STATUS_AUTHENTICATION_FAILED=0x7f0c02e0;
-        public static final int tv_IDS_STATUS_AUTHENTICATION_NOINCOMING=0x7f0c02e1;
-        public static final int tv_IDS_STATUS_AUTHENTICATION_NOLANCONNECTION=0x7f0c02e2;
-        public static final int tv_IDS_STATUS_ConnectNoRoute=0x7f0c02e3;
-        public static final int tv_IDS_STATUS_ConnectToOwnID=0x7f0c02e4;
-        public static final int tv_IDS_STATUS_INCOMPATIBLE=0x7f0c02e5;
-        public static final int tv_IDS_STATUS_MOBILE_LICENSE_REQUIRED=0x7f0c02e6;
-        public static final int tv_IDS_STATUS_MSG_NOROUTE_CommercialUse=0x7f0c02e7;
-        public static final int tv_IDS_STATUS_MSG_NOROUTE_ConnectAlreadyJoined=0x7f0c02e8;
-        public static final int tv_IDS_STATUS_MSG_NOROUTE_ControlIDNotFound=0x7f0c02e9;
-        public static final int tv_IDS_STATUS_MSG_NOROUTE_DenyIncoming=0x7f0c02ea;
-        public static final int tv_IDS_STATUS_MSG_NOROUTE_ExcessiveUse=0x7f0c02eb;
-        public static final int tv_IDS_STATUS_MSG_NOROUTE_FreeRoutersInUse=0x7f0c02ec;
-        public static final int tv_IDS_STATUS_MSG_NOROUTE_IdNotFound=0x7f0c02ed;
-        public static final int tv_IDS_STATUS_MSG_NOROUTE_InvalidCustomerID=0x7f0c02ee;
-        public static final int tv_IDS_STATUS_MSG_NOROUTE_InvalidLicense=0x7f0c02ef;
-        public static final int tv_IDS_STATUS_MSG_NOROUTE_InvalidSupporterID=0x7f0c02f0;
-        public static final int tv_IDS_STATUS_MSG_NOROUTE_KeepAliveInactive=0x7f0c02f1;
-        public static final int tv_IDS_STATUS_MSG_NOROUTE_KeepAliveLost=0x7f0c02f2;
-        public static final int tv_IDS_STATUS_MSG_NOROUTE_KeepAliveTimeout=0x7f0c02f3;
-        public static final int tv_IDS_STATUS_MSG_NOROUTE_LicenseBlocked=0x7f0c02f4;
-        public static final int tv_IDS_STATUS_MSG_NOROUTE_LicenseExpired=0x7f0c02f5;
-        public static final int tv_IDS_STATUS_MSG_NOROUTE_LoggedOut=0x7f0c02f6;
-        public static final int tv_IDS_STATUS_MSG_NOROUTE_MeetingIncompatibleVersion=0x7f0c02f7;
-        public static final int tv_IDS_STATUS_MSG_NOROUTE_NoControlSupport=0x7f0c02f8;
-        public static final int tv_IDS_STATUS_MSG_NOROUTE_NoMachineAvailable=0x7f0c02f9;
-        public static final int tv_IDS_STATUS_MSG_NOROUTE_NoServer=0x7f0c02fa;
-        public static final int tv_IDS_STATUS_MSG_NOROUTE_SessionClosed=0x7f0c02fb;
-        public static final int tv_IDS_STATUS_MSG_NOROUTE_SessionExpired=0x7f0c02fc;
-        public static final int tv_IDS_STATUS_MSG_NOROUTE_SessionLimit=0x7f0c02fd;
-        public static final int tv_IDS_STATUS_MSG_NOROUTE_SmartAccessDenied=0x7f0c02fe;
-        public static final int tv_IDS_STATUS_MSG_NOROUTE_TimeoutBlock=0x7f0c02ff;
-        public static final int tv_IDS_STATUS_MSG_NOROUTE_UnknownSupportSessionID=0x7f0c0300;
-        public static final int tv_NewMajorVersion=0x7f0c0301;
-        public static final int tv_connect=0x7f0c0302;
-        public static final int tv_connectFailedVersion=0x7f0c0303;
-        public static final int tv_connectNoConnection=0x7f0c0304;
-        public static final int tv_connecting=0x7f0c0305;
-        public static final int tv_connectingPleaseWait=0x7f0c0306;
-        public static final int tv_connectingWaitForAccept=0x7f0c0307;
-        public static final int tv_errorMessage_FeatureNotAvailable=0x7f0c0308;
-        public static final int tv_errorMessage_InternalAndroidError=0x7f0c0309;
-        public static final int tv_errorMessage_LoadingNativeScreenshotLibrary=0x7f0c030a;
-        public static final int tv_errorMessage_LoadingNativeScreenshotLibrary_Caption=0x7f0c030b;
-        public static final int tv_errorMessage_NoStorageAvailableText=0x7f0c030c;
-        public static final int tv_errorMessage_NoStorageAvailableTitle=0x7f0c030d;
-        public static final int tv_errorMessage_PARTNER_NEW_MAJOR_VERSION=0x7f0c030e;
-        public static final int tv_errorMessage_SdkReconnectFailed=0x7f0c030f;
-        public static final int tv_errorMessage_UNSUPPORTED_CONNECTION_TYPE=0x7f0c0310;
-        public static final int tv_errorMessage_connect_ACTION_CONNECT_ABORT=0x7f0c0311;
-        public static final int tv_errorMessage_connect_ERROR_AUTHENTIFICATION=0x7f0c0312;
-        public static final int tv_errorMessage_connect_ERROR_CONNECT_PENDING=0x7f0c0313;
-        public static final int tv_errorMessage_connect_ERROR_MASTER_RESPONSE=0x7f0c0314;
-        public static final int tv_errorMessage_connect_ERROR_MASTER_UNKNOWN_MEETING_ID=0x7f0c0315;
-        public static final int tv_errorMessage_connect_MEETING_OVER=0x7f0c0316;
-        public static final int tv_error_pl_login_timeout=0x7f0c0317;
-        public static final int tv_filetransfer_access_confirm=0x7f0c0318;
-        public static final int tv_filetransfer_access_denied=0x7f0c0319;
-        public static final int tv_filetransfer_dialog_file_exists_header=0x7f0c031a;
-        public static final int tv_filetransfer_dialog_file_exists_override=0x7f0c031b;
-        public static final int tv_filetransfer_dialog_file_exists_resume=0x7f0c031c;
-        public static final int tv_filetransfer_dialog_file_exists_skip=0x7f0c031d;
-        public static final int tv_filetransfer_error_create_dir_failed=0x7f0c031e;
-        public static final int tv_filetransfer_error_drop_root=0x7f0c031f;
-        public static final int tv_filetransfer_error_filesystem=0x7f0c0320;
-        public static final int tv_filetransfer_error_opdenied=0x7f0c0321;
-        public static final int tv_filetransfer_external_storage=0x7f0c0322;
-        public static final int tv_filetransfer_my_desktop=0x7f0c0323;
-        public static final int tv_filetransfer_my_documents=0x7f0c0324;
-        public static final int tv_filetransfer_my_downloads=0x7f0c0325;
-        public static final int tv_filetransfer_my_movies=0x7f0c0326;
-        public static final int tv_filetransfer_my_music=0x7f0c0327;
-        public static final int tv_filetransfer_my_network=0x7f0c0328;
-        public static final int tv_filetransfer_my_photos=0x7f0c0329;
-        public static final int tv_filetransfer_my_pictures=0x7f0c032a;
-        public static final int tv_filetransfer_session_abort=0x7f0c032b;
-        public static final int tv_filetransfer_session_err_fserror=0x7f0c032c;
-        public static final int tv_filetransfer_session_err_getdir=0x7f0c032d;
-        public static final int tv_filetransfer_session_err_getdiraccess=0x7f0c032e;
-        public static final int tv_filetransfer_session_err_invalsession=0x7f0c032f;
-        public static final int tv_filetransfer_session_err_other=0x7f0c0330;
-        public static final int tv_filetransfer_session_err_servererror=0x7f0c0331;
-        public static final int tv_license=0x7f0c0332;
-        public static final int tv_license_Business=0x7f0c0333;
-        public static final int tv_license_Channel_String_P=0x7f0c0334;
-        public static final int tv_license_Channel_String_S=0x7f0c0335;
-        public static final int tv_license_Corporate=0x7f0c0336;
-        public static final int tv_license_Enterprise=0x7f0c0337;
-        public static final int tv_license_Free=0x7f0c0338;
-        public static final int tv_license_FreeReg=0x7f0c0339;
-        public static final int tv_license_Host=0x7f0c033a;
-        public static final int tv_license_Premium=0x7f0c033b;
-        public static final int tv_license_SB=0x7f0c033c;
-        public static final int tv_license_Trial=0x7f0c033d;
-        public static final int tv_license_server_Enterprise=0x7f0c033e;
-        public static final int tv_license_server_trial=0x7f0c033f;
-        public static final int tv_mail_feedback_content=0x7f0c0340;
-        public static final int tv_mail_feedback_receiver=0x7f0c0341;
-        public static final int tv_mail_feedback_subject=0x7f0c0342;
-        public static final int tv_message_TcpReconnectStarted=0x7f0c0343;
-        public static final int tv_message_TcpReconnectStarted_Title=0x7f0c0344;
-        public static final int tv_ok=0x7f0c0345;
-        public static final int tv_options=0x7f0c0346;
-        public static final int tv_options_Automatic=0x7f0c0347;
-        public static final int tv_options_ConnectionLogEmailText=0x7f0c0348;
-        public static final int tv_options_ConnectionLogSubject=0x7f0c0349;
-        public static final int tv_options_CrashLogDefaultReceiver=0x7f0c034a;
-        public static final int tv_options_CrashLogDefaultSubject=0x7f0c034b;
-        public static final int tv_options_CrashLogDefaultText=0x7f0c034c;
-        public static final int tv_options_EnableAutoLocking=0x7f0c034d;
-        public static final int tv_options_EnableAutoLocking_Always=0x7f0c034e;
-        public static final int tv_options_EnableAutoLocking_AutoSelect=0x7f0c034f;
-        public static final int tv_options_EnableAutoLocking_Disable=0x7f0c0350;
-        public static final int tv_options_EventLog=0x7f0c0351;
-        public static final int tv_options_EventLogDefaultReceiver=0x7f0c0352;
-        public static final int tv_options_EventLogDefaultSubject=0x7f0c0353;
-        public static final int tv_options_EventLogEmailText=0x7f0c0354;
-        public static final int tv_options_InputMethod=0x7f0c0355;
-        public static final int tv_options_InputMethodMouse=0x7f0c0356;
-        public static final int tv_options_InputMethodTouch=0x7f0c0357;
-        public static final int tv_options_OptimizeQuality=0x7f0c0358;
-        public static final int tv_options_OptimizeSpeed=0x7f0c0359;
-        public static final int tv_options_PreferredResolution=0x7f0c035a;
-        public static final int tv_options_PreferredResolutionBestFit=0x7f0c035b;
-        public static final int tv_options_PreferredResolutionDontChange=0x7f0c035c;
-        public static final int tv_options_autolock_key_always=0x7f0c035d;
-        public static final int tv_options_autolock_key_automatic=0x7f0c035e;
-        public static final int tv_options_autolock_key_disable=0x7f0c035f;
-        public static final int tv_options_meeting_name=0x7f0c0360;
-        public static final int tv_options_meeting_name_default_value=0x7f0c0361;
-        public static final int tv_protocolNegotiationFailed=0x7f0c0362;
-        public static final int tv_qs_allow=0x7f0c0363;
-        public static final int tv_qs_deny=0x7f0c0364;
-        public static final int tv_qs_incomingRemoteSupportConnectionMessage=0x7f0c0365;
-        public static final int tv_qs_incomingRemoteSupportConnectionTitle=0x7f0c0366;
-        public static final int tv_qs_notification_disconnect_text=0x7f0c0367;
-        public static final int tv_qs_notification_waiting_content=0x7f0c0368;
-        public static final int tv_qs_waiting_message=0x7f0c0369;
-        public static final int tv_rs_event_app_installed=0x7f0c036a;
-        public static final int tv_rs_event_app_removed=0x7f0c036b;
-        public static final int tv_rs_event_clipboard=0x7f0c036c;
-        public static final int tv_rs_event_directory_created=0x7f0c036d;
-        public static final int tv_rs_event_directory_sent=0x7f0c036e;
-        public static final int tv_rs_event_file_deleted=0x7f0c036f;
-        public static final int tv_rs_event_process_stopped=0x7f0c0370;
-        public static final int tv_rs_event_screenshot_requested=0x7f0c0371;
-        public static final int tv_rs_event_screenshot_sent=0x7f0c0372;
-        public static final int tv_rs_event_session_started=0x7f0c0373;
-        public static final int tv_rs_event_wifi_added=0x7f0c0374;
-        public static final int tv_rs_event_wifi_changed=0x7f0c0375;
-        public static final int tv_rs_event_wifi_removed=0x7f0c0376;
-        public static final int tv_rs_notification_connect_text=0x7f0c0377;
-        public static final int tv_rs_notification_connect_ticker=0x7f0c0378;
-        public static final int tv_rs_notification_title=0x7f0c0379;
-        public static final int tv_rs_nudge_notification_title=0x7f0c037a;
-        public static final int tv_rs_screen_notification_text=0x7f0c037b;
-        public static final int tv_rs_screen_notification_ticker=0x7f0c037c;
-        public static final int tv_rs_screen_notification_title=0x7f0c037d;
-        public static final int tv_sdk_EventLogDefaultSubject=0x7f0c037e;
-        public static final int tv_sdk_EventLogEmailText=0x7f0c037f;
-        public static final int tv_sdk_IDS_STATUS_MSG_NOROUTE_SessionClosed=0x7f0c0380;
-        public static final int tv_sdk_IDS_STATUS_MSG_NOROUTE_SessionExpired=0x7f0c0381;
-        public static final int tv_sdk_IDS_STATUS_MSG_NOROUTE_SessionInvalid=0x7f0c0382;
-        public static final int tv_sdk_incomingRemoteSupportConnectionMessage=0x7f0c0383;
-        public static final int tv_send=0x7f0c0384;
-        public static final int tv_sendEmail_ActivityNotFoundException=0x7f0c0385;
-        public static final int tv_supportedFeatureMessage_NoScreenResChange=0x7f0c0386;
-        public static final int tv_teamviewer=0x7f0c0387;
-        public static final int tv_tickertext_still_connected=0x7f0c0388;
-        public static final int tv_toastSavingFailed=0x7f0c0389;
-        public static final int unknownlocation=0x7f0c038a;
-        public static final int vehicle=0x7f0c038b;
-        public static final int ver=0x7f0c038c;
-        public static final int verifyinglogincredentials=0x7f0c038d;
-        public static final int wallet_buy_button_place_holder=0x7f0c038e;
-        public static final int wantprocessasVOUCHER=0x7f0c038f;
-        public static final int warning=0x7f0c0390;
-        public static final int wrongpassword=0x7f0c0391;
-        public static final int youwanttouseMeterasPrinting=0x7f0c0392;
-        public static final int zone=0x7f0c0393;
-        public static final int zones=0x7f0c0394;
+        public static final int Customer_Account=0x7f0c0079;
+        public static final int Data_Processed=0x7f0c007a;
+        public static final int Decline=0x7f0c007b;
+        public static final int Decode_Completed=0x7f0c007c;
+        public static final int DefaultView=0x7f0c007d;
+        public static final int DeviceRegisteredSuccessfully=0x7f0c007e;
+        public static final int DevicefetchingBreakStats=0x7f0c007f;
+        public static final int DevicehasbeenDeactivatedByAdmin=0x7f0c0080;
+        public static final int DevicehasbeenLockedAdmin=0x7f0c0081;
+        public static final int DevicehasbeenRemovedByAdmin=0x7f0c0082;
+        public static final int DeviceisnotRegistered=0x7f0c0083;
+        public static final int DeviceonCradle=0x7f0c0084;
+        public static final int DirectDropforSlimCD=0x7f0c0085;
+        public static final int Discount=0x7f0c0086;
+        public static final int Distance_From_Pickup_Location=0x7f0c0087;
+        public static final int DownloadingFile=0x7f0c0088;
+        public static final int DoyouwanttoStartTrip=0x7f0c0089;
+        public static final int Doyouwanttoprintcustomerreceipt=0x7f0c008a;
+        public static final int Doyouwanttoprintmerchantreceipt=0x7f0c008b;
+        public static final int Doyouwanttoprintthisreceipt=0x7f0c008c;
+        public static final int DriverActivationRequired=0x7f0c008d;
+        public static final int DriverNo=0x7f0c008e;
+        public static final int Driverisalreadyinloginstate=0x7f0c008f;
+        public static final int Drop=0x7f0c0090;
+        public static final int DropOffAddress=0x7f0c0091;
+        public static final int DropOffCityNotEmpty=0x7f0c0092;
+        public static final int DropOffConfirmation=0x7f0c0093;
+        public static final int DropOffMessage=0x7f0c0094;
+        public static final int DropOffNavigate=0x7f0c0095;
+        public static final int DropOffStreetNotEmpty=0x7f0c0096;
+        public static final int Dropofftrip=0x7f0c0097;
+        public static final int Dropped=0x7f0c0098;
+        public static final int Edit=0x7f0c0099;
+        public static final int Email_Sent=0x7f0c009a;
+        public static final int EmergencyMessagesenttodispatchersuccessfully=0x7f0c009b;
+        public static final int EmptyString=0x7f0c009c;
+        public static final int EnableAJR=0x7f0c009d;
+        public static final int EnableAudioCommands=0x7f0c009e;
+        public static final int EnableGPS=0x7f0c009f;
+        public static final int EndShift=0x7f0c00a0;
+        public static final int EndShiftConfirmation=0x7f0c00a1;
+        public static final int English=0x7f0c00a2;
+        public static final int EnterValidPassengers=0x7f0c00a3;
+        public static final int Enter_Some_Amount=0x7f0c00a4;
+        public static final int Enter_Some_End_Amount=0x7f0c00a5;
+        public static final int Enter_odometer_End=0x7f0c00a6;
+        public static final int Enter_odometer_Start=0x7f0c00a7;
+        public static final int EntervalidAmount=0x7f0c00a8;
+        public static final int EntervalidExpiryDate=0x7f0c00a9;
+        public static final int Error_Sending_Email=0x7f0c00aa;
+        public static final int EstimateCost=0x7f0c00ab;
+        public static final int EstimateTripcost=0x7f0c00ac;
+        public static final int Estimated=0x7f0c00ad;
+        public static final int EstimatingDrivingDistance=0x7f0c00ae;
+        public static final int EstimatingFare=0x7f0c00af;
+        public static final int Estimating_Driving_Distance=0x7f0c00b0;
+        public static final int Extras=0x7f0c00b1;
+        public static final int Extras1=0x7f0c00b2;
+        public static final int FailedConnectMeter=0x7f0c00b3;
+        public static final int FailedtoConnectBluetoothPrinter=0x7f0c00b4;
+        public static final int Fare=0x7f0c00b5;
+        public static final int Fare1=0x7f0c00b6;
+        public static final int FareVehicle=0x7f0c00b7;
+        public static final int FetchAdjacentZonesFailed=0x7f0c00b8;
+        public static final int FetchCCMappingFailed=0x7f0c00b9;
+        public static final int FetchCCProcessorsListFailed=0x7f0c00ba;
+        public static final int FetchGeneralSettingsFailed=0x7f0c00bb;
+        public static final int FetchingAppsList=0x7f0c00bc;
+        public static final int FetchingCCMapings=0x7f0c00bd;
+        public static final int FetchingCCProcessors=0x7f0c00be;
+        public static final int FetchingCannedMessagesList=0x7f0c00bf;
+        public static final int FetchingGeneralSettings=0x7f0c00c0;
+        public static final int FetchingMessageHistory=0x7f0c00c1;
+        public static final int FetchingWallTrips=0x7f0c00c2;
+        public static final int Fetching_Manifest_Wall=0x7f0c00c3;
+        public static final int Fetching_Trip_List=0x7f0c00c4;
+        public static final int FileDownload=0x7f0c00c5;
+        public static final int Filter=0x7f0c00c6;
+        public static final int FlaggerRequest=0x7f0c00c7;
+        public static final int FlaggerRequestFailed=0x7f0c00c8;
+        public static final int FlaggerSuccessfullyCreated=0x7f0c00c9;
+        public static final int FlaggerTripConfirmation=0x7f0c00ca;
+        public static final int FlaggerTripCostEstimation=0x7f0c00cb;
+        public static final int Font=0x7f0c00cc;
+        public static final int Free=0x7f0c00cd;
+        public static final int Funding=0x7f0c00ce;
+        public static final int FundingSource=0x7f0c00cf;
+        public static final int GenderNotMatched=0x7f0c00d0;
+        public static final int Hotspot_Name=0x7f0c00d1;
+        public static final int HowManyPassengers=0x7f0c00d2;
+        public static final int IDTech_Connected=0x7f0c00d3;
+        public static final int IDTech_DisConnected=0x7f0c00d4;
+        public static final int IDTech_Failure=0x7f0c00d5;
+        public static final int IDTech_PoweringUp=0x7f0c00d6;
+        public static final int IDTech_TimeOut=0x7f0c00d7;
+        public static final int IMEI=0x7f0c00d8;
+        public static final int IS_SWIPER_HERE=0x7f0c00d9;
+        public static final int ITCurves=0x7f0c00da;
+        public static final int InActivitySystemMessage=0x7f0c00db;
+        public static final int InactiveMessage=0x7f0c00dc;
+        public static final int Incoming_call_detected=0x7f0c00dd;
+        public static final int Info=0x7f0c00de;
+        public static final int Install_Try_Again=0x7f0c00df;
+        public static final int Installingnewversion=0x7f0c00e0;
+        public static final int Insufficient_Card_Balance=0x7f0c00e1;
+        public static final int Interrupted=0x7f0c00e2;
+        public static final int InvalidClearTripMessageRecieved=0x7f0c00e3;
+        public static final int Invalid_state=0x7f0c00e4;
+        public static final int KmAwayCanNotPerform=0x7f0c00e5;
+        public static final int KmAwayFromStand=0x7f0c00e6;
+        public static final int KmsAwayFromCallOut=0x7f0c00e7;
+        public static final int KmsAwayFromLocation=0x7f0c00e8;
+        public static final int KmsAwayFromNoShow=0x7f0c00e9;
+        public static final int Language=0x7f0c00ea;
+        public static final int Language1=0x7f0c00eb;
+        public static final int Language2=0x7f0c00ec;
+        public static final int Latitude=0x7f0c00ed;
+        public static final int Loading=0x7f0c00ee;
+        public static final int LoggedOffSuccessfully=0x7f0c00ef;
+        public static final int LoggedinSuccessfully=0x7f0c00f0;
+        public static final int LoginFailure=0x7f0c00f1;
+        public static final int Login_Balance_Check=0x7f0c00f2;
+        public static final int Login_Failed=0x7f0c00f3;
+        public static final int LongClickForList=0x7f0c00f4;
+        public static final int Longitude=0x7f0c00f5;
+        public static final int MRMSDV=0x7f0c00f6;
+        public static final int Manifest=0x7f0c00f7;
+        public static final int ManifestNumber=0x7f0c00f8;
+        public static final int ManifestOptions=0x7f0c00f9;
+        public static final int Manifest_Assignment=0x7f0c00fa;
+        public static final int Manifest_End_Time=0x7f0c00fb;
+        public static final int Manifest_End_Zone=0x7f0c00fc;
+        public static final int Manifest_Start_Time=0x7f0c00fd;
+        public static final int Manifest_Start_Zone=0x7f0c00fe;
+        public static final int Manifestcouldntbeassigned=0x7f0c00ff;
+        public static final int ManualStandBookinRestricted=0x7f0c0100;
+        public static final int ManualZoneBookinRestricted=0x7f0c0101;
+        public static final int ManualZoneRestricted=0x7f0c0102;
+        public static final int MarkAsNoShow=0x7f0c0103;
+        public static final int Me=0x7f0c0104;
+        public static final int Messagehasbeensentdispatch=0x7f0c0105;
+        public static final int MeterBusy=0x7f0c0106;
+        public static final int MeterMilage=0x7f0c0107;
+        public static final int MeterNotBusy=0x7f0c0108;
+        public static final int MeterOFF=0x7f0c0109;
+        public static final int MeterON=0x7f0c010a;
+        public static final int Meter_Locked=0x7f0c010b;
+        public static final int Meter_State=0x7f0c010c;
+        public static final int MeterasPrintingTerminal=0x7f0c010d;
+        public static final int Mileage=0x7f0c010e;
+        public static final int Miles=0x7f0c010f;
+        public static final int MilesAwayCanNotPerform=0x7f0c0110;
+        public static final int MilesAwayFromCallOut=0x7f0c0111;
+        public static final int MilesAwayFromDropOff=0x7f0c0112;
+        public static final int MilesAwayFromLocation=0x7f0c0113;
+        public static final int MilesAwayFromNoShow=0x7f0c0114;
+        public static final int MilesAwayFromPickup=0x7f0c0115;
+        public static final int MilesAwayFromStand=0x7f0c0116;
+        public static final int MoreRejections=0x7f0c0117;
+        public static final int Msgs=0x7f0c0118;
+        public static final int Mytaxi=0x7f0c0119;
+        public static final int NOSHOWForApproval=0x7f0c011a;
+        public static final int NTEPNumber=0x7f0c011b;
+        public static final int Navigation_Not_Supported=0x7f0c011c;
+        public static final int NearByZone=0x7f0c011d;
+        public static final int Newtriphasbeenadded=0x7f0c011e;
+        public static final int No=0x7f0c011f;
+        public static final int NoBid=0x7f0c0120;
+        public static final int NoDataConnection=0x7f0c0121;
+        public static final int NoDataConnectivity=0x7f0c0122;
+        public static final int NoNearByZone=0x7f0c0123;
+        public static final int NoNetworkConnectivity=0x7f0c0124;
+        public static final int NoShowApproved=0x7f0c0125;
+        public static final int NoShowConfirmation=0x7f0c0126;
+        public static final int NoShowMessage=0x7f0c0127;
+        public static final int NoShowNotApproved=0x7f0c0128;
+        public static final int NoShowReq=0x7f0c0129;
+        public static final int NoTripAssigned=0x7f0c012a;
+        public static final int NoTripinProgress=0x7f0c012b;
+        public static final int No_Trip_Assigned_Yet=0x7f0c012c;
+        public static final int NointernetConnectivity=0x7f0c012d;
+        public static final int None=0x7f0c012e;
+        public static final int NotAssigned=0x7f0c012f;
+        public static final int NotAtLocation=0x7f0c0130;
+        public static final int NotAtLocationKms=0x7f0c0131;
+        public static final int NotAtLocationMessage=0x7f0c0132;
+        public static final int NotAtLocationMiles=0x7f0c0133;
+        public static final int NotConnected=0x7f0c0134;
+        public static final int Not_Applicable=0x7f0c0135;
+        public static final int Not_Enough_Balance=0x7f0c0136;
+        public static final int Notassignedanddispatchedrequiredcapacitynotmatched=0x7f0c0137;
+        public static final int NotatPickupNoShow=0x7f0c0138;
+        public static final int Notdispatchedrequiredwheelchaircountnotmatched=0x7f0c0139;
+        public static final int Notification=0x7f0c013a;
+        public static final int Odo_End_Value=0x7f0c013b;
+        public static final int Odo_Start_Value=0x7f0c013c;
+        public static final int OtherDeviceAlreadyDriverCancelled=0x7f0c013d;
+        public static final int Override_Payment=0x7f0c013e;
+        public static final int PIN=0x7f0c013f;
+        public static final int PLeaseEntercorrectMeterReading=0x7f0c0140;
+        public static final int PTT=0x7f0c0141;
+        public static final int PassengerCount=0x7f0c0142;
+        public static final int Password=0x7f0c0143;
+        public static final int Payment=0x7f0c0144;
+        public static final int PaymentResponse=0x7f0c0145;
+        public static final int PaymentType=0x7f0c0146;
+        public static final int Payment_successfully_processed=0x7f0c0147;
+        public static final int PaywithCASH=0x7f0c0148;
+        public static final int PaywithCREDITCARD=0x7f0c0149;
+        public static final int PaywithVOUCHER=0x7f0c014a;
+        public static final int PerformManifestRequest=0x7f0c014b;
+        public static final int PerformTrip=0x7f0c014c;
+        public static final int PerformTripRequest=0x7f0c014d;
+        public static final int PickSort=0x7f0c014e;
+        public static final int PickUp=0x7f0c014f;
+        public static final int PickUpNavigate=0x7f0c0150;
+        public static final int PickUpStreetNotEmpty=0x7f0c0151;
+        public static final int PickedUp=0x7f0c0152;
+        public static final int PickupAddress=0x7f0c0153;
+        public static final int PickupCityNotEmpty=0x7f0c0154;
+        public static final int PickupConfirmation=0x7f0c0155;
+        public static final int PickupMessage=0x7f0c0156;
+        public static final int Pickuptrip=0x7f0c0157;
+        public static final int PleaseEnableGPS=0x7f0c0158;
+        public static final int PleaseSayYesOrNo=0x7f0c0159;
+        public static final int PleaseTryAgainAfterFortySeconds=0x7f0c015a;
+        public static final int PleaseUseValidDriverNumber=0x7f0c015b;
+        public static final int Please_Swipe_Card=0x7f0c015c;
+        public static final int Please_scan=0x7f0c015d;
+        public static final int PleasesayyestoAccept=0x7f0c015e;
+        public static final int Postauth=0x7f0c015f;
+        public static final int Preauth=0x7f0c0160;
+        public static final int Previous=0x7f0c0161;
+        public static final int Print=0x7f0c0162;
+        public static final int PrintInquiry=0x7f0c0163;
+        public static final int Print_Inquiry=0x7f0c0164;
+        public static final int PrinterIndentification=0x7f0c0165;
+        public static final int ProceedToPickup=0x7f0c0166;
+        public static final int Processing=0x7f0c0167;
+        public static final int ProcessingPayment=0x7f0c0168;
+        public static final int Processing_Credit_Card=0x7f0c0169;
+        public static final int Processing_Dialie_Payment=0x7f0c016a;
+        public static final int Processing_Payment=0x7f0c016b;
+        public static final int Promotion_Code_Not_Valid=0x7f0c016c;
+        public static final int PulsarMeterAvailable=0x7f0c016d;
+        public static final int PushToTalkunderdevelopment=0x7f0c016e;
+        public static final int Quit=0x7f0c016f;
+        public static final int REGISTEREDWITHSDHS=0x7f0c0170;
+        public static final int RankUpdated=0x7f0c0171;
+        public static final int Reading_card_data=0x7f0c0172;
+        public static final int Recognizer_not_present=0x7f0c0173;
+        public static final int ReconnectedtoMeter=0x7f0c0174;
+        public static final int RegisterDevice=0x7f0c0175;
+        public static final int Register_Device=0x7f0c0176;
+        public static final int Registering_Device=0x7f0c0177;
+        public static final int Registering_With_Caw=0x7f0c0178;
+        public static final int Registering_With_Vantiv=0x7f0c0179;
+        public static final int Registration_Failed=0x7f0c017a;
+        public static final int Registration_In_Progress=0x7f0c017b;
+        public static final int Registrationsuccessful=0x7f0c017c;
+        public static final int Regressionduetonoshoworcancellation=0x7f0c017d;
+        public static final int RejectTrip=0x7f0c017e;
+        public static final int RejectingAtrip=0x7f0c017f;
+        public static final int RejectingTripassignment=0x7f0c0180;
+        public static final int RejectionConfirmation=0x7f0c0181;
+        public static final int RemindLater=0x7f0c0182;
+        public static final int ReprintReceipt=0x7f0c0183;
+        public static final int Reprint_Receipt=0x7f0c0184;
+        public static final int RequestError=0x7f0c0185;
+        public static final int RequestIsNotAvailable=0x7f0c0186;
+        public static final int RequiredVehicleTypeNotMatched=0x7f0c0187;
+        public static final int RestartNow=0x7f0c0188;
+        public static final int Resume=0x7f0c0189;
+        public static final int Retry=0x7f0c018a;
+        public static final int ReverseGEOError=0x7f0c018b;
+        public static final int Riyal=0x7f0c018c;
+        public static final int SDHSMessageSplit=0x7f0c018d;
+        public static final int SDHSValueSplit=0x7f0c018e;
+        public static final int STOP=0x7f0c018f;
+        public static final int SWIPE=0x7f0c0190;
+        public static final int SaleWithCreditCard=0x7f0c0191;
+        public static final int SelectPrinter=0x7f0c0192;
+        public static final int SelectProperDeviceFromSettingsMenu=0x7f0c0193;
+        public static final int Select_Signature_Type=0x7f0c0194;
+        public static final int Select_Vivotech_Device=0x7f0c0195;
+        public static final int Select_the_Payment_Type=0x7f0c0196;
+        public static final int Send=0x7f0c0197;
+        public static final int SendMessage=0x7f0c0198;
+        public static final int Send_Fare=0x7f0c0199;
+        public static final int Sending_Email=0x7f0c019a;
+        public static final int ServerErrorEstimatedFare=0x7f0c019b;
+        public static final int ServerHandshakesuccessful=0x7f0c019c;
+        public static final int ServerIPaddress=0x7f0c019d;
+        public static final int ServerResponse=0x7f0c019e;
+        public static final int Server_Error=0x7f0c019f;
+        public static final int Service_Id=0x7f0c01a0;
+        public static final int Settings=0x7f0c01a1;
+        public static final int ShareScreen=0x7f0c01a2;
+        public static final int ShowCharacters=0x7f0c01a3;
+        public static final int ShuttingDown=0x7f0c01a4;
+        public static final int SignatureRequired=0x7f0c01a5;
+        public static final int SoftwareUpdateNotification=0x7f0c01a6;
+        public static final int StandBookinConfirmation=0x7f0c01a7;
+        public static final int StandBookinFailed=0x7f0c01a8;
+        public static final int StartFlaggerorFromList=0x7f0c01a9;
+        public static final int StartShift=0x7f0c01aa;
+        public static final int StartingFlaggerTrip=0x7f0c01ab;
+        public static final int State=0x7f0c01ac;
+        public static final int Status=0x7f0c01ad;
+        public static final int StatusSort=0x7f0c01ae;
+        public static final int Street=0x7f0c01af;
+        public static final int Summary=0x7f0c01b0;
+        public static final int SurestartFlaggerTrip=0x7f0c01b1;
+        public static final int SwipeCardOnP=0x7f0c01b2;
+        public static final int Swipe_Result=0x7f0c01b3;
+        public static final int Swipe_fail=0x7f0c01b4;
+        public static final int Swipecard=0x7f0c01b5;
+        public static final int Swiper_is_here=0x7f0c01b6;
+        public static final int Swiper_is_not_here=0x7f0c01b7;
+        public static final int Swiper_uplugged=0x7f0c01b8;
+        public static final int Tap_fail=0x7f0c01b9;
+        public static final int TaxiMeter=0x7f0c01ba;
+        public static final int TaxiMetertoStartFlagger=0x7f0c01bb;
+        public static final int TemporarilyBlacklisted=0x7f0c01bc;
+        public static final int ThisTriphasState=0x7f0c01bd;
+        public static final int This_device_does_not_have_desired_functionality=0x7f0c01be;
+        public static final int TimeOFF=0x7f0c01bf;
+        public static final int TimeOfffromMeter=0x7f0c01c0;
+        public static final int Timeout=0x7f0c01c1;
+        public static final int Tip=0x7f0c01c2;
+        public static final int Tip1=0x7f0c01c3;
+        public static final int TipAmountisgreater=0x7f0c01c4;
+        public static final int Tip_cannot_be_deducted=0x7f0c01c5;
+        public static final int TopUpView=0x7f0c01c6;
+        public static final int Total=0x7f0c01c7;
+        public static final int Total1=0x7f0c01c8;
+        public static final int Transaction_Result=0x7f0c01c9;
+        public static final int TripAcceptancetimeExpired=0x7f0c01ca;
+        public static final int TripApprovedNOSHOW=0x7f0c01cb;
+        public static final int TripAssignment=0x7f0c01cc;
+        public static final int TripCancelledDispatcherReason=0x7f0c01cd;
+        public static final int TripCancelledbyCustomer=0x7f0c01ce;
+        public static final int TripCancelledbyDispatcher=0x7f0c01cf;
+        public static final int TripCleared=0x7f0c01d0;
+        public static final int TripClearedByDispatcher=0x7f0c01d1;
+        public static final int TripClearedBySDHS=0x7f0c01d2;
+        public static final int TripCompleted=0x7f0c01d3;
+        public static final int TripDetailsRecieved=0x7f0c01d4;
+        public static final int TripDetailsUpdatedforTripNumber=0x7f0c01d5;
+        public static final int TripList=0x7f0c01d6;
+        public static final int TripNNumber=0x7f0c01d7;
+        public static final int TripNotAssignedDispatched=0x7f0c01d8;
+        public static final int TripOptions=0x7f0c01d9;
+        public static final int TripStateCancelled=0x7f0c01da;
+        public static final int TripSuccessfullyAssignedDispatched=0x7f0c01db;
+        public static final int TripUnAssignedDispatcher=0x7f0c01dc;
+        public static final int Tripcouldntbeassigned=0x7f0c01dd;
+        public static final int Tripcouldntbeassignedrequestnotavailable=0x7f0c01de;
+        public static final int Triphasbeencancelled=0x7f0c01df;
+        public static final int Triphasbeensuccessfullyassigned=0x7f0c01e0;
+        public static final int Triphasbeenupdated=0x7f0c01e1;
+        public static final int TripisClearedbyDispatcher=0x7f0c01e2;
+        public static final int Tripnotassignedvehicletypenotmatched=0x7f0c01e3;
+        public static final int Tripntassigntripbelongsrestrictedaccount=0x7f0c01e4;
+        public static final int Tripntbeassignedrequiredgendernotmatched=0x7f0c01e5;
+        public static final int Try_Again=0x7f0c01e6;
+        public static final int UnKnownZone=0x7f0c01e7;
+        public static final int UnableToPerformCallOutKms=0x7f0c01e8;
+        public static final int UnableToPerformCallOutMiles=0x7f0c01e9;
+        public static final int UnableToPerformDropOffKms=0x7f0c01ea;
+        public static final int UnableToPerformDropOffMiles=0x7f0c01eb;
+        public static final int UnableToPerformNoShowKms=0x7f0c01ec;
+        public static final int UnableToPerformNoShowMiles=0x7f0c01ed;
+        public static final int UnableToPerformPickupKms=0x7f0c01ee;
+        public static final int UnableToPerformPickupMiles=0x7f0c01ef;
+        public static final int UnableToRequestNoShow=0x7f0c01f0;
+        public static final int UnavailableAddressEstimatedFare=0x7f0c01f1;
+        public static final int Unit=0x7f0c01f2;
+        public static final int Unknown=0x7f0c01f3;
+        public static final int UnknownGPSLocation=0x7f0c01f4;
+        public static final int UnknownPickupDropoffAddress=0x7f0c01f5;
+        public static final int Unknown_Address=0x7f0c01f6;
+        public static final int Unknown_GPS_Location=0x7f0c01f7;
+        public static final int Unknown_decode_error=0x7f0c01f8;
+        public static final int Update=0x7f0c01f9;
+        public static final int UpdateLater=0x7f0c01fa;
+        public static final int UpdateList=0x7f0c01fb;
+        public static final int UpdateMeterMilage=0x7f0c01fc;
+        public static final int UpdateNow=0x7f0c01fd;
+        public static final int UpdateofthisApplicationAvailable=0x7f0c01fe;
+        public static final int UpdatingServer=0x7f0c01ff;
+        public static final int UpdatingZoneList=0x7f0c0200;
+        public static final int UpdatingZones=0x7f0c0201;
+        public static final int Updating_Meter_Status=0x7f0c0202;
+        public static final int Urdu=0x7f0c0203;
+        public static final int Use_Connect_Meter_Button_to_Establish_Connection=0x7f0c0204;
+        public static final int Usernotexist=0x7f0c0205;
+        public static final int VehTripDistance=0x7f0c0206;
+        public static final int VehicleActivationRequired=0x7f0c0207;
+        public static final int VehicleNo=0x7f0c0208;
+        public static final int Vehicle_Milage=0x7f0c0209;
+        public static final int VeriFoneAvailable=0x7f0c020a;
+        public static final int Verifone_Cash_Credit_Ignored=0x7f0c020b;
+        public static final int Verifone_Cash_Ignored=0x7f0c020c;
+        public static final int Verifone_Credit_Ignored=0x7f0c020d;
+        public static final int Verifone_cash_ignored=0x7f0c020e;
+        public static final int Verifone_credit_ignored=0x7f0c020f;
+        public static final int Verifying=0x7f0c0210;
+        public static final int Versions=0x7f0c0211;
+        public static final int Voucher=0x7f0c0212;
+        public static final int VoucherPaymentSuccessful=0x7f0c0213;
+        public static final int WARNING=0x7f0c0214;
+        public static final int WEBSERVICE=0x7f0c0215;
+        public static final int Wait_For_PickUp_Time=0x7f0c0216;
+        public static final int Waiting_card_swipe=0x7f0c0217;
+        public static final int Waiting_for_device=0x7f0c0218;
+        public static final int Wall=0x7f0c0219;
+        public static final int WantEndShift=0x7f0c021a;
+        public static final int WelcomeTo=0x7f0c021b;
+        public static final int Will_Call=0x7f0c021c;
+        public static final int WouldYouLikeToApplyTip=0x7f0c021d;
+        public static final int WrongDriverNumberorPin=0x7f0c021e;
+        public static final int WrongVehicleAssociation=0x7f0c021f;
+        public static final int WrongVehicleProvided=0x7f0c0220;
+        public static final int Yes=0x7f0c0221;
+        public static final int YouAreAllowedFor=0x7f0c0222;
+        public static final int YouAreBookedinbyDispatcher=0x7f0c0223;
+        public static final int You_are_Not_Logged_In=0x7f0c0224;
+        public static final int YourDevicehasbeenLocked=0x7f0c0225;
+        public static final int Youreceivedtripoffer=0x7f0c0226;
+        public static final int ZipCode=0x7f0c0227;
+        public static final int Zones=0x7f0c0228;
+        public static final int accept=0x7f0c0229;
+        public static final int action_settings=0x7f0c022a;
+        public static final int app_name=0x7f0c022b;
+        public static final int auth=0x7f0c022c;
+        public static final int avl=0x7f0c022d;
+        public static final int balanceWarning=0x7f0c022e;
+        public static final int bookedinstand=0x7f0c022f;
+        public static final int bookedinzone=0x7f0c0230;
+        public static final int bookedoutfromstand=0x7f0c0231;
+        public static final int bookedoutfromzone=0x7f0c0232;
+        public static final int bye=0x7f0c0233;
+        public static final int cab=0x7f0c0234;
+        public static final int calculating=0x7f0c0235;
+        public static final int cashsaleFailed=0x7f0c0236;
+        public static final int cashsaleSuccess=0x7f0c0237;
+        public static final int closeShareScreen=0x7f0c0238;
+        public static final int common_android_wear_notification_needs_update_text=0x7f0c0239;
+        public static final int common_android_wear_update_text=0x7f0c023a;
+        public static final int common_android_wear_update_title=0x7f0c023b;
+        public static final int common_google_play_services_enable_button=0x7f0c023c;
+        public static final int common_google_play_services_enable_text=0x7f0c023d;
+        public static final int common_google_play_services_enable_title=0x7f0c023e;
+        public static final int common_google_play_services_error_notification_requested_by_msg=0x7f0c023f;
+        public static final int common_google_play_services_install_button=0x7f0c0240;
+        public static final int common_google_play_services_install_text_phone=0x7f0c0241;
+        public static final int common_google_play_services_install_text_tablet=0x7f0c0242;
+        public static final int common_google_play_services_install_title=0x7f0c0243;
+        public static final int common_google_play_services_invalid_account_text=0x7f0c0244;
+        public static final int common_google_play_services_invalid_account_title=0x7f0c0245;
+        public static final int common_google_play_services_needs_enabling_title=0x7f0c0246;
+        public static final int common_google_play_services_network_error_text=0x7f0c0247;
+        public static final int common_google_play_services_network_error_title=0x7f0c0248;
+        public static final int common_google_play_services_notification_needs_installation_title=0x7f0c0249;
+        public static final int common_google_play_services_notification_needs_update_title=0x7f0c024a;
+        public static final int common_google_play_services_notification_ticker=0x7f0c024b;
+        public static final int common_google_play_services_unknown_issue=0x7f0c024c;
+        public static final int common_google_play_services_unsupported_text=0x7f0c024d;
+        public static final int common_google_play_services_unsupported_title=0x7f0c024e;
+        public static final int common_google_play_services_update_button=0x7f0c024f;
+        public static final int common_google_play_services_update_text=0x7f0c0250;
+        public static final int common_google_play_services_update_title=0x7f0c0251;
+        public static final int common_open_on_phone=0x7f0c0252;
+        public static final int common_signin_button_text=0x7f0c0253;
+        public static final int common_signin_button_text_long=0x7f0c0254;
+        public static final int couldnotBeAssignedAndDispatched=0x7f0c0255;
+        public static final int couldnotBeAssignedAndDispatchedTripNo1=0x7f0c0256;
+        public static final int couldnotBeAssignedAndDispatchedTripNo2=0x7f0c0257;
+        public static final int create_calendar_message=0x7f0c0258;
+        public static final int create_calendar_title=0x7f0c0259;
+        public static final int credit=0x7f0c025a;
+        public static final int decline=0x7f0c025b;
+        public static final int direction=0x7f0c025c;
+        public static final int disclaimer_accept=0x7f0c025d;
+        public static final int disclaimer_title=0x7f0c025e;
+        public static final int driver=0x7f0c025f;
+        public static final int driver1=0x7f0c0260;
+        public static final int drivername=0x7f0c0261;
+        public static final int enterpassword=0x7f0c0262;
+        public static final int error=0x7f0c0263;
+        public static final int eula_accept=0x7f0c0264;
+        public static final int eula_refuse=0x7f0c0265;
+        public static final int eula_title=0x7f0c0266;
+        public static final int extra=0x7f0c0267;
+        public static final int fare=0x7f0c0268;
+        public static final int favoritename=0x7f0c0269;
+        public static final int fetchAppsListFailed=0x7f0c026a;
+        public static final int fetchCannedMsgsListFailed=0x7f0c026b;
+        public static final int fieldempty=0x7f0c026c;
+        public static final int forZone=0x7f0c026d;
+        public static final int handshake=0x7f0c026e;
+        public static final int hello=0x7f0c026f;
+        public static final int hello_world=0x7f0c0270;
+        public static final int holdwithCREDITCARD=0x7f0c0271;
+        public static final int km=0x7f0c0272;
+        public static final int kmsAwayFromDropOff=0x7f0c0273;
+        public static final int kmsAwayFromPickup=0x7f0c0274;
+        public static final int last24=0x7f0c0275;
+        public static final int last8days=0x7f0c0276;
+        public static final int loginFailed=0x7f0c0277;
+        public static final int loginSuccess=0x7f0c0278;
+        public static final int meternotfound=0x7f0c0279;
+        public static final int miles=0x7f0c027a;
+        public static final int nMiles=0x7f0c027b;
+        public static final int nMiles1=0x7f0c027c;
+        public static final int notAuthorizedtoUseDevice=0x7f0c027d;
+        public static final int num=0x7f0c027e;
+        public static final int ok=0x7f0c027f;
+        public static final int override_payment=0x7f0c0280;
+        public static final int phone=0x7f0c0281;
+        public static final int phoneno=0x7f0c0282;
+        public static final int postVoucher=0x7f0c0283;
+        public static final int preVoucher=0x7f0c0284;
+        public static final int rank=0x7f0c0285;
+        public static final int signature=0x7f0c0286;
+        public static final int speed=0x7f0c0287;
+        public static final int stand=0x7f0c0288;
+        public static final int stands=0x7f0c0289;
+        public static final int store_picture_message=0x7f0c028a;
+        public static final int store_picture_title=0x7f0c028b;
+        public static final int swiper_unplugged=0x7f0c028c;
+        public static final int theTripHasStateCancelled=0x7f0c028d;
+        public static final int tip=0x7f0c028e;
+        public static final int tipApplied=0x7f0c028f;
+        public static final int title_activity_download=0x7f0c0290;
+        public static final int tv_Connection_lost=0x7f0c0291;
+        public static final int tv_IDS_ACCESS_ASKCONFIRMATION_FORREMOTECONTROL=0x7f0c0292;
+        public static final int tv_IDS_ACCESS_CONFIRMFOR=0x7f0c0293;
+        public static final int tv_IDS_AUTH_RETRY=0x7f0c0294;
+        public static final int tv_IDS_AUTH_RETRY_DYN_OR_FIXED_PWD=0x7f0c0295;
+        public static final int tv_IDS_AUTH_RETRY_PRES_PWD=0x7f0c0296;
+        public static final int tv_IDS_BUDDY_SERVERERROR_1=0x7f0c0297;
+        public static final int tv_IDS_BUDDY_SERVERERROR_10=0x7f0c0298;
+        public static final int tv_IDS_BUDDY_SERVERERROR_11=0x7f0c0299;
+        public static final int tv_IDS_BUDDY_SERVERERROR_12=0x7f0c029a;
+        public static final int tv_IDS_BUDDY_SERVERERROR_13=0x7f0c029b;
+        public static final int tv_IDS_BUDDY_SERVERERROR_14=0x7f0c029c;
+        public static final int tv_IDS_BUDDY_SERVERERROR_15=0x7f0c029d;
+        public static final int tv_IDS_BUDDY_SERVERERROR_16=0x7f0c029e;
+        public static final int tv_IDS_BUDDY_SERVERERROR_17=0x7f0c029f;
+        public static final int tv_IDS_BUDDY_SERVERERROR_18=0x7f0c02a0;
+        public static final int tv_IDS_BUDDY_SERVERERROR_19=0x7f0c02a1;
+        public static final int tv_IDS_BUDDY_SERVERERROR_2=0x7f0c02a2;
+        public static final int tv_IDS_BUDDY_SERVERERROR_20=0x7f0c02a3;
+        public static final int tv_IDS_BUDDY_SERVERERROR_21=0x7f0c02a4;
+        public static final int tv_IDS_BUDDY_SERVERERROR_22=0x7f0c02a5;
+        public static final int tv_IDS_BUDDY_SERVERERROR_23=0x7f0c02a6;
+        public static final int tv_IDS_BUDDY_SERVERERROR_24=0x7f0c02a7;
+        public static final int tv_IDS_BUDDY_SERVERERROR_25=0x7f0c02a8;
+        public static final int tv_IDS_BUDDY_SERVERERROR_26=0x7f0c02a9;
+        public static final int tv_IDS_BUDDY_SERVERERROR_27=0x7f0c02aa;
+        public static final int tv_IDS_BUDDY_SERVERERROR_28=0x7f0c02ab;
+        public static final int tv_IDS_BUDDY_SERVERERROR_29=0x7f0c02ac;
+        public static final int tv_IDS_BUDDY_SERVERERROR_3=0x7f0c02ad;
+        public static final int tv_IDS_BUDDY_SERVERERROR_30=0x7f0c02ae;
+        public static final int tv_IDS_BUDDY_SERVERERROR_31=0x7f0c02af;
+        public static final int tv_IDS_BUDDY_SERVERERROR_32=0x7f0c02b0;
+        public static final int tv_IDS_BUDDY_SERVERERROR_33=0x7f0c02b1;
+        public static final int tv_IDS_BUDDY_SERVERERROR_34=0x7f0c02b2;
+        public static final int tv_IDS_BUDDY_SERVERERROR_35=0x7f0c02b3;
+        public static final int tv_IDS_BUDDY_SERVERERROR_36=0x7f0c02b4;
+        public static final int tv_IDS_BUDDY_SERVERERROR_37=0x7f0c02b5;
+        public static final int tv_IDS_BUDDY_SERVERERROR_38=0x7f0c02b6;
+        public static final int tv_IDS_BUDDY_SERVERERROR_39=0x7f0c02b7;
+        public static final int tv_IDS_BUDDY_SERVERERROR_4=0x7f0c02b8;
+        public static final int tv_IDS_BUDDY_SERVERERROR_40=0x7f0c02b9;
+        public static final int tv_IDS_BUDDY_SERVERERROR_41=0x7f0c02ba;
+        public static final int tv_IDS_BUDDY_SERVERERROR_42=0x7f0c02bb;
+        public static final int tv_IDS_BUDDY_SERVERERROR_43=0x7f0c02bc;
+        public static final int tv_IDS_BUDDY_SERVERERROR_44=0x7f0c02bd;
+        public static final int tv_IDS_BUDDY_SERVERERROR_45=0x7f0c02be;
+        public static final int tv_IDS_BUDDY_SERVERERROR_46=0x7f0c02bf;
+        public static final int tv_IDS_BUDDY_SERVERERROR_47=0x7f0c02c0;
+        public static final int tv_IDS_BUDDY_SERVERERROR_48=0x7f0c02c1;
+        public static final int tv_IDS_BUDDY_SERVERERROR_49=0x7f0c02c2;
+        public static final int tv_IDS_BUDDY_SERVERERROR_5=0x7f0c02c3;
+        public static final int tv_IDS_BUDDY_SERVERERROR_50=0x7f0c02c4;
+        public static final int tv_IDS_BUDDY_SERVERERROR_51=0x7f0c02c5;
+        public static final int tv_IDS_BUDDY_SERVERERROR_52=0x7f0c02c6;
+        public static final int tv_IDS_BUDDY_SERVERERROR_53=0x7f0c02c7;
+        public static final int tv_IDS_BUDDY_SERVERERROR_54=0x7f0c02c8;
+        public static final int tv_IDS_BUDDY_SERVERERROR_55=0x7f0c02c9;
+        public static final int tv_IDS_BUDDY_SERVERERROR_56=0x7f0c02ca;
+        public static final int tv_IDS_BUDDY_SERVERERROR_57=0x7f0c02cb;
+        public static final int tv_IDS_BUDDY_SERVERERROR_58=0x7f0c02cc;
+        public static final int tv_IDS_BUDDY_SERVERERROR_59=0x7f0c02cd;
+        public static final int tv_IDS_BUDDY_SERVERERROR_6=0x7f0c02ce;
+        public static final int tv_IDS_BUDDY_SERVERERROR_60=0x7f0c02cf;
+        public static final int tv_IDS_BUDDY_SERVERERROR_61=0x7f0c02d0;
+        public static final int tv_IDS_BUDDY_SERVERERROR_62=0x7f0c02d1;
+        public static final int tv_IDS_BUDDY_SERVERERROR_63=0x7f0c02d2;
+        public static final int tv_IDS_BUDDY_SERVERERROR_64=0x7f0c02d3;
+        public static final int tv_IDS_BUDDY_SERVERERROR_65=0x7f0c02d4;
+        public static final int tv_IDS_BUDDY_SERVERERROR_66=0x7f0c02d5;
+        public static final int tv_IDS_BUDDY_SERVERERROR_7=0x7f0c02d6;
+        public static final int tv_IDS_BUDDY_SERVERERROR_8=0x7f0c02d7;
+        public static final int tv_IDS_BUDDY_SERVERERROR_9=0x7f0c02d8;
+        public static final int tv_IDS_INCOMING_BLOCKED_DUE_MEETING=0x7f0c02d9;
+        public static final int tv_IDS_INCOMING_BLOCKED_DUE_MULTIPLE_CONNECTIONS=0x7f0c02da;
+        public static final int tv_IDS_INCOMING_BLOCKED_DUE_REMOTECONTROL=0x7f0c02db;
+        public static final int tv_IDS_NONCOMMERCIAL=0x7f0c02dc;
+        public static final int tv_IDS_NONCOMMERCIAL_TITLE=0x7f0c02dd;
+        public static final int tv_IDS_QUICK_ACCESS_REJECTED=0x7f0c02de;
+        public static final int tv_IDS_SESSION_CODE_CREATION_FAILED=0x7f0c02df;
+        public static final int tv_IDS_STATUS_AUTHENTICATIONREJECTED=0x7f0c02e0;
+        public static final int tv_IDS_STATUS_AUTHENTICATION_BLACKLISTED=0x7f0c02e1;
+        public static final int tv_IDS_STATUS_AUTHENTICATION_BLOCKED=0x7f0c02e2;
+        public static final int tv_IDS_STATUS_AUTHENTICATION_FAILED=0x7f0c02e3;
+        public static final int tv_IDS_STATUS_AUTHENTICATION_NOINCOMING=0x7f0c02e4;
+        public static final int tv_IDS_STATUS_AUTHENTICATION_NOLANCONNECTION=0x7f0c02e5;
+        public static final int tv_IDS_STATUS_ConnectNoRoute=0x7f0c02e6;
+        public static final int tv_IDS_STATUS_ConnectToOwnID=0x7f0c02e7;
+        public static final int tv_IDS_STATUS_INCOMPATIBLE=0x7f0c02e8;
+        public static final int tv_IDS_STATUS_MOBILE_LICENSE_REQUIRED=0x7f0c02e9;
+        public static final int tv_IDS_STATUS_MSG_NOROUTE_CommercialUse=0x7f0c02ea;
+        public static final int tv_IDS_STATUS_MSG_NOROUTE_ConnectAlreadyJoined=0x7f0c02eb;
+        public static final int tv_IDS_STATUS_MSG_NOROUTE_ControlIDNotFound=0x7f0c02ec;
+        public static final int tv_IDS_STATUS_MSG_NOROUTE_DenyIncoming=0x7f0c02ed;
+        public static final int tv_IDS_STATUS_MSG_NOROUTE_ExcessiveUse=0x7f0c02ee;
+        public static final int tv_IDS_STATUS_MSG_NOROUTE_FreeRoutersInUse=0x7f0c02ef;
+        public static final int tv_IDS_STATUS_MSG_NOROUTE_IdNotFound=0x7f0c02f0;
+        public static final int tv_IDS_STATUS_MSG_NOROUTE_InvalidCustomerID=0x7f0c02f1;
+        public static final int tv_IDS_STATUS_MSG_NOROUTE_InvalidLicense=0x7f0c02f2;
+        public static final int tv_IDS_STATUS_MSG_NOROUTE_InvalidSupporterID=0x7f0c02f3;
+        public static final int tv_IDS_STATUS_MSG_NOROUTE_KeepAliveInactive=0x7f0c02f4;
+        public static final int tv_IDS_STATUS_MSG_NOROUTE_KeepAliveLost=0x7f0c02f5;
+        public static final int tv_IDS_STATUS_MSG_NOROUTE_KeepAliveTimeout=0x7f0c02f6;
+        public static final int tv_IDS_STATUS_MSG_NOROUTE_LicenseBlocked=0x7f0c02f7;
+        public static final int tv_IDS_STATUS_MSG_NOROUTE_LicenseExpired=0x7f0c02f8;
+        public static final int tv_IDS_STATUS_MSG_NOROUTE_LoggedOut=0x7f0c02f9;
+        public static final int tv_IDS_STATUS_MSG_NOROUTE_MeetingIncompatibleVersion=0x7f0c02fa;
+        public static final int tv_IDS_STATUS_MSG_NOROUTE_NoControlSupport=0x7f0c02fb;
+        public static final int tv_IDS_STATUS_MSG_NOROUTE_NoMachineAvailable=0x7f0c02fc;
+        public static final int tv_IDS_STATUS_MSG_NOROUTE_NoServer=0x7f0c02fd;
+        public static final int tv_IDS_STATUS_MSG_NOROUTE_SessionClosed=0x7f0c02fe;
+        public static final int tv_IDS_STATUS_MSG_NOROUTE_SessionExpired=0x7f0c02ff;
+        public static final int tv_IDS_STATUS_MSG_NOROUTE_SessionLimit=0x7f0c0300;
+        public static final int tv_IDS_STATUS_MSG_NOROUTE_SmartAccessDenied=0x7f0c0301;
+        public static final int tv_IDS_STATUS_MSG_NOROUTE_TimeoutBlock=0x7f0c0302;
+        public static final int tv_IDS_STATUS_MSG_NOROUTE_UnknownSupportSessionID=0x7f0c0303;
+        public static final int tv_NewMajorVersion=0x7f0c0304;
+        public static final int tv_connect=0x7f0c0305;
+        public static final int tv_connectFailedVersion=0x7f0c0306;
+        public static final int tv_connectNoConnection=0x7f0c0307;
+        public static final int tv_connecting=0x7f0c0308;
+        public static final int tv_connectingPleaseWait=0x7f0c0309;
+        public static final int tv_connectingWaitForAccept=0x7f0c030a;
+        public static final int tv_errorMessage_FeatureNotAvailable=0x7f0c030b;
+        public static final int tv_errorMessage_InternalAndroidError=0x7f0c030c;
+        public static final int tv_errorMessage_LoadingNativeScreenshotLibrary=0x7f0c030d;
+        public static final int tv_errorMessage_LoadingNativeScreenshotLibrary_Caption=0x7f0c030e;
+        public static final int tv_errorMessage_NoStorageAvailableText=0x7f0c030f;
+        public static final int tv_errorMessage_NoStorageAvailableTitle=0x7f0c0310;
+        public static final int tv_errorMessage_PARTNER_NEW_MAJOR_VERSION=0x7f0c0311;
+        public static final int tv_errorMessage_SdkReconnectFailed=0x7f0c0312;
+        public static final int tv_errorMessage_UNSUPPORTED_CONNECTION_TYPE=0x7f0c0313;
+        public static final int tv_errorMessage_connect_ACTION_CONNECT_ABORT=0x7f0c0314;
+        public static final int tv_errorMessage_connect_ERROR_AUTHENTIFICATION=0x7f0c0315;
+        public static final int tv_errorMessage_connect_ERROR_CONNECT_PENDING=0x7f0c0316;
+        public static final int tv_errorMessage_connect_ERROR_MASTER_RESPONSE=0x7f0c0317;
+        public static final int tv_errorMessage_connect_ERROR_MASTER_UNKNOWN_MEETING_ID=0x7f0c0318;
+        public static final int tv_errorMessage_connect_MEETING_OVER=0x7f0c0319;
+        public static final int tv_error_pl_login_timeout=0x7f0c031a;
+        public static final int tv_filetransfer_access_confirm=0x7f0c031b;
+        public static final int tv_filetransfer_access_denied=0x7f0c031c;
+        public static final int tv_filetransfer_dialog_file_exists_header=0x7f0c031d;
+        public static final int tv_filetransfer_dialog_file_exists_override=0x7f0c031e;
+        public static final int tv_filetransfer_dialog_file_exists_resume=0x7f0c031f;
+        public static final int tv_filetransfer_dialog_file_exists_skip=0x7f0c0320;
+        public static final int tv_filetransfer_error_create_dir_failed=0x7f0c0321;
+        public static final int tv_filetransfer_error_drop_root=0x7f0c0322;
+        public static final int tv_filetransfer_error_filesystem=0x7f0c0323;
+        public static final int tv_filetransfer_error_opdenied=0x7f0c0324;
+        public static final int tv_filetransfer_external_storage=0x7f0c0325;
+        public static final int tv_filetransfer_my_desktop=0x7f0c0326;
+        public static final int tv_filetransfer_my_documents=0x7f0c0327;
+        public static final int tv_filetransfer_my_downloads=0x7f0c0328;
+        public static final int tv_filetransfer_my_movies=0x7f0c0329;
+        public static final int tv_filetransfer_my_music=0x7f0c032a;
+        public static final int tv_filetransfer_my_network=0x7f0c032b;
+        public static final int tv_filetransfer_my_photos=0x7f0c032c;
+        public static final int tv_filetransfer_my_pictures=0x7f0c032d;
+        public static final int tv_filetransfer_session_abort=0x7f0c032e;
+        public static final int tv_filetransfer_session_err_fserror=0x7f0c032f;
+        public static final int tv_filetransfer_session_err_getdir=0x7f0c0330;
+        public static final int tv_filetransfer_session_err_getdiraccess=0x7f0c0331;
+        public static final int tv_filetransfer_session_err_invalsession=0x7f0c0332;
+        public static final int tv_filetransfer_session_err_other=0x7f0c0333;
+        public static final int tv_filetransfer_session_err_servererror=0x7f0c0334;
+        public static final int tv_license=0x7f0c0335;
+        public static final int tv_license_Business=0x7f0c0336;
+        public static final int tv_license_Channel_String_P=0x7f0c0337;
+        public static final int tv_license_Channel_String_S=0x7f0c0338;
+        public static final int tv_license_Corporate=0x7f0c0339;
+        public static final int tv_license_Enterprise=0x7f0c033a;
+        public static final int tv_license_Free=0x7f0c033b;
+        public static final int tv_license_FreeReg=0x7f0c033c;
+        public static final int tv_license_Host=0x7f0c033d;
+        public static final int tv_license_Premium=0x7f0c033e;
+        public static final int tv_license_SB=0x7f0c033f;
+        public static final int tv_license_Trial=0x7f0c0340;
+        public static final int tv_license_server_Enterprise=0x7f0c0341;
+        public static final int tv_license_server_trial=0x7f0c0342;
+        public static final int tv_mail_feedback_content=0x7f0c0343;
+        public static final int tv_mail_feedback_receiver=0x7f0c0344;
+        public static final int tv_mail_feedback_subject=0x7f0c0345;
+        public static final int tv_message_TcpReconnectStarted=0x7f0c0346;
+        public static final int tv_message_TcpReconnectStarted_Title=0x7f0c0347;
+        public static final int tv_ok=0x7f0c0348;
+        public static final int tv_options=0x7f0c0349;
+        public static final int tv_options_Automatic=0x7f0c034a;
+        public static final int tv_options_ConnectionLogEmailText=0x7f0c034b;
+        public static final int tv_options_ConnectionLogSubject=0x7f0c034c;
+        public static final int tv_options_CrashLogDefaultReceiver=0x7f0c034d;
+        public static final int tv_options_CrashLogDefaultSubject=0x7f0c034e;
+        public static final int tv_options_CrashLogDefaultText=0x7f0c034f;
+        public static final int tv_options_EnableAutoLocking=0x7f0c0350;
+        public static final int tv_options_EnableAutoLocking_Always=0x7f0c0351;
+        public static final int tv_options_EnableAutoLocking_AutoSelect=0x7f0c0352;
+        public static final int tv_options_EnableAutoLocking_Disable=0x7f0c0353;
+        public static final int tv_options_EventLog=0x7f0c0354;
+        public static final int tv_options_EventLogDefaultReceiver=0x7f0c0355;
+        public static final int tv_options_EventLogDefaultSubject=0x7f0c0356;
+        public static final int tv_options_EventLogEmailText=0x7f0c0357;
+        public static final int tv_options_InputMethod=0x7f0c0358;
+        public static final int tv_options_InputMethodMouse=0x7f0c0359;
+        public static final int tv_options_InputMethodTouch=0x7f0c035a;
+        public static final int tv_options_OptimizeQuality=0x7f0c035b;
+        public static final int tv_options_OptimizeSpeed=0x7f0c035c;
+        public static final int tv_options_PreferredResolution=0x7f0c035d;
+        public static final int tv_options_PreferredResolutionBestFit=0x7f0c035e;
+        public static final int tv_options_PreferredResolutionDontChange=0x7f0c035f;
+        public static final int tv_options_autolock_key_always=0x7f0c0360;
+        public static final int tv_options_autolock_key_automatic=0x7f0c0361;
+        public static final int tv_options_autolock_key_disable=0x7f0c0362;
+        public static final int tv_options_meeting_name=0x7f0c0363;
+        public static final int tv_options_meeting_name_default_value=0x7f0c0364;
+        public static final int tv_protocolNegotiationFailed=0x7f0c0365;
+        public static final int tv_qs_allow=0x7f0c0366;
+        public static final int tv_qs_deny=0x7f0c0367;
+        public static final int tv_qs_incomingRemoteSupportConnectionMessage=0x7f0c0368;
+        public static final int tv_qs_incomingRemoteSupportConnectionTitle=0x7f0c0369;
+        public static final int tv_qs_notification_disconnect_text=0x7f0c036a;
+        public static final int tv_qs_notification_waiting_content=0x7f0c036b;
+        public static final int tv_qs_waiting_message=0x7f0c036c;
+        public static final int tv_rs_event_app_installed=0x7f0c036d;
+        public static final int tv_rs_event_app_removed=0x7f0c036e;
+        public static final int tv_rs_event_clipboard=0x7f0c036f;
+        public static final int tv_rs_event_directory_created=0x7f0c0370;
+        public static final int tv_rs_event_directory_sent=0x7f0c0371;
+        public static final int tv_rs_event_file_deleted=0x7f0c0372;
+        public static final int tv_rs_event_process_stopped=0x7f0c0373;
+        public static final int tv_rs_event_screenshot_requested=0x7f0c0374;
+        public static final int tv_rs_event_screenshot_sent=0x7f0c0375;
+        public static final int tv_rs_event_session_started=0x7f0c0376;
+        public static final int tv_rs_event_wifi_added=0x7f0c0377;
+        public static final int tv_rs_event_wifi_changed=0x7f0c0378;
+        public static final int tv_rs_event_wifi_removed=0x7f0c0379;
+        public static final int tv_rs_notification_connect_text=0x7f0c037a;
+        public static final int tv_rs_notification_connect_ticker=0x7f0c037b;
+        public static final int tv_rs_notification_title=0x7f0c037c;
+        public static final int tv_rs_nudge_notification_title=0x7f0c037d;
+        public static final int tv_rs_screen_notification_text=0x7f0c037e;
+        public static final int tv_rs_screen_notification_ticker=0x7f0c037f;
+        public static final int tv_rs_screen_notification_title=0x7f0c0380;
+        public static final int tv_sdk_EventLogDefaultSubject=0x7f0c0381;
+        public static final int tv_sdk_EventLogEmailText=0x7f0c0382;
+        public static final int tv_sdk_IDS_STATUS_MSG_NOROUTE_SessionClosed=0x7f0c0383;
+        public static final int tv_sdk_IDS_STATUS_MSG_NOROUTE_SessionExpired=0x7f0c0384;
+        public static final int tv_sdk_IDS_STATUS_MSG_NOROUTE_SessionInvalid=0x7f0c0385;
+        public static final int tv_sdk_incomingRemoteSupportConnectionMessage=0x7f0c0386;
+        public static final int tv_send=0x7f0c0387;
+        public static final int tv_sendEmail_ActivityNotFoundException=0x7f0c0388;
+        public static final int tv_supportedFeatureMessage_NoScreenResChange=0x7f0c0389;
+        public static final int tv_teamviewer=0x7f0c038a;
+        public static final int tv_tickertext_still_connected=0x7f0c038b;
+        public static final int tv_toastSavingFailed=0x7f0c038c;
+        public static final int unknownlocation=0x7f0c038d;
+        public static final int vehicle=0x7f0c038e;
+        public static final int ver=0x7f0c038f;
+        public static final int verifyinglogincredentials=0x7f0c0390;
+        public static final int wallet_buy_button_place_holder=0x7f0c0391;
+        public static final int wantprocessasVOUCHER=0x7f0c0392;
+        public static final int warning=0x7f0c0393;
+        public static final int wrongpassword=0x7f0c0394;
+        public static final int youwanttouseMeterasPrinting=0x7f0c0395;
+        public static final int zone=0x7f0c0396;
+        public static final int zones=0x7f0c0397;
     }
     public static final class style {
         public static final int DialogAnimation1=0x7f0d0000;
@@ -1746,7 +1752,9 @@ containing a value of this type.
         public static final int tv_dialog_buttonstyle=0x7f0d0011;
     }
     public static final class xml {
-        public static final int preferences=0x7f050000;
+        public static final int authenticator=0x7f050000;
+        public static final int preferences=0x7f050001;
+        public static final int syncadapter=0x7f050002;
     }
     public static final class styleable {
         /** Attributes that can be used with a AdsAttrs.
@@ -1755,9 +1763,9 @@ containing a value of this type.
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #AdsAttrs_adSize itcurves.infonetmytaxi:adSize}</code></td><td></td></tr>
-           <tr><td><code>{@link #AdsAttrs_adSizes itcurves.infonetmytaxi:adSizes}</code></td><td></td></tr>
-           <tr><td><code>{@link #AdsAttrs_adUnitId itcurves.infonetmytaxi:adUnitId}</code></td><td></td></tr>
+           <tr><td><code>{@link #AdsAttrs_adSize itcurves.regencycab:adSize}</code></td><td></td></tr>
+           <tr><td><code>{@link #AdsAttrs_adSizes itcurves.regencycab:adSizes}</code></td><td></td></tr>
+           <tr><td><code>{@link #AdsAttrs_adUnitId itcurves.regencycab:adUnitId}</code></td><td></td></tr>
            </table>
            @see #AdsAttrs_adSize
            @see #AdsAttrs_adSizes
@@ -1767,7 +1775,7 @@ containing a value of this type.
             0x7f010000, 0x7f010001, 0x7f010002
         };
         /**
-          <p>This symbol is the offset where the {@link itcurves.infonetmytaxi.R.attr#adSize}
+          <p>This symbol is the offset where the {@link itcurves.regencycab.R.attr#adSize}
           attribute's value can be found in the {@link #AdsAttrs} array.
 
 
@@ -1777,11 +1785,11 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name itcurves.infonetmytaxi:adSize
+          @attr name itcurves.regencycab:adSize
         */
         public static final int AdsAttrs_adSize = 0;
         /**
-          <p>This symbol is the offset where the {@link itcurves.infonetmytaxi.R.attr#adSizes}
+          <p>This symbol is the offset where the {@link itcurves.regencycab.R.attr#adSizes}
           attribute's value can be found in the {@link #AdsAttrs} array.
 
 
@@ -1791,11 +1799,11 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name itcurves.infonetmytaxi:adSizes
+          @attr name itcurves.regencycab:adSizes
         */
         public static final int AdsAttrs_adSizes = 1;
         /**
-          <p>This symbol is the offset where the {@link itcurves.infonetmytaxi.R.attr#adUnitId}
+          <p>This symbol is the offset where the {@link itcurves.regencycab.R.attr#adUnitId}
           attribute's value can be found in the {@link #AdsAttrs} array.
 
 
@@ -1805,7 +1813,7 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name itcurves.infonetmytaxi:adUnitId
+          @attr name itcurves.regencycab:adUnitId
         */
         public static final int AdsAttrs_adUnitId = 2;
         /** Attributes that can be used with a LoadingImageView.
@@ -1814,9 +1822,9 @@ containing a value of this type.
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #LoadingImageView_circleCrop itcurves.infonetmytaxi:circleCrop}</code></td><td></td></tr>
-           <tr><td><code>{@link #LoadingImageView_imageAspectRatio itcurves.infonetmytaxi:imageAspectRatio}</code></td><td></td></tr>
-           <tr><td><code>{@link #LoadingImageView_imageAspectRatioAdjust itcurves.infonetmytaxi:imageAspectRatioAdjust}</code></td><td></td></tr>
+           <tr><td><code>{@link #LoadingImageView_circleCrop itcurves.regencycab:circleCrop}</code></td><td></td></tr>
+           <tr><td><code>{@link #LoadingImageView_imageAspectRatio itcurves.regencycab:imageAspectRatio}</code></td><td></td></tr>
+           <tr><td><code>{@link #LoadingImageView_imageAspectRatioAdjust itcurves.regencycab:imageAspectRatioAdjust}</code></td><td></td></tr>
            </table>
            @see #LoadingImageView_circleCrop
            @see #LoadingImageView_imageAspectRatio
@@ -1826,7 +1834,7 @@ containing a value of this type.
             0x7f010003, 0x7f010004, 0x7f010005
         };
         /**
-          <p>This symbol is the offset where the {@link itcurves.infonetmytaxi.R.attr#circleCrop}
+          <p>This symbol is the offset where the {@link itcurves.regencycab.R.attr#circleCrop}
           attribute's value can be found in the {@link #LoadingImageView} array.
 
 
@@ -1836,11 +1844,11 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name itcurves.infonetmytaxi:circleCrop
+          @attr name itcurves.regencycab:circleCrop
         */
         public static final int LoadingImageView_circleCrop = 2;
         /**
-          <p>This symbol is the offset where the {@link itcurves.infonetmytaxi.R.attr#imageAspectRatio}
+          <p>This symbol is the offset where the {@link itcurves.regencycab.R.attr#imageAspectRatio}
           attribute's value can be found in the {@link #LoadingImageView} array.
 
 
@@ -1850,11 +1858,11 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name itcurves.infonetmytaxi:imageAspectRatio
+          @attr name itcurves.regencycab:imageAspectRatio
         */
         public static final int LoadingImageView_imageAspectRatio = 1;
         /**
-          <p>This symbol is the offset where the {@link itcurves.infonetmytaxi.R.attr#imageAspectRatioAdjust}
+          <p>This symbol is the offset where the {@link itcurves.regencycab.R.attr#imageAspectRatioAdjust}
           attribute's value can be found in the {@link #LoadingImageView} array.
 
 
@@ -1868,7 +1876,7 @@ containing a value of this type.
 <tr><td><code>adjust_width</code></td><td>1</td><td></td></tr>
 <tr><td><code>adjust_height</code></td><td>2</td><td></td></tr>
 </table>
-          @attr name itcurves.infonetmytaxi:imageAspectRatioAdjust
+          @attr name itcurves.regencycab:imageAspectRatioAdjust
         */
         public static final int LoadingImageView_imageAspectRatioAdjust = 0;
         /** Attributes that can be used with a MapAttrs.
@@ -1877,22 +1885,22 @@ containing a value of this type.
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #MapAttrs_cameraBearing itcurves.infonetmytaxi:cameraBearing}</code></td><td></td></tr>
-           <tr><td><code>{@link #MapAttrs_cameraTargetLat itcurves.infonetmytaxi:cameraTargetLat}</code></td><td></td></tr>
-           <tr><td><code>{@link #MapAttrs_cameraTargetLng itcurves.infonetmytaxi:cameraTargetLng}</code></td><td></td></tr>
-           <tr><td><code>{@link #MapAttrs_cameraTilt itcurves.infonetmytaxi:cameraTilt}</code></td><td></td></tr>
-           <tr><td><code>{@link #MapAttrs_cameraZoom itcurves.infonetmytaxi:cameraZoom}</code></td><td></td></tr>
-           <tr><td><code>{@link #MapAttrs_liteMode itcurves.infonetmytaxi:liteMode}</code></td><td></td></tr>
-           <tr><td><code>{@link #MapAttrs_mapType itcurves.infonetmytaxi:mapType}</code></td><td></td></tr>
-           <tr><td><code>{@link #MapAttrs_uiCompass itcurves.infonetmytaxi:uiCompass}</code></td><td></td></tr>
-           <tr><td><code>{@link #MapAttrs_uiMapToolbar itcurves.infonetmytaxi:uiMapToolbar}</code></td><td></td></tr>
-           <tr><td><code>{@link #MapAttrs_uiRotateGestures itcurves.infonetmytaxi:uiRotateGestures}</code></td><td></td></tr>
-           <tr><td><code>{@link #MapAttrs_uiScrollGestures itcurves.infonetmytaxi:uiScrollGestures}</code></td><td></td></tr>
-           <tr><td><code>{@link #MapAttrs_uiTiltGestures itcurves.infonetmytaxi:uiTiltGestures}</code></td><td></td></tr>
-           <tr><td><code>{@link #MapAttrs_uiZoomControls itcurves.infonetmytaxi:uiZoomControls}</code></td><td></td></tr>
-           <tr><td><code>{@link #MapAttrs_uiZoomGestures itcurves.infonetmytaxi:uiZoomGestures}</code></td><td></td></tr>
-           <tr><td><code>{@link #MapAttrs_useViewLifecycle itcurves.infonetmytaxi:useViewLifecycle}</code></td><td></td></tr>
-           <tr><td><code>{@link #MapAttrs_zOrderOnTop itcurves.infonetmytaxi:zOrderOnTop}</code></td><td></td></tr>
+           <tr><td><code>{@link #MapAttrs_cameraBearing itcurves.regencycab:cameraBearing}</code></td><td></td></tr>
+           <tr><td><code>{@link #MapAttrs_cameraTargetLat itcurves.regencycab:cameraTargetLat}</code></td><td></td></tr>
+           <tr><td><code>{@link #MapAttrs_cameraTargetLng itcurves.regencycab:cameraTargetLng}</code></td><td></td></tr>
+           <tr><td><code>{@link #MapAttrs_cameraTilt itcurves.regencycab:cameraTilt}</code></td><td></td></tr>
+           <tr><td><code>{@link #MapAttrs_cameraZoom itcurves.regencycab:cameraZoom}</code></td><td></td></tr>
+           <tr><td><code>{@link #MapAttrs_liteMode itcurves.regencycab:liteMode}</code></td><td></td></tr>
+           <tr><td><code>{@link #MapAttrs_mapType itcurves.regencycab:mapType}</code></td><td></td></tr>
+           <tr><td><code>{@link #MapAttrs_uiCompass itcurves.regencycab:uiCompass}</code></td><td></td></tr>
+           <tr><td><code>{@link #MapAttrs_uiMapToolbar itcurves.regencycab:uiMapToolbar}</code></td><td></td></tr>
+           <tr><td><code>{@link #MapAttrs_uiRotateGestures itcurves.regencycab:uiRotateGestures}</code></td><td></td></tr>
+           <tr><td><code>{@link #MapAttrs_uiScrollGestures itcurves.regencycab:uiScrollGestures}</code></td><td></td></tr>
+           <tr><td><code>{@link #MapAttrs_uiTiltGestures itcurves.regencycab:uiTiltGestures}</code></td><td></td></tr>
+           <tr><td><code>{@link #MapAttrs_uiZoomControls itcurves.regencycab:uiZoomControls}</code></td><td></td></tr>
+           <tr><td><code>{@link #MapAttrs_uiZoomGestures itcurves.regencycab:uiZoomGestures}</code></td><td></td></tr>
+           <tr><td><code>{@link #MapAttrs_useViewLifecycle itcurves.regencycab:useViewLifecycle}</code></td><td></td></tr>
+           <tr><td><code>{@link #MapAttrs_zOrderOnTop itcurves.regencycab:zOrderOnTop}</code></td><td></td></tr>
            </table>
            @see #MapAttrs_cameraBearing
            @see #MapAttrs_cameraTargetLat
@@ -1918,7 +1926,7 @@ containing a value of this type.
             0x7f010012, 0x7f010013, 0x7f010014, 0x7f010015
         };
         /**
-          <p>This symbol is the offset where the {@link itcurves.infonetmytaxi.R.attr#cameraBearing}
+          <p>This symbol is the offset where the {@link itcurves.regencycab.R.attr#cameraBearing}
           attribute's value can be found in the {@link #MapAttrs} array.
 
 
@@ -1928,11 +1936,11 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name itcurves.infonetmytaxi:cameraBearing
+          @attr name itcurves.regencycab:cameraBearing
         */
         public static final int MapAttrs_cameraBearing = 1;
         /**
-          <p>This symbol is the offset where the {@link itcurves.infonetmytaxi.R.attr#cameraTargetLat}
+          <p>This symbol is the offset where the {@link itcurves.regencycab.R.attr#cameraTargetLat}
           attribute's value can be found in the {@link #MapAttrs} array.
 
 
@@ -1942,11 +1950,11 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name itcurves.infonetmytaxi:cameraTargetLat
+          @attr name itcurves.regencycab:cameraTargetLat
         */
         public static final int MapAttrs_cameraTargetLat = 2;
         /**
-          <p>This symbol is the offset where the {@link itcurves.infonetmytaxi.R.attr#cameraTargetLng}
+          <p>This symbol is the offset where the {@link itcurves.regencycab.R.attr#cameraTargetLng}
           attribute's value can be found in the {@link #MapAttrs} array.
 
 
@@ -1956,11 +1964,11 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name itcurves.infonetmytaxi:cameraTargetLng
+          @attr name itcurves.regencycab:cameraTargetLng
         */
         public static final int MapAttrs_cameraTargetLng = 3;
         /**
-          <p>This symbol is the offset where the {@link itcurves.infonetmytaxi.R.attr#cameraTilt}
+          <p>This symbol is the offset where the {@link itcurves.regencycab.R.attr#cameraTilt}
           attribute's value can be found in the {@link #MapAttrs} array.
 
 
@@ -1970,11 +1978,11 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name itcurves.infonetmytaxi:cameraTilt
+          @attr name itcurves.regencycab:cameraTilt
         */
         public static final int MapAttrs_cameraTilt = 4;
         /**
-          <p>This symbol is the offset where the {@link itcurves.infonetmytaxi.R.attr#cameraZoom}
+          <p>This symbol is the offset where the {@link itcurves.regencycab.R.attr#cameraZoom}
           attribute's value can be found in the {@link #MapAttrs} array.
 
 
@@ -1984,11 +1992,11 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name itcurves.infonetmytaxi:cameraZoom
+          @attr name itcurves.regencycab:cameraZoom
         */
         public static final int MapAttrs_cameraZoom = 5;
         /**
-          <p>This symbol is the offset where the {@link itcurves.infonetmytaxi.R.attr#liteMode}
+          <p>This symbol is the offset where the {@link itcurves.regencycab.R.attr#liteMode}
           attribute's value can be found in the {@link #MapAttrs} array.
 
 
@@ -1998,11 +2006,11 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name itcurves.infonetmytaxi:liteMode
+          @attr name itcurves.regencycab:liteMode
         */
         public static final int MapAttrs_liteMode = 6;
         /**
-          <p>This symbol is the offset where the {@link itcurves.infonetmytaxi.R.attr#mapType}
+          <p>This symbol is the offset where the {@link itcurves.regencycab.R.attr#mapType}
           attribute's value can be found in the {@link #MapAttrs} array.
 
 
@@ -2018,11 +2026,11 @@ containing a value of this type.
 <tr><td><code>terrain</code></td><td>3</td><td></td></tr>
 <tr><td><code>hybrid</code></td><td>4</td><td></td></tr>
 </table>
-          @attr name itcurves.infonetmytaxi:mapType
+          @attr name itcurves.regencycab:mapType
         */
         public static final int MapAttrs_mapType = 0;
         /**
-          <p>This symbol is the offset where the {@link itcurves.infonetmytaxi.R.attr#uiCompass}
+          <p>This symbol is the offset where the {@link itcurves.regencycab.R.attr#uiCompass}
           attribute's value can be found in the {@link #MapAttrs} array.
 
 
@@ -2032,11 +2040,11 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name itcurves.infonetmytaxi:uiCompass
+          @attr name itcurves.regencycab:uiCompass
         */
         public static final int MapAttrs_uiCompass = 7;
         /**
-          <p>This symbol is the offset where the {@link itcurves.infonetmytaxi.R.attr#uiMapToolbar}
+          <p>This symbol is the offset where the {@link itcurves.regencycab.R.attr#uiMapToolbar}
           attribute's value can be found in the {@link #MapAttrs} array.
 
 
@@ -2046,11 +2054,11 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name itcurves.infonetmytaxi:uiMapToolbar
+          @attr name itcurves.regencycab:uiMapToolbar
         */
         public static final int MapAttrs_uiMapToolbar = 15;
         /**
-          <p>This symbol is the offset where the {@link itcurves.infonetmytaxi.R.attr#uiRotateGestures}
+          <p>This symbol is the offset where the {@link itcurves.regencycab.R.attr#uiRotateGestures}
           attribute's value can be found in the {@link #MapAttrs} array.
 
 
@@ -2060,11 +2068,11 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name itcurves.infonetmytaxi:uiRotateGestures
+          @attr name itcurves.regencycab:uiRotateGestures
         */
         public static final int MapAttrs_uiRotateGestures = 8;
         /**
-          <p>This symbol is the offset where the {@link itcurves.infonetmytaxi.R.attr#uiScrollGestures}
+          <p>This symbol is the offset where the {@link itcurves.regencycab.R.attr#uiScrollGestures}
           attribute's value can be found in the {@link #MapAttrs} array.
 
 
@@ -2074,11 +2082,11 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name itcurves.infonetmytaxi:uiScrollGestures
+          @attr name itcurves.regencycab:uiScrollGestures
         */
         public static final int MapAttrs_uiScrollGestures = 9;
         /**
-          <p>This symbol is the offset where the {@link itcurves.infonetmytaxi.R.attr#uiTiltGestures}
+          <p>This symbol is the offset where the {@link itcurves.regencycab.R.attr#uiTiltGestures}
           attribute's value can be found in the {@link #MapAttrs} array.
 
 
@@ -2088,11 +2096,11 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name itcurves.infonetmytaxi:uiTiltGestures
+          @attr name itcurves.regencycab:uiTiltGestures
         */
         public static final int MapAttrs_uiTiltGestures = 10;
         /**
-          <p>This symbol is the offset where the {@link itcurves.infonetmytaxi.R.attr#uiZoomControls}
+          <p>This symbol is the offset where the {@link itcurves.regencycab.R.attr#uiZoomControls}
           attribute's value can be found in the {@link #MapAttrs} array.
 
 
@@ -2102,11 +2110,11 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name itcurves.infonetmytaxi:uiZoomControls
+          @attr name itcurves.regencycab:uiZoomControls
         */
         public static final int MapAttrs_uiZoomControls = 11;
         /**
-          <p>This symbol is the offset where the {@link itcurves.infonetmytaxi.R.attr#uiZoomGestures}
+          <p>This symbol is the offset where the {@link itcurves.regencycab.R.attr#uiZoomGestures}
           attribute's value can be found in the {@link #MapAttrs} array.
 
 
@@ -2116,11 +2124,11 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name itcurves.infonetmytaxi:uiZoomGestures
+          @attr name itcurves.regencycab:uiZoomGestures
         */
         public static final int MapAttrs_uiZoomGestures = 12;
         /**
-          <p>This symbol is the offset where the {@link itcurves.infonetmytaxi.R.attr#useViewLifecycle}
+          <p>This symbol is the offset where the {@link itcurves.regencycab.R.attr#useViewLifecycle}
           attribute's value can be found in the {@link #MapAttrs} array.
 
 
@@ -2130,11 +2138,11 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name itcurves.infonetmytaxi:useViewLifecycle
+          @attr name itcurves.regencycab:useViewLifecycle
         */
         public static final int MapAttrs_useViewLifecycle = 13;
         /**
-          <p>This symbol is the offset where the {@link itcurves.infonetmytaxi.R.attr#zOrderOnTop}
+          <p>This symbol is the offset where the {@link itcurves.regencycab.R.attr#zOrderOnTop}
           attribute's value can be found in the {@link #MapAttrs} array.
 
 
@@ -2144,7 +2152,7 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name itcurves.infonetmytaxi:zOrderOnTop
+          @attr name itcurves.regencycab:zOrderOnTop
         */
         public static final int MapAttrs_zOrderOnTop = 14;
         /** Attributes that can be used with a WalletFragmentOptions.
@@ -2153,10 +2161,10 @@ containing a value of this type.
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #WalletFragmentOptions_appTheme itcurves.infonetmytaxi:appTheme}</code></td><td></td></tr>
-           <tr><td><code>{@link #WalletFragmentOptions_environment itcurves.infonetmytaxi:environment}</code></td><td></td></tr>
-           <tr><td><code>{@link #WalletFragmentOptions_fragmentMode itcurves.infonetmytaxi:fragmentMode}</code></td><td></td></tr>
-           <tr><td><code>{@link #WalletFragmentOptions_fragmentStyle itcurves.infonetmytaxi:fragmentStyle}</code></td><td></td></tr>
+           <tr><td><code>{@link #WalletFragmentOptions_appTheme itcurves.regencycab:appTheme}</code></td><td></td></tr>
+           <tr><td><code>{@link #WalletFragmentOptions_environment itcurves.regencycab:environment}</code></td><td></td></tr>
+           <tr><td><code>{@link #WalletFragmentOptions_fragmentMode itcurves.regencycab:fragmentMode}</code></td><td></td></tr>
+           <tr><td><code>{@link #WalletFragmentOptions_fragmentStyle itcurves.regencycab:fragmentStyle}</code></td><td></td></tr>
            </table>
            @see #WalletFragmentOptions_appTheme
            @see #WalletFragmentOptions_environment
@@ -2167,7 +2175,7 @@ containing a value of this type.
             0x7f010016, 0x7f010017, 0x7f010018, 0x7f010019
         };
         /**
-          <p>This symbol is the offset where the {@link itcurves.infonetmytaxi.R.attr#appTheme}
+          <p>This symbol is the offset where the {@link itcurves.regencycab.R.attr#appTheme}
           attribute's value can be found in the {@link #WalletFragmentOptions} array.
 
 
@@ -2180,11 +2188,11 @@ containing a value of this type.
 <tr><td><code>holo_dark</code></td><td>0</td><td></td></tr>
 <tr><td><code>holo_light</code></td><td>1</td><td></td></tr>
 </table>
-          @attr name itcurves.infonetmytaxi:appTheme
+          @attr name itcurves.regencycab:appTheme
         */
         public static final int WalletFragmentOptions_appTheme = 0;
         /**
-          <p>This symbol is the offset where the {@link itcurves.infonetmytaxi.R.attr#environment}
+          <p>This symbol is the offset where the {@link itcurves.regencycab.R.attr#environment}
           attribute's value can be found in the {@link #WalletFragmentOptions} array.
 
 
@@ -2198,11 +2206,11 @@ containing a value of this type.
 <tr><td><code>sandbox</code></td><td>0</td><td></td></tr>
 <tr><td><code>strict_sandbox</code></td><td>2</td><td></td></tr>
 </table>
-          @attr name itcurves.infonetmytaxi:environment
+          @attr name itcurves.regencycab:environment
         */
         public static final int WalletFragmentOptions_environment = 1;
         /**
-          <p>This symbol is the offset where the {@link itcurves.infonetmytaxi.R.attr#fragmentMode}
+          <p>This symbol is the offset where the {@link itcurves.regencycab.R.attr#fragmentMode}
           attribute's value can be found in the {@link #WalletFragmentOptions} array.
 
 
@@ -2215,17 +2223,17 @@ containing a value of this type.
 <tr><td><code>buyButton</code></td><td>1</td><td></td></tr>
 <tr><td><code>selectionDetails</code></td><td>2</td><td></td></tr>
 </table>
-          @attr name itcurves.infonetmytaxi:fragmentMode
+          @attr name itcurves.regencycab:fragmentMode
         */
         public static final int WalletFragmentOptions_fragmentMode = 3;
         /**
-          <p>This symbol is the offset where the {@link itcurves.infonetmytaxi.R.attr#fragmentStyle}
+          <p>This symbol is the offset where the {@link itcurves.regencycab.R.attr#fragmentStyle}
           attribute's value can be found in the {@link #WalletFragmentOptions} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name itcurves.infonetmytaxi:fragmentStyle
+          @attr name itcurves.regencycab:fragmentStyle
         */
         public static final int WalletFragmentOptions_fragmentStyle = 2;
         /** Attributes that can be used with a WalletFragmentStyle.
@@ -2234,17 +2242,17 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #WalletFragmentStyle_buyButtonAppearance itcurves.infonetmytaxi:buyButtonAppearance}</code></td><td></td></tr>
-           <tr><td><code>{@link #WalletFragmentStyle_buyButtonHeight itcurves.infonetmytaxi:buyButtonHeight}</code></td><td></td></tr>
-           <tr><td><code>{@link #WalletFragmentStyle_buyButtonText itcurves.infonetmytaxi:buyButtonText}</code></td><td></td></tr>
-           <tr><td><code>{@link #WalletFragmentStyle_buyButtonWidth itcurves.infonetmytaxi:buyButtonWidth}</code></td><td></td></tr>
-           <tr><td><code>{@link #WalletFragmentStyle_maskedWalletDetailsBackground itcurves.infonetmytaxi:maskedWalletDetailsBackground}</code></td><td></td></tr>
-           <tr><td><code>{@link #WalletFragmentStyle_maskedWalletDetailsButtonBackground itcurves.infonetmytaxi:maskedWalletDetailsButtonBackground}</code></td><td></td></tr>
-           <tr><td><code>{@link #WalletFragmentStyle_maskedWalletDetailsButtonTextAppearance itcurves.infonetmytaxi:maskedWalletDetailsButtonTextAppearance}</code></td><td></td></tr>
-           <tr><td><code>{@link #WalletFragmentStyle_maskedWalletDetailsHeaderTextAppearance itcurves.infonetmytaxi:maskedWalletDetailsHeaderTextAppearance}</code></td><td></td></tr>
-           <tr><td><code>{@link #WalletFragmentStyle_maskedWalletDetailsLogoImageType itcurves.infonetmytaxi:maskedWalletDetailsLogoImageType}</code></td><td></td></tr>
-           <tr><td><code>{@link #WalletFragmentStyle_maskedWalletDetailsLogoTextColor itcurves.infonetmytaxi:maskedWalletDetailsLogoTextColor}</code></td><td></td></tr>
-           <tr><td><code>{@link #WalletFragmentStyle_maskedWalletDetailsTextAppearance itcurves.infonetmytaxi:maskedWalletDetailsTextAppearance}</code></td><td></td></tr>
+           <tr><td><code>{@link #WalletFragmentStyle_buyButtonAppearance itcurves.regencycab:buyButtonAppearance}</code></td><td></td></tr>
+           <tr><td><code>{@link #WalletFragmentStyle_buyButtonHeight itcurves.regencycab:buyButtonHeight}</code></td><td></td></tr>
+           <tr><td><code>{@link #WalletFragmentStyle_buyButtonText itcurves.regencycab:buyButtonText}</code></td><td></td></tr>
+           <tr><td><code>{@link #WalletFragmentStyle_buyButtonWidth itcurves.regencycab:buyButtonWidth}</code></td><td></td></tr>
+           <tr><td><code>{@link #WalletFragmentStyle_maskedWalletDetailsBackground itcurves.regencycab:maskedWalletDetailsBackground}</code></td><td></td></tr>
+           <tr><td><code>{@link #WalletFragmentStyle_maskedWalletDetailsButtonBackground itcurves.regencycab:maskedWalletDetailsButtonBackground}</code></td><td></td></tr>
+           <tr><td><code>{@link #WalletFragmentStyle_maskedWalletDetailsButtonTextAppearance itcurves.regencycab:maskedWalletDetailsButtonTextAppearance}</code></td><td></td></tr>
+           <tr><td><code>{@link #WalletFragmentStyle_maskedWalletDetailsHeaderTextAppearance itcurves.regencycab:maskedWalletDetailsHeaderTextAppearance}</code></td><td></td></tr>
+           <tr><td><code>{@link #WalletFragmentStyle_maskedWalletDetailsLogoImageType itcurves.regencycab:maskedWalletDetailsLogoImageType}</code></td><td></td></tr>
+           <tr><td><code>{@link #WalletFragmentStyle_maskedWalletDetailsLogoTextColor itcurves.regencycab:maskedWalletDetailsLogoTextColor}</code></td><td></td></tr>
+           <tr><td><code>{@link #WalletFragmentStyle_maskedWalletDetailsTextAppearance itcurves.regencycab:maskedWalletDetailsTextAppearance}</code></td><td></td></tr>
            </table>
            @see #WalletFragmentStyle_buyButtonAppearance
            @see #WalletFragmentStyle_buyButtonHeight
@@ -2264,7 +2272,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
             0x7f010022, 0x7f010023, 0x7f010024
         };
         /**
-          <p>This symbol is the offset where the {@link itcurves.infonetmytaxi.R.attr#buyButtonAppearance}
+          <p>This symbol is the offset where the {@link itcurves.regencycab.R.attr#buyButtonAppearance}
           attribute's value can be found in the {@link #WalletFragmentStyle} array.
 
 
@@ -2278,11 +2286,11 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 <tr><td><code>grayscale</code></td><td>2</td><td></td></tr>
 <tr><td><code>monochrome</code></td><td>3</td><td></td></tr>
 </table>
-          @attr name itcurves.infonetmytaxi:buyButtonAppearance
+          @attr name itcurves.regencycab:buyButtonAppearance
         */
         public static final int WalletFragmentStyle_buyButtonAppearance = 3;
         /**
-          <p>This symbol is the offset where the {@link itcurves.infonetmytaxi.R.attr#buyButtonHeight}
+          <p>This symbol is the offset where the {@link itcurves.regencycab.R.attr#buyButtonHeight}
           attribute's value can be found in the {@link #WalletFragmentStyle} array.
 
 
@@ -2303,11 +2311,11 @@ containing a value of this type.
 <tr><td><code>match_parent</code></td><td>-1</td><td></td></tr>
 <tr><td><code>wrap_content</code></td><td>-2</td><td></td></tr>
 </table>
-          @attr name itcurves.infonetmytaxi:buyButtonHeight
+          @attr name itcurves.regencycab:buyButtonHeight
         */
         public static final int WalletFragmentStyle_buyButtonHeight = 0;
         /**
-          <p>This symbol is the offset where the {@link itcurves.infonetmytaxi.R.attr#buyButtonText}
+          <p>This symbol is the offset where the {@link itcurves.regencycab.R.attr#buyButtonText}
           attribute's value can be found in the {@link #WalletFragmentStyle} array.
 
 
@@ -2322,11 +2330,11 @@ containing a value of this type.
 <tr><td><code>book_now</code></td><td>3</td><td></td></tr>
 <tr><td><code>donate_with_google</code></td><td>4</td><td></td></tr>
 </table>
-          @attr name itcurves.infonetmytaxi:buyButtonText
+          @attr name itcurves.regencycab:buyButtonText
         */
         public static final int WalletFragmentStyle_buyButtonText = 2;
         /**
-          <p>This symbol is the offset where the {@link itcurves.infonetmytaxi.R.attr#buyButtonWidth}
+          <p>This symbol is the offset where the {@link itcurves.regencycab.R.attr#buyButtonWidth}
           attribute's value can be found in the {@link #WalletFragmentStyle} array.
 
 
@@ -2347,11 +2355,11 @@ containing a value of this type.
 <tr><td><code>match_parent</code></td><td>-1</td><td></td></tr>
 <tr><td><code>wrap_content</code></td><td>-2</td><td></td></tr>
 </table>
-          @attr name itcurves.infonetmytaxi:buyButtonWidth
+          @attr name itcurves.regencycab:buyButtonWidth
         */
         public static final int WalletFragmentStyle_buyButtonWidth = 1;
         /**
-          <p>This symbol is the offset where the {@link itcurves.infonetmytaxi.R.attr#maskedWalletDetailsBackground}
+          <p>This symbol is the offset where the {@link itcurves.regencycab.R.attr#maskedWalletDetailsBackground}
           attribute's value can be found in the {@link #WalletFragmentStyle} array.
 
 
@@ -2359,11 +2367,11 @@ containing a value of this type.
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
 <p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
 "<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
-          @attr name itcurves.infonetmytaxi:maskedWalletDetailsBackground
+          @attr name itcurves.regencycab:maskedWalletDetailsBackground
         */
         public static final int WalletFragmentStyle_maskedWalletDetailsBackground = 6;
         /**
-          <p>This symbol is the offset where the {@link itcurves.infonetmytaxi.R.attr#maskedWalletDetailsButtonBackground}
+          <p>This symbol is the offset where the {@link itcurves.regencycab.R.attr#maskedWalletDetailsButtonBackground}
           attribute's value can be found in the {@link #WalletFragmentStyle} array.
 
 
@@ -2371,31 +2379,31 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
 <p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
 "<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
-          @attr name itcurves.infonetmytaxi:maskedWalletDetailsButtonBackground
+          @attr name itcurves.regencycab:maskedWalletDetailsButtonBackground
         */
         public static final int WalletFragmentStyle_maskedWalletDetailsButtonBackground = 8;
         /**
-          <p>This symbol is the offset where the {@link itcurves.infonetmytaxi.R.attr#maskedWalletDetailsButtonTextAppearance}
+          <p>This symbol is the offset where the {@link itcurves.regencycab.R.attr#maskedWalletDetailsButtonTextAppearance}
           attribute's value can be found in the {@link #WalletFragmentStyle} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name itcurves.infonetmytaxi:maskedWalletDetailsButtonTextAppearance
+          @attr name itcurves.regencycab:maskedWalletDetailsButtonTextAppearance
         */
         public static final int WalletFragmentStyle_maskedWalletDetailsButtonTextAppearance = 7;
         /**
-          <p>This symbol is the offset where the {@link itcurves.infonetmytaxi.R.attr#maskedWalletDetailsHeaderTextAppearance}
+          <p>This symbol is the offset where the {@link itcurves.regencycab.R.attr#maskedWalletDetailsHeaderTextAppearance}
           attribute's value can be found in the {@link #WalletFragmentStyle} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name itcurves.infonetmytaxi:maskedWalletDetailsHeaderTextAppearance
+          @attr name itcurves.regencycab:maskedWalletDetailsHeaderTextAppearance
         */
         public static final int WalletFragmentStyle_maskedWalletDetailsHeaderTextAppearance = 5;
         /**
-          <p>This symbol is the offset where the {@link itcurves.infonetmytaxi.R.attr#maskedWalletDetailsLogoImageType}
+          <p>This symbol is the offset where the {@link itcurves.regencycab.R.attr#maskedWalletDetailsLogoImageType}
           attribute's value can be found in the {@link #WalletFragmentStyle} array.
 
 
@@ -2408,11 +2416,11 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 <tr><td><code>classic</code></td><td>1</td><td></td></tr>
 <tr><td><code>monochrome</code></td><td>2</td><td></td></tr>
 </table>
-          @attr name itcurves.infonetmytaxi:maskedWalletDetailsLogoImageType
+          @attr name itcurves.regencycab:maskedWalletDetailsLogoImageType
         */
         public static final int WalletFragmentStyle_maskedWalletDetailsLogoImageType = 10;
         /**
-          <p>This symbol is the offset where the {@link itcurves.infonetmytaxi.R.attr#maskedWalletDetailsLogoTextColor}
+          <p>This symbol is the offset where the {@link itcurves.regencycab.R.attr#maskedWalletDetailsLogoTextColor}
           attribute's value can be found in the {@link #WalletFragmentStyle} array.
 
 
@@ -2423,17 +2431,17 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name itcurves.infonetmytaxi:maskedWalletDetailsLogoTextColor
+          @attr name itcurves.regencycab:maskedWalletDetailsLogoTextColor
         */
         public static final int WalletFragmentStyle_maskedWalletDetailsLogoTextColor = 9;
         /**
-          <p>This symbol is the offset where the {@link itcurves.infonetmytaxi.R.attr#maskedWalletDetailsTextAppearance}
+          <p>This symbol is the offset where the {@link itcurves.regencycab.R.attr#maskedWalletDetailsTextAppearance}
           attribute's value can be found in the {@link #WalletFragmentStyle} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name itcurves.infonetmytaxi:maskedWalletDetailsTextAppearance
+          @attr name itcurves.regencycab:maskedWalletDetailsTextAppearance
         */
         public static final int WalletFragmentStyle_maskedWalletDetailsTextAppearance = 4;
     };

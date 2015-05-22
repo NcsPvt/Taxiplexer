@@ -41,6 +41,7 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.OutputStreamWriter;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -73,8 +74,10 @@ import java.util.concurrent.TimeoutException;
 
 import org.abtollc.sdk.AbtoApplication;
 import org.abtollc.sdk.AbtoPhone;
+import org.abtollc.sdk.AbtoPhoneCfg;
 import org.abtollc.sdk.OnIncomingCallListener;
 import org.abtollc.sdk.OnInitializeListener;
+import org.abtollc.sdk.OnNetworkEventListener;
 import org.abtollc.sdk.OnRegistrationListener;
 import org.abtollc.utils.codec.Codec;
 import org.apache.http.util.ByteArrayBuffer;
@@ -87,8 +90,11 @@ import org.ksoap2.serialization.SoapSerializationEnvelope;
 import org.ksoap2.transport.HttpTransportSE;
 import org.xmlpull.v1.XmlPullParserException;
 
+import android.accounts.Account;
+import android.accounts.AccountManager;
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.app.ActivityManager;
 import android.app.AlarmManager;
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -100,7 +106,9 @@ import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.content.ActivityNotFoundException;
 import android.content.BroadcastReceiver;
+import android.content.ContentResolver;
 import android.content.Context;
+import android.content.ContextWrapper;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
@@ -124,6 +132,7 @@ import android.media.MediaPlayer;
 import android.media.SoundPool;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.net.TrafficStats;
 import android.net.Uri;
 import android.net.wifi.WifiConfiguration;
 import android.net.wifi.WifiManager;
@@ -387,7 +396,7 @@ public class TaxiPlexer extends Activity
     protected static ArrayList<String> matches;
     private String[] bidResponse = null;
     List<String> TripNumbers = new ArrayList<String>();
-    public ArrayList<WallTrip> WALLTrips = new ArrayList<WallTrip>();
+    public static ArrayList<WallTrip> WALLTrips = new ArrayList<WallTrip>();
     public ArrayList<WallTrip> TempWALLTrips = new ArrayList<WallTrip>();
 
     public Typeface _Jameel_Noori_Nastaleeq_Kasheeda;
@@ -412,7 +421,7 @@ public class TaxiPlexer extends Activity
     private EditText ttfTotal;
     private EditText ttfFare;
     private EditText ttfCustomerPhoneNo;
-    private EditText ttfVehicleID, TopUpCardNo;
+    private EditText ttfVehicleID, TopUpCardNo, TopUpDriverID;
     private EditText composeMsg;
     private EditText ttfHotspotName;
     private EditText ttfHotspotPassword;
@@ -467,7 +476,7 @@ public class TaxiPlexer extends Activity
     private Button NoShowButton;
     private Button callOutButton;
     private Button btnLogin;
-    private Button btnEnableHotSpot;
+    private Button btnEnableHotSpot, btnAccountLogin;
     private Button PickedButton;
     private Button DroppedButton;
     private Button bookAVLButton;
@@ -590,6 +599,7 @@ public class TaxiPlexer extends Activity
 
     private ConnectivityManager cnnxManager;
     private long lastUpdated;
+    private long lastUpdatedEmg = 0;
     private long lastUpdated_MWall;
     private static long break_status = 0;
     private static boolean setMeterData = true;
@@ -779,6 +789,11 @@ public class TaxiPlexer extends Activity
     SoundPool soundPool = null;
 
     DBHelper dbh = null;
+
+
+
+    String MeterState = null;
+
     /*--------------------------------------------------------------TextToSpeech.OnInitListener-----------------------------------------------------*/
     // Implements TextToSpeech.OnInitListener.
     public void onInit(int status) {
@@ -817,7 +832,7 @@ public class TaxiPlexer extends Activity
             handleException("[Initializing Text Speech Listener]" + "[onInit]" + "[" + ex.getLocalizedMessage() + "]");
         }
     }
-
+     CheckBox softMeter;
     /*--------------------------------------------------------------Dialog onCreate-----------------------------------------------------------------*/
     @SuppressWarnings("deprecation")
     @SuppressLint("NewApi")
@@ -876,7 +891,7 @@ public class TaxiPlexer extends Activity
                     final CheckBox audiojackperipheral = (CheckBox) v.findViewById(R.id.audiojackperipheral);
                     final CheckBox ventiveAJR = (CheckBox) v.findViewById(R.id.ventiveAJR);
                     final CheckBox IDTech = (CheckBox) v.findViewById(R.id.IDTech);
-                    final CheckBox softMeter = (CheckBox) v.findViewById(R.id.SoftMeter);
+                     softMeter = (CheckBox) v.findViewById(R.id.SoftMeter);
 
                     BT_Meter.setTextSize(miscFont);
                     Pulsar_Meter.setTextSize(miscFont);
@@ -1315,6 +1330,9 @@ public class TaxiPlexer extends Activity
             pref.edit().putInt("FontPosition", 4).commit();
         }
 
+
+
+
         try {
             // WindowManager.LayoutParams lp = getWindow().getAttributes();
             // lp.screenBrightness = 1.0f; // brightness 1=MAX 0=MIN;
@@ -1376,6 +1394,9 @@ public class TaxiPlexer extends Activity
         }
         super.onCreate(savedInstanceState);
     }
+
+
+
     /*-------------------------------------------------------------myOnCreate-----------------------------------------------------------------------*/
     public void myOnCreate() {
 
@@ -1386,7 +1407,7 @@ public class TaxiPlexer extends Activity
         manifestSound = MediaPlayer.create(this, R.raw.manifest);
 
         soundPool = new SoundPool(10, AudioManager.STREAM_SYSTEM, 5);
-        tripSoundMyTaxi = soundPool.load(this, R.raw.trip_offer, 1);
+        tripSoundMyTaxi = soundPool.load(this, R.raw.trip_offer1, 1);
         tripSound = soundPool.load(this, R.raw.tripdetail, 1);
         totalBreaksTaken = -1;
         // Check to see if a recognition activity is present
@@ -3545,6 +3566,7 @@ public class TaxiPlexer extends Activity
                             if(!odoMeterDialog.isShowing())
                             odoMeterDialog.show();
                         }
+
                     } else {
                         if (AVL_Service.NotAllowActionIfAway.charAt(0) == '0' || AVL_Service.locManager.isProviderEnabled(LocationManager.GPS_PROVIDER) == false) {
                             PickupUPDistanceDialog = new AlertDialog.Builder(TaxiPlexer.this).setIcon(android.R.drawable.ic_dialog_alert).setTitle(
@@ -3634,6 +3656,7 @@ public class TaxiPlexer extends Activity
                                                 if(!odoMeterDialog.isShowing())
                                                     odoMeterDialog.show();
                                             }
+
                                         } // onClick
 
                                     }).setNegativeButton(Farsi.Convert(getResources().getString(R.string.No)), new DialogInterface.OnClickListener() {
@@ -3970,6 +3993,8 @@ public class TaxiPlexer extends Activity
                 if(!odoMeterDialog.isShowing())
                     odoMeterDialog.show();
             }
+
+
             if (AVL_Service.pref.getBoolean("BlueBambooDevice", false))
                 showPrinterDialog();
 
@@ -4605,6 +4630,9 @@ public class TaxiPlexer extends Activity
                                     .toString()
                                     .trim()
                                     .equalsIgnoreCase(""))) {
+
+
+
                                 handleShowProgress(Farsi.Convert(getResources().getString(R.string.Login_Balance_Check)));
                             final RestClient client = new RestClient(AVL_Service.InLoadAPI_URL + "/PPV/CheckAllowedBalance");
                             try {
@@ -4620,6 +4648,7 @@ public class TaxiPlexer extends Activity
                                 @Override
                                 public void run() {
                                     try {
+
                                         client.Execute(RestClient.RequestMethod.POST);
                                         final String response = client.getResponse();
                                         if (client.getResponseCode() == 200) {
@@ -4630,12 +4659,49 @@ public class TaxiPlexer extends Activity
 
                                                 runOnUiThread(new Runnable() {
                                                     public void run() {
+                                                        boolean activity = false;
+                                                        try {
                                                         if (isAllowed) {
                                                             AVL_Service.pref.edit().putString("LVehicleID", ttfVehicleID.getText().toString().trim()).commit();
                                                             AVL_Service.pref.edit().putString("LDriverID", ttfUserid.getText().toString().trim()).commit();
                                                             AVL_Service.pref.edit().putString("LPin", ttfPassword.getText().toString().trim()).commit();
+                                                           if(softMeter != null) {
+                                                               if (softMeter.isChecked()) {
+                                                                   ActivityManager mActivityManager = (ActivityManager) TaxiPlexer.this.getSystemService(ACTIVITY_SERVICE);
+                                                                   boolean b = false;
+                                                                   final List<ActivityManager.RunningAppProcessInfo> processInfos = mActivityManager.getRunningAppProcesses();
+                                                                   for (ActivityManager.RunningAppProcessInfo processInfo : processInfos) {
+                                                                       if (processInfo.processName.equalsIgnoreCase("com.example.skhalid.softmetersimulation")) {
+                                                                           b = true;
+                                                                           break;
+                                                                       }
+                                                                   }
+                                                                   if (!b) {
+                                                                       activity = true;
+                                                                       PackageManager pm = getPackageManager();
+                                                                       Intent intent = pm.getLaunchIntentForPackage("com.example.skhalid.softmetersimulation");
+                                                                       startActivity(intent);
+                                                                   }
+                                                               }
+                                                           } else if (AVL_Service.pref.getBoolean("softMeter", false)){
+                                                               ActivityManager mActivityManager = (ActivityManager) TaxiPlexer.this.getSystemService(ACTIVITY_SERVICE);
+                                                               boolean b = false;
+                                                               final List<ActivityManager.RunningAppProcessInfo> processInfos = mActivityManager.getRunningAppProcesses();
+                                                               for (ActivityManager.RunningAppProcessInfo processInfo : processInfos) {
+                                                                   if (processInfo.processName.equalsIgnoreCase("com.example.skhalid.softmetersimulation")) {
+                                                                       b = true;
+                                                                       break;
+                                                                   }
+                                                               }
+                                                               if (!b) {
+                                                                   activity = true;
+                                                                   PackageManager pm = getPackageManager();
+                                                                   Intent intent = pm.getLaunchIntentForPackage("com.example.skhalid.softmetersimulation");
+                                                                   startActivity(intent);
+                                                               }
+                                                           }
 
-
+                                                            activity = false;
                                                             Log.w(getClass().getSimpleName(), "Login button was pressed");
                                                             DriverPin = ttfPassword.getText().toString();
                                                             checkforloginresp = false;
@@ -4759,19 +4825,59 @@ public class TaxiPlexer extends Activity
                                                         } else {
                                                             showToastMessageFromString(Farsi.Convert(getResources().getString(R.string.balanceWarning)));
                                                         }
+
+                                                    }catch (Exception e) {
+                                                            if(activity){
+                                                                AlertDialog.Builder builder = new AlertDialog.Builder(TaxiPlexer.this);
+                                                                builder.setIcon(android.R.drawable.ic_dialog_alert).setTitle(Farsi.Convert(getResources().getString(R.string.Alert))).setMessage(
+                                                                        Farsi.Convert(getResources().getString(R.string.Install_Try_Again))).setPositiveButton(
+                                                                        Farsi.Convert(getResources().getString(R.string.ok)),
+                                                                        new DialogInterface.OnClickListener() {
+                                                                            @Override
+                                                                            public void onClick(DialogInterface dialog, int which) {
+                                                                                dialog.dismiss();
+                                                                            } // onClick
+
+                                                                        });
+                                                                AlertDialog alert = builder.create();
+                                                                alert.show();
+
+                                                                dialogFontSize(alert);
+                                                                ttfPassword.setText("");
+                                                            }else
+                                                        exception("[Exception on loginBalanceCheck]" + "[on click login button]" + "[" + e.getLocalizedMessage() + "]");
+                                                    }
                                                     }
                                                 });
                                             }
                                         }
 
 
-                                    } catch (Exception e) {
-                                        exception("[Exception on discountbtnclick]" + "[createpaymentview]" + "[" + e.getLocalizedMessage() + "]");
+                                    } catch (NameNotFoundException e){
+                                        AlertDialog.Builder builder = new AlertDialog.Builder(TaxiPlexer.this);
+                                        builder.setIcon(android.R.drawable.ic_dialog_alert).setTitle(Farsi.Convert(getResources().getString(R.string.Alert))).setMessage(
+                                                Farsi.Convert(getResources().getString(R.string.Install_Try_Again))).setPositiveButton(
+                                                Farsi.Convert(getResources().getString(R.string.ok)),
+                                                new DialogInterface.OnClickListener() {
+                                                    @Override
+                                                    public void onClick(DialogInterface dialog, int which) {
+                                                        dialog.dismiss();
+                                                    } // onClick
+
+                                                });
+                                        AlertDialog alert = builder.create();
+                                        alert.show();
+
+                                        dialogFontSize(alert);
+                                        ttfPassword.setText("");
+                                    }catch (Exception e) {
+                                        exception("[Exception on loginBalanceCheck]" + "[on click login button]" + "[" + e.getLocalizedMessage() + "]");
                                     }
                                     hideProgressDialog();
                                 }// run
 
                             }.start();
+
                         } else
                                 showToastMessage(R.string.BlankVehicleDriver);
 
@@ -4950,6 +5056,38 @@ public class TaxiPlexer extends Activity
 
             loginRow.addView(btnLogin);
             loginRow.addView(btnEnableHotSpot);
+
+            final LinearLayout AccountRow = new LinearLayout(this);
+            AccountRow.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT));
+            AccountRow.setOrientation(LinearLayout.HORIZONTAL);
+            AccountRow.setGravity(Gravity.LEFT);
+
+            btnAccountLogin = new Button(this);
+            if (AVL_Service.pref.getString("AppLanguage", "").equalsIgnoreCase("ur")) {
+                btnAccountLogin.setTypeface(_Jameel_Noori_Nastaleeq_Kasheeda);
+                btnAccountLogin.setText(getResources().getString(R.string.Accounts));
+            } else
+                btnAccountLogin.setText(Farsi.Convert(getResources().getString(R.string.Accounts)));
+
+            btnAccountLogin.setLayoutParams(new LayoutParams(LayoutParams.WRAP_CONTENT, txtHeight));
+            btnAccountLogin.setGravity(Gravity.CENTER);
+            btnAccountLogin.setTextSize(20);
+            btnAccountLogin.setTypeface(Typeface.DEFAULT_BOLD);
+            btnAccountLogin.setVisibility(View.INVISIBLE);
+
+            btnAccountLogin.setOnClickListener(new OnClickListener() {
+
+                @Override
+                public void onClick(View v) {
+                    tripRejectDialog = new AlertDialog.Builder(TaxiPlexer.this).setView(createAccountsTabBeforeLogin()).setCancelable(false).create();
+                    tripRejectDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                    tripRejectDialog.show();
+                }
+            });
+
+
+
+            AccountRow.addView(btnAccountLogin);
             // HandShakeRow.addView(btnHandShake);
             final LinearLayout statusRow = new LinearLayout(this);
             statusRow.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT));
@@ -5003,6 +5141,7 @@ public class TaxiPlexer extends Activity
             panel.addView(nameRow);
             panel.addView(passwordRow);
             panel.addView(loginRow);
+            panel.addView(AccountRow);
 
             panel.addView(contain);
 
@@ -5838,6 +5977,7 @@ public class TaxiPlexer extends Activity
                                 if (currentTrip.state.equalsIgnoreCase(States.ACCEPTED)) {
                                     sendTripResponse(States.IRTPU);
                                     enableTripView();
+                                    manifestSound.start();
 
                                 } else if (currentTrip.state.equalsIgnoreCase(States.IRTPU)) {
                                     disableTripView();
@@ -7835,9 +7975,9 @@ public class TaxiPlexer extends Activity
 
         if (AVL_Service.pref.getString("AppLanguage", "").equalsIgnoreCase("ur")) {
             Avaiable.setTypeface(_Jameel_Noori_Nastaleeq_Kasheeda);
-            Avaiable.setText(getResources().getString(R.string.Available));
+            Avaiable.setText(getResources().getString(R.string.TopUpView));
         } else
-            Avaiable.setText(Farsi.Convert(getResources().getString(R.string.Available)));
+            Avaiable.setText(Farsi.Convert(getResources().getString(R.string.TopUpView)));
 
         Avaiable.setTextSize(labelFont);
         Avaiable.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT, 0.25f));
@@ -7968,6 +8108,183 @@ public class TaxiPlexer extends Activity
 
         scroll.addView(panel);
         linear.addView(scroll);
+
+        return linear;
+
+    }
+
+
+    @SuppressWarnings("deprecation")
+    @SuppressLint("NewApi")
+    private ViewGroup createAccountsTabBeforeLogin() {
+        SetApplicationLocal();
+        // TopupCustomerBalance_Driver();
+
+        LinearLayout panel = new LinearLayout(this);
+        panel.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT, 1));
+        panel.setOrientation(LinearLayout.VERTICAL);
+
+        DisplayMetrics metrics = new DisplayMetrics();
+        getWindowManager().getDefaultDisplay().getMetrics(metrics);
+        int h = metrics.heightPixels; // 1280
+        int w = metrics.widthPixels; // 72
+
+
+
+        View line = new View(this);
+        line.setBackgroundColor(Color.DKGRAY);
+        line.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT, 1));
+
+        final LinearLayout Avaliable_Row = new LinearLayout(this);
+        Avaliable_Row.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT));
+        Avaliable_Row.setOrientation(LinearLayout.HORIZONTAL);
+        // AVL.setPadding(0, screenHeight / 30, 0, 0);
+
+        TextView Avaiable = new TextView(this);
+
+        if (AVL_Service.pref.getString("AppLanguage", "").equalsIgnoreCase("ur")) {
+            Avaiable.setTypeface(_Jameel_Noori_Nastaleeq_Kasheeda);
+            Avaiable.setText(getResources().getString(R.string.Available));
+        } else
+            Avaiable.setText(Farsi.Convert(getResources().getString(R.string.Available)));
+
+        Avaiable.setTextSize(labelFont);
+        Avaiable.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT, 0.25f));
+
+        LinearLayout.LayoutParams params2 = (LinearLayout.LayoutParams)Avaiable.getLayoutParams();
+        params2.setMargins(20, 10, 20, 0); //substitute parameters for left, top, right, bottom
+        Avaiable.setLayoutParams(params2);
+        Avaiable.setGravity(Gravity.CENTER_HORIZONTAL);
+
+        Avaliable_Row.addView(Avaiable);
+
+        final LinearLayout DriverRow = new LinearLayout(this);
+        DriverRow.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT));
+        DriverRow.setOrientation(LinearLayout.HORIZONTAL);
+
+        TopUpDriverID = new EditText(this);
+        TopUpDriverID.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT, 0.7f));
+        LinearLayout.LayoutParams params = (LinearLayout.LayoutParams)TopUpDriverID.getLayoutParams();
+        params.setMargins(20, 10, 20, 0); //substitute parameters for left, top, right, bottom
+        TopUpDriverID.setLayoutParams(params);
+        TopUpDriverID.setInputType(InputType.TYPE_CLASS_NUMBER);
+        // ET_CardNumber.setFilters(mmyyFilter);
+        TopUpDriverID.setSingleLine();
+        TopUpDriverID.setHint("Driver Number");
+        TopUpDriverID.setText("");
+        TopUpDriverID.setTextSize(labelFont - 1);
+        TopUpDriverID.setTypeface(Typeface.DEFAULT_BOLD);
+
+        DriverRow.addView(TopUpDriverID);
+
+
+        final LinearLayout CardRow = new LinearLayout(this);
+        CardRow.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT));
+        CardRow.setOrientation(LinearLayout.HORIZONTAL);
+
+        TopUpCardNo = new EditText(this);
+        TopUpCardNo.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT, 0.7f));
+        LinearLayout.LayoutParams params1 = (LinearLayout.LayoutParams)TopUpCardNo.getLayoutParams();
+        params1.setMargins(20, 10, 20, 0); //substitute parameters for left, top, right, bottom
+        TopUpCardNo.setLayoutParams(params1);
+        TopUpCardNo.setInputType(InputType.TYPE_CLASS_NUMBER);
+        // ET_CardNumber.setFilters(mmyyFilter);
+        TopUpCardNo.setSingleLine();
+        TopUpCardNo.setHint("Card Number");
+        TopUpCardNo.setText("");
+        TopUpCardNo.setTextSize(labelFont - 1);
+        TopUpCardNo.setTypeface(Typeface.DEFAULT_BOLD);
+
+        CardRow.addView(TopUpCardNo);
+
+        final LinearLayout LoadButton_Row = new LinearLayout(this);
+        LoadButton_Row.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT));
+        LinearLayout.LayoutParams params3 = (LinearLayout.LayoutParams)LoadButton_Row.getLayoutParams();
+        params3.setMargins(20, 10, 20, 0); //substitute parameters for left, top, right, bottom
+        LoadButton_Row.setLayoutParams(params3);
+        LoadButton_Row.setOrientation(LinearLayout.HORIZONTAL);
+
+        Button btnCredit = new Button(this);
+        if (AVL_Service.pref.getString("AppLanguage", "").equalsIgnoreCase("ur")) {
+            btnCredit.setTypeface(_Jameel_Noori_Nastaleeq_Kasheeda);
+            btnCredit.setText(getResources().getString(R.string.Credit));
+        } else
+            btnCredit.setText(Farsi.Convert(getResources().getString(R.string.Credit)));
+
+        btnCredit.setTextSize(buttonFont);
+        btnCredit.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT, 0.33f));
+        btnCredit.setGravity(Gravity.CENTER);
+        drawable = btnCredit.getBackground();
+        drawable.setColorFilter(Color.parseColor(AVL_Service.HEXColor), android.graphics.PorterDuff.Mode.SRC_IN);
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.JELLY_BEAN)
+            btnCredit.setBackground(drawable);
+        else
+            btnCredit.setBackgroundDrawable(drawable);
+        btnCredit.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                AVL_Service.pref.edit().putString("TopUpCardNo", TopUpCardNo.getText().toString()).commit();
+                TopupCustomerBalanceBeforeLogin();
+            }
+        });
+
+        Button btnCancel = new Button(this);
+        if (AVL_Service.pref.getString("AppLanguage", "").equalsIgnoreCase("ur")) {
+            btnCancel.setTypeface(_Jameel_Noori_Nastaleeq_Kasheeda);
+            btnCancel.setText(getResources().getString(R.string.Cancel));
+        } else
+            btnCancel.setText(Farsi.Convert(getResources().getString(R.string.Cancel)));
+
+        btnCancel.setTextSize(buttonFont);
+        // btnCancel.setTypeface(Typeface.DEFAULT_BOLD);
+        btnCancel.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT, 0.33f));
+        btnCancel.setGravity(Gravity.CENTER);
+        drawable = btnCancel.getBackground();
+        drawable.setColorFilter(Color.parseColor(AVL_Service.HEXColor), android.graphics.PorterDuff.Mode.SRC_IN);
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.JELLY_BEAN)
+            btnCancel.setBackground(drawable);
+        else
+            btnCancel.setBackgroundDrawable(drawable);
+        btnCancel.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                tripRejectDialog.dismiss();
+            }
+        });
+
+        LoadButton_Row.addView(btnCredit);
+        LoadButton_Row.addView(btnCancel);
+
+
+
+        panel.addView(Avaliable_Row);
+        panel.addView(DriverRow);
+        panel.addView(CardRow);
+        panel.addView(LoadButton_Row);
+
+        LinearLayout linear = new LinearLayout(this);
+        linear.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT));
+
+//        if (h == 1776 && w == 1080) {
+//
+//            linear.setPadding(0, screenHeight / 20, 0, 0);
+//
+//        } else if (h == 1280 && w == 720) {
+//            linear.setPadding(0, screenHeight / 40, 0, 0);
+//
+//        }
+//
+//        else {
+//            linear.setPadding(0, 0, 0, 0);
+//
+//        }
+
+//        linear.setScrollContainer(true);
+//        ScrollView scroll = new ScrollView(this);
+//        scroll.setPadding(0, 0, 0, 0);
+//        scroll.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT));
+//        scroll.setFillViewport(true);
+
+//        scroll.addView(panel);
+        linear.addView(panel);
 
         return linear;
 
@@ -9219,6 +9536,8 @@ public class TaxiPlexer extends Activity
             tripStartedfromSoftMeter = false;
             AVL_Service.sendMessageToSoftMeter(currentTrip.ClassOfServiceID, MsgType.MSG_QTD, AVL_Service.pref.getString("VehicleID", "Unknown"), AVL_Service.getDeviceID());
         }
+
+
         final RelativeLayout main = new RelativeLayout(this);
         RelativeLayout.LayoutParams Params = new RelativeLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT);
         main.setLayoutParams(Params);
@@ -10119,6 +10438,8 @@ public class TaxiPlexer extends Activity
         else
             callOutButton.setBackgroundDrawable(drawable);
 
+
+
         callOutButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
 
@@ -10126,6 +10447,9 @@ public class TaxiPlexer extends Activity
                         .valueOf(AVL_Service.pref.getString("LastLongitude", "0")), Double.valueOf(currentTrip.PUlat), Double.valueOf(currentTrip.PUlong));
                 if (distance < Double.valueOf(AVL_Service.allowableCallOutDistance) || Double.valueOf(AVL_Service.allowableCallOutDistance) == 0) {
                     if (currentTrip.state.equalsIgnoreCase(States.IRTPU) || currentTrip.state.equalsIgnoreCase(States.ATLOCATION)) {
+
+
+
                         if (AVL_Service.SDEnableCentralizedAsteriskService) {
                             Callout_Response resp = new Callout_Response();
                             resp.execute();
@@ -10202,6 +10526,7 @@ public class TaxiPlexer extends Activity
                                         (AVL_Service.SDUnitOfDistance.equalsIgnoreCase("mile")) ? String.format(Farsi.Convert(getResources().getString(R.string.UnableToPerformCallOutMiles)), dFormat
                                                 .format(distance / 1609)) : String.format(Farsi.Convert(getResources().getString(R.string.UnableToPerformCallOutKms)), dFormat.format(distance / 1000)),
                                         Toast.LENGTH_SHORT).show();
+
                                 if (AVL_Service.SDEnableCentralizedAsteriskService) {
                                     Callout_Response resp = new Callout_Response();
                                     resp.execute();
@@ -13333,10 +13658,15 @@ public class TaxiPlexer extends Activity
 
         if (AVL_Service.pref.getString("AppLanguage", "").equalsIgnoreCase("ur")) {
             voucherBtn.setTypeface(_Jameel_Noori_Nastaleeq_Kasheeda);
+            if(AVL_Service.PPV_UsePPVModule)
+            voucherBtn.setText(getResources().getString(R.string.Customer_Account));
+            else
             voucherBtn.setText(getResources().getString(R.string.Voucher));
         } else {
-
-            voucherBtn.setText(Farsi.Convert(getResources().getString(R.string.Voucher)));
+            if(AVL_Service.PPV_UsePPVModule)
+            voucherBtn.setText(Farsi.Convert(getResources().getString(R.string.Customer_Account)));
+            else
+                voucherBtn.setText(Farsi.Convert(getResources().getString(R.string.Voucher)));
             voucherBtn.setTypeface(Typeface.DEFAULT_BOLD);
         }
 
@@ -15110,11 +15440,12 @@ public class TaxiPlexer extends Activity
                     // if (AVL_Service.PPV_UsePPVModule)
                     // GetBalanceAndBlackListStatus();
                 } else if (tabId.equalsIgnoreCase("WallTrips")) {
-                    if (AVL_Service.pref.getBoolean("ShowWallTrips", true)) {
-                        if (!AVL_Service.showManifestWallOnSD)
-                            fetchWallTrips(true, false);
-                    } else if (AVL_Service.showManifestWallOnSD)
-                        fetchManifestWallTrips(true);
+//                    if (AVL_Service.pref.getBoolean("ShowWallTrips", true)) {
+//                        if (!AVL_Service.showManifestWallOnSD)
+////                            fetchWallTrips(true, false);
+//                            isAppActive = true;
+//                    } else if (AVL_Service.showManifestWallOnSD)
+//                        fetchManifestWallTrips(true);
                     isAppActive = true;
 
                 } else if (tabId.equalsIgnoreCase("Msgs")) {
@@ -15247,6 +15578,18 @@ public class TaxiPlexer extends Activity
                 tv4.setTypeface(_Jameel_Noori_Nastaleeq_Kasheeda);
                 tv4.setText(getResources().getString(R.string.Wall));
             }
+            Account newAccount = new Account("dummyaccount", "itcurves.ncs.provider");
+            AccountManager accountManager = (AccountManager) this.getSystemService(ACCOUNT_SERVICE);
+            accountManager.addAccountExplicitly(newAccount, null, null);
+            ContentResolver mResolver= getContentResolver();
+            ContentResolver.setIsSyncable(newAccount, "itcurves.ncs.provider", 1);
+            ContentResolver.setSyncAutomatically(newAccount, "itcurves.ncs.provider", true);
+
+            ContentResolver.addPeriodicSync(
+                    newAccount,
+                    "itcurves.ncs.provider",
+                    Bundle.EMPTY,
+                    30);
         } else if (AVL_Service.showManifestWallOnSD) {
             tabSpec = tabHost.newTabSpec("WallTrips");
             tabSpec.setIndicator(Farsi.Convert(getResources().getString(R.string.Wall)), getResources().getDrawable(R.drawable.routes));
@@ -15266,6 +15609,18 @@ public class TaxiPlexer extends Activity
                 tv5.setTypeface(_Jameel_Noori_Nastaleeq_Kasheeda);
                 tv5.setText(getResources().getString(R.string.Wall));
             }
+            Account newAccount = new Account("dummyaccount", "itcurves.ncs.provider");
+            AccountManager accountManager = (AccountManager) this.getSystemService(ACCOUNT_SERVICE);
+            accountManager.addAccountExplicitly(newAccount, null, null);
+            ContentResolver mResolver= getContentResolver();
+            ContentResolver.setIsSyncable(newAccount, "itcurves.ncs.provider", 1);
+            ContentResolver.setSyncAutomatically(newAccount, "itcurves.ncs.provider", true);
+
+            ContentResolver.addPeriodicSync(
+                    newAccount,
+                    "itcurves.ncs.provider",
+                    Bundle.EMPTY,
+                    30);
         }
 
         // badge = new BadgeView(this, tabWidget, wallIndex);
@@ -15395,7 +15750,7 @@ public class TaxiPlexer extends Activity
 
                 isSortWallTrips1Pressed = true;
                 isSortWallTrips2Pressed = false;
-                fetchWallTrips(true, true);
+//                fetchWallTrips(true, true);
                 new Thread(new Runnable() {
                     public void run() {
                         sortWallTrips();
@@ -15436,7 +15791,7 @@ public class TaxiPlexer extends Activity
                 isSortWallTrips1Pressed = false;
                 isSortWallTrips2Pressed = true;
 
-                fetchWallTrips(true, false);
+//                fetchWallTrips(true, false);
 
             }
         });
@@ -15501,16 +15856,16 @@ public class TaxiPlexer extends Activity
 
             public void onTabChanged(final String tabId) {
 
-                if (tabId.equalsIgnoreCase("SubWallTrips")) {
-                    fetchWallTrips(true, false);
-                    isAppActive = true;
-
-                } else if (tabId.equalsIgnoreCase("ManifestWall")) {
-                    fetchManifestWallTrips(true);
-                    isAppActive = true;
-
-                }
-
+//                if (tabId.equalsIgnoreCase("SubWallTrips")) {
+////                    fetchWallTrips(true, false);
+//                    isAppActive = true;
+//
+//                } else if (tabId.equalsIgnoreCase("ManifestWall")) {
+//                    fetchManifestWallTrips(true);
+//                    isAppActive = true;
+//
+//                }
+                isAppActive = true;
             }// onTabChanged
         });
 
@@ -16003,6 +16358,11 @@ public class TaxiPlexer extends Activity
                                 contain.setVisibility(View.VISIBLE);
                             else
                                 contain.setVisibility(View.GONE);
+                            if(AVL_Service.PPV_UsePPVModule){
+                                AVL_Service.pref.edit().putBoolean("softMeter", true).commit();
+                                btnAccountLogin.setVisibility(View.VISIBLE);
+
+                            }
                             if ((!AVL_Service.pref.getString("EULADate", "0").equals(ddMMyyyy.format(new Date()))) || !(AVL_Service.pref.getString("LastLoginDriver", "0").equals(AVL_Service.pref
                                     .getString("DriverID", "0")))) {
 
@@ -16136,6 +16496,16 @@ public class TaxiPlexer extends Activity
                         FontRow.setVisibility(View.VISIBLE);
                     else
                         FontRow.setVisibility(View.GONE);
+
+                    if (AVL_Service.SDShowPhoneandIMEI)
+                        contain.setVisibility(View.VISIBLE);
+                    else
+                        contain.setVisibility(View.GONE);
+                    if(AVL_Service.PPV_UsePPVModule){
+                        AVL_Service.pref.edit().putBoolean("softMeter", true).commit();
+                        btnAccountLogin.setVisibility(View.VISIBLE);
+
+                    }
 
                     if ((!AVL_Service.pref.getString("EULADate", "0").equals(ddMMyyyy.format(new Date()))) || !(AVL_Service.pref.getString("LastLoginDriver", "0").equals(AVL_Service.pref.getString(
                             "DriverID",
@@ -16343,14 +16713,15 @@ public class TaxiPlexer extends Activity
         SetApplicationLocal();
         hideProgressDialog();
         if (getApplicationContext().getPackageName().contains("infonetmytaxi")) {
-            breakBtnLabel = getResources().getString(R.string.Busy);
-            resumeButtonLabel = getResources().getString(R.string.Free);
+            breakBtnLabel = getResources().getString(R.string.Free);
+            resumeButtonLabel = getResources().getString(R.string.Busy);
         } else {
             breakBtnLabel = getResources().getString(R.string.Break);
             resumeButtonLabel = getResources().getString(R.string.Resume);
         }
         try {
             if (serverResp[0].equalsIgnoreCase("1")) {
+
                 IsVerifoneConnectionMSGSend = false; // to send CMD1 to VeriFone one time
                 IsVerifoneCMD8Received = false;
                 VerifoneCMD8LastTime = 0;
@@ -16713,15 +17084,14 @@ public class TaxiPlexer extends Activity
 //                            SDAsteriskPwd += Driver_name.substring(0, 1);
 //                        else {
                         char c = AVL_Service.SIPPwdPattern.charAt(i);
-                        if(Character.isLetter(c)){
-                            SDAsteriskPwd += c;
-                        } else {
+                        if(Character.isDigit(c)){
                             if (i <= SDAsteriskExt.length())
                                 SDAsteriskPwd += SDAsteriskExt.substring(Integer.valueOf(AVL_Service.SIPPwdPattern.substring(i, i + 1)) - 1, Integer.valueOf(AVL_Service.SIPPwdPattern.substring(i, i + 1)));
                             else
                                 SDAsteriskPwd += "0";
 //                        }
-                        }
+                        } else
+                            SDAsteriskPwd += c;
                     }
                     if (abtoPhone == null)
                         setUpSipExtension();
@@ -16731,7 +17101,10 @@ public class TaxiPlexer extends Activity
                     AVL_Service.softmeterthreadstart();
                     AVL_Service.fetchClassofServiceRates();
                 }
-
+//                tabHost.setCurrentTab(TripIndex);
+                tabHost.setCurrentTab(TripIndex);
+                fetchTripList();
+                openTxtFileforWriting();
             } else {
 
                 AlertDialog.Builder builder = new AlertDialog.Builder(TaxiPlexer.this);
@@ -16957,13 +17330,15 @@ public class TaxiPlexer extends Activity
                 standRankValue.setText(columns[3]);
                 avlZoneValue.setText(avlZone);
 
-                if (AVL_Service.pref.getBoolean("ShowWallTrips", true))
-                    if ((((System.currentTimeMillis() / 1000) - (lastUpdated / 1000)) > AVL_Service.WallRefreshTimer) && mainView.isShown())
-                        fetchWallTrips(false, false);
-
-                if (AVL_Service.showManifestWallOnSD)
-                    if ((((System.currentTimeMillis() / 1000) - (lastUpdated_MWall / 1000)) > AVL_Service.WallRefreshTimer) && mainView.isShown())
-                        fetchManifestWallTrips(false);
+//                if (AVL_Service.pref.getBoolean("ShowWallTrips", true))
+//                    if ((((System.currentTimeMillis() / 1000) - (lastUpdated / 1000)) > AVL_Service.WallRefreshTimer) && mainView.isShown()){
+////                        fetchWallTrips(false, false);
+//
+//                    }
+////
+//                if (AVL_Service.showManifestWallOnSD)
+//                    if ((((System.currentTimeMillis() / 1000) - (lastUpdated_MWall / 1000)) > AVL_Service.WallRefreshTimer) && mainView.isShown())
+//                        fetchManifestWallTrips(false);
 
                 if (!bookedZoneValue.getText().toString().equalsIgnoreCase(bookedZone) || !bookedStandValue.getText().toString().equalsIgnoreCase(bookedStand)) {
                     if (TTS && (AVL_Service.pref.getBoolean("AudioCommands", false)))
@@ -19369,6 +19744,7 @@ public class TaxiPlexer extends Activity
                         if(!odoMeterDialog.isShowing())
                             odoMeterDialog.show();
                     }
+
                 }// if Flagger
 
             }// else
@@ -20285,7 +20661,7 @@ public class TaxiPlexer extends Activity
                             + Integer.toString(tripsIRTDO) + Constants.COLSEPARATOR
                             + AVL_Service.pref.getString("Address", "Unknown Address") + Constants.COLSEPARATOR
                             + -1 + Constants.COLSEPARATOR
-                            + currentTrip.PUzone + Constants.COLSEPARATOR
+                            + newTrip.PUzone + Constants.COLSEPARATOR
                             + 0 + Constants.COLSEPARATOR
                             + 0
                             , "SDHS", MsgType.TripResponse, AckType.NEW, MsgValidity.Short, MsgPriority.Highest);
@@ -20730,6 +21106,17 @@ public class TaxiPlexer extends Activity
                     if (Float.parseFloat(AVL_Service.pref.getString("Speed", "00.0")) > Float.valueOf(AVL_Service.allowedSpeedForMessaging)) {
                         composeMsg.setEnabled(false);
                         sendBtn.setEnabled(false);
+                        if ((((System.currentTimeMillis() / 1000) - (lastUpdatedEmg / 1000)) > 600)) {
+                            lastUpdatedEmg = System.currentTimeMillis();
+                            serviceHandle.sendMessageToServer(
+                                    AVL_Service.pref.getString("DriverID", "0") + Constants.COLSEPARATOR + AVL_Service.pref.getString("VehicleID", "0")  + Constants.COLSEPARATOR + "1",
+                                    "SDHS",
+                                    MsgType.Emergency,
+                                    AckType.NEW,
+                                    MsgValidity.Medium,
+                                    MsgPriority.Highest);
+                    }
+
                     } else {
                         composeMsg.setEnabled(true);
                         sendBtn.setEnabled(true);
@@ -20875,6 +21262,7 @@ public class TaxiPlexer extends Activity
             switch (msg.getMessageId().getValue()) {
                 case MessageId.METER_ON_OFF_STATE_CHANGE_VALUE :
                     if (Character.toString(((MeterStateChangeMessage) msg).getState()).equalsIgnoreCase("1")) {
+                        MeterState = "Meter ON";
                         LogException("[METER_ON_OFF_STATE_CHANGE_VALUE]" + "[handlemeterMessage]" + "Meter ON : " + ((currentTrip != null) ? currentTrip.ConfirmNumber : "New"));
                         isMeterON = true;
                         IsVerifoneMeterStarted = true;
@@ -20949,6 +21337,7 @@ public class TaxiPlexer extends Activity
 
                     } else if (Character.toString(((MeterStateChangeMessage) msg).getState()).equalsIgnoreCase("0")) { // Meter Off
                         // Toast.makeText(TaxiPlexer.this, Farsi.Convert(getResources().getString(R.string.MeterOFF)), Toast.LENGTH_SHORT).show();
+                        MeterState = "Meter OFF";
                         showToastMessage(R.string.MeterOFF);
                         LogException("[METER_ON_OFF_STATE_CHANGE_VALUE]" + "[handlemeterMessage]" + "Meter OFF : " + ((currentTrip != null) ? currentTrip.ConfirmNumber : "Current Trip NULL"));
                         if (currentTrip == null) {
@@ -21013,6 +21402,7 @@ public class TaxiPlexer extends Activity
 
                         // droppedOff("TaxiMeter");
                     } else if (Character.toString(((MeterStateChangeMessage) msg).getState()).equalsIgnoreCase("2")) { // Meter Time off
+                        MeterState = "Time Off";
                         IsVerifoneMeterStarted = false;
                         // Toast.makeText(TaxiPlexer.this, Farsi.Convert(getResources().getString(R.string.TimeOFF)), Toast.LENGTH_SHORT).show();
                         showToastMessage(R.string.TimeOFF);
@@ -21070,8 +21460,17 @@ public class TaxiPlexer extends Activity
                             }
                     }
                     setMeterData = true;
+                    try {
+                    if(myOutWriter != null)
+                        myOutWriter.append(((currentTrip!=null)?currentTrip.ConfirmNumber:"null") + "\tFare:\t" + Fare + "\tExtras:\t" + Extras + "\tTotal:\t" + total + "\tDistance:\t" + Distance + "\tTrip State:\t" + ((currentTrip!=null)?currentTrip.state:"Flagger Pickup") + "\tMeter State:\t" + MeterState + "\n");
 
-                    // Commented for Sacramento
+                } catch (IOException e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+
+                }
+
+                                       // Commented for Sacramento
                     // Toast.makeText(
                     // TaxiPlexer.this,
                     // ("Fare: $" + dFormat.format(Float.parseFloat(((MeterTripData) msg).getFare()))) + "\nExtras: $"
@@ -23730,10 +24129,24 @@ public class TaxiPlexer extends Activity
 
                                 }
                             });
-                            AlertDialog alert = builder.create();
-                            alert.show();
+                            final AlertDialog alert = builder.create();
 
-                            dialogFontSize(alert);
+                            ScheduledExecutorService scheduler = Executors.newSingleThreadScheduledExecutor();
+                            scheduler.schedule(new Runnable() {
+
+                                @Override
+                                public void run() {
+                                    runOnUiThread(new Runnable() {
+                                        public void run() {
+
+                                            alert.show();
+                                            dialogFontSize(alert);
+                                        }
+                                    });
+
+                                }
+                            }, 3, TimeUnit.SECONDS);
+
                         } else if (isNewTrip == 2 || isNewTrip == 0
                                 || AVL_Service.pref.getBoolean("VeriFoneDevice", false)
                                 || (isNewTrip == 1 && !AVL_Service.SDEnableTwoStepPaymentProcessing && currentTrip.paymentMethod.equalsIgnoreCase("Voucher"))
@@ -23802,6 +24215,10 @@ public class TaxiPlexer extends Activity
 
                     if (isNewTrip == 1)
                         handleShowCustomToast(getDataFromResourse(columns[1]), R.drawable.icondone);
+
+
+
+
 
                 } else {
                     hideProgressDialog();
@@ -25477,7 +25894,7 @@ public class TaxiPlexer extends Activity
                 wallTripAdapter.notifyDataSetChanged();
 
         } catch (Exception e) {
-            handleException("[Exception in handleWallTrips]" + "[handleWallTrips]" + "[" + e.getLocalizedMessage() + "]");
+//            handleException("[Exception in handleWallTrips]" + "[handleWallTrips]" + "[" + e.getLocalizedMessage() + "]");
         }
     }
 
@@ -26973,7 +27390,7 @@ public class TaxiPlexer extends Activity
                         // Toast.makeText(TaxiPlexer.this, Farsi.Convert(getResources().getString(R.string.Messagehasbeensentdispatch)), Toast.LENGTH_SHORT).show();
                         showToastMessage(R.string.Messagehasbeensentdispatch);
                         serviceHandle.sendMessageToServer(
-                                AVL_Service.pref.getString("DriverID", "0") + Constants.COLSEPARATOR + AVL_Service.pref.getString("VehicleID", "0"),
+                                AVL_Service.pref.getString("DriverID", "0") + Constants.COLSEPARATOR + AVL_Service.pref.getString("VehicleID", "0") + Constants.COLSEPARATOR + "0",
                                 "SDHS",
                                 MsgType.Emergency,
                                 AckType.NEW,
@@ -27379,6 +27796,30 @@ public class TaxiPlexer extends Activity
                     if (registered) {
                         if (!isCaling) {
                             if (((Button) v).getText().toString().equalsIgnoreCase("D2C")) {
+                                final RestClient client = new RestClient(AVL_Service.InLoadAPI_URL + "/PPV/AddD2CHistoryInOutLoad");
+                                try {
+                                    client.AddParam("RefID", currentTrip.tripNumber);
+
+                                } catch (JSONException e1) {
+                                    // TODO Auto-generated catch block
+                                    e1.printStackTrace();
+                                }
+                                client.AddHeader("Content-Type", "application/json");
+
+                                new Thread() {
+                                    @Override
+                                    public void run() {
+                                        try {
+
+                                            client.Execute(RestClient.RequestMethod.POST);
+                                            final String response = client.getResponse();
+                                        } catch (Exception e) {
+                                            exception("[Exception in pttButtonLintener]" + "[pttButtonLintener]" + "[" + e.getLocalizedMessage() + "]");
+                                        }
+                                        hideProgressDialog();
+                                    }// run
+
+                                }.start();
                                 custPhone = currentTrip.CustomerPhoneNumberForD2C.replace("-", "");
                                 if(custPhone.contains("000000000")) {
                                     if (Integer.valueOf(currentTrip.MARSRefID) > 0)
@@ -27419,6 +27860,30 @@ public class TaxiPlexer extends Activity
             }
             else {
                 if (((Button) v).getText().toString().equalsIgnoreCase("D2C")) {
+                    final RestClient client = new RestClient(AVL_Service.InLoadAPI_URL + "/PPV/AddD2CHistoryInOutLoad");
+                    try {
+                        client.AddParam("RefID", currentTrip.tripNumber);
+
+                    } catch (JSONException e1) {
+                        // TODO Auto-generated catch block
+                        e1.printStackTrace();
+                    }
+                    client.AddHeader("Content-Type", "application/json");
+
+                    new Thread() {
+                        @Override
+                        public void run() {
+                            try {
+
+                                client.Execute(RestClient.RequestMethod.POST);
+                                final String response = client.getResponse();
+                            } catch (Exception e) {
+                                exception("[Exception in pttButtonLintener]" + "[pttButtonLintener]" + "[" + e.getLocalizedMessage() + "]");
+                            }
+                            hideProgressDialog();
+                        }// run
+
+                    }.start();
                     custPhone = currentTrip.CustomerPhoneNumberForD2C.replace("-", "");
                     if(!custPhone.contains("000000000")) {
                         if (Integer.valueOf(currentTrip.MARSRefID) > 0)
@@ -27445,87 +27910,87 @@ public class TaxiPlexer extends Activity
     };
 
 
-    /*------------------------------------------------fetchWallTrips------------------------------------------------------------------------*/
-    private void fetchWallTrips(boolean showProgress, final boolean callSortingAfter) {
-        try {
-            SetApplicationLocal();
-            if (showProgress)
-                handleShowProgress(Farsi.Convert(getResources().getString(R.string.FetchingWallTrips)));
-            new Thread() {
-                @Override
-                public void run() {
-                    try {
-
-                        StringBuffer envelope = new StringBuffer(
-                                "<?xml version=\"1.0\" encoding=\"utf-8\"?><soap:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\"><soap:Body><GetSpecializedWallTrips xmlns=\"http://Itcurves.net/\"><vLatitude>" + AVL_Service.pref
-                                        .getString("LastLatitude", "0.000000")
-                                        + "</vLatitude><vLongitude>"
-                                        + AVL_Service.pref.getString("LastLongitude", "0.000000")
-                                        + "</vLongitude><vVehicleNumber>"
-                                        + AVL_Service.pref.getString("VehicleID", "0")
-                                        + "</vVehicleNumber></GetSpecializedWallTrips></soap:Body></soap:Envelope>");
-                        // StringBuffer envelope = new StringBuffer(
-                        // "<?xml version=\"1.0\" encoding=\"utf-8\"?><soap:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\"><soap:Body><GetSpecializedWallTrips xmlns=\"http://Itcurves.net/\"><vLatitude>39.1432028263807</vLatitude><vLongitude>-77.2227812837809</vLongitude></GetSpecializedWallTrips></soap:Body></soap:Envelope>");
-
-                        // Calling Web Service and Parsing Response
-                        WS_Response tempResponse = CallingWS.submit(AVL_Service.webServiceURL, AVL_Service.soapAction_SpecializedWallTrips, envelope.toString());
-                        if (tempResponse != null && tempResponse.responseType != null && tempResponse.responseType.equalsIgnoreCase("GetSpecializedWallTripsResult")) {
-                            if (WALLTrips != null && AVL_Service.SDEnableVoiceIfNewTripAddedOnWall) {
-
-                                synchronized (WALLTrips) {
-                                    TempWALLTrips.clear();
-                                    TempWALLTrips.addAll(WALLTrips);
-
-                                    WALLTrips.clear();
-                                    WALLTrips.addAll(tempResponse.wallTrips);
-                                    WALLTrips.notifyAll();
-                                }
-
-                                if (WALLTrips.size() > 0 && TempWALLTrips.size() > 0) {
-                                    for (int counter = 0; counter < WALLTrips.size(); counter++) {
-                                        for (int counter1 = 0; counter1 < TempWALLTrips.size(); counter1++) {
-                                            if ((WALLTrips.get(counter).tripNumber.equalsIgnoreCase(TempWALLTrips.get(counter1).tripNumber))) {
-                                                // Toast.makeText(TaxiPlexer.this, "New Trip has been added to the wall.", Toast.LENGTH_LONG).show();
-                                                break;
-                                            } else if (counter1 == (TempWALLTrips.size() - 1))
-                                                newWallTripSound = true;
-                                        }
-
-                                    }
-                                } else if (WALLTrips.size() > 0 && TempWALLTrips.size() == 0)
-                                    newWallTripSound = true;
-
-                                if (newWallTripSound) {
-                                    bidOfferSound.start();
-                                    newWallTripSound = false;
-                                }
-                            } else {
-                                synchronized (WALLTrips) {
-                                    WALLTrips.clear();
-                                    WALLTrips.addAll(tempResponse.wallTrips);
-                                    WALLTrips.notifyAll();
-                                }
-                            }
-                            msgHandler.obtainMessage(MsgType.wallTripsArray, tempResponse.wallTrips).sendToTarget();
-                            lastUpdated = System.currentTimeMillis();
-                        } else {
-                            // exception("Fetch WallTrips Failed");
-                            fetchSecondaryWallTrips();
-                        }
-                    } catch (Exception e) {
-                        fetchSecondaryWallTrips();
-
-                    }
-                    if (!callSortingAfter)
-                        hideProgressDialog();
-                }// run
-
-            }.start();
-        } catch (Exception ex) {
-            LogException("[Exception in fetching wall trips]" + "[fetchWallTrips]" + "[" + ex.getLocalizedMessage() + "]");
-        }
-
-    }
+//    /*------------------------------------------------fetchWallTrips------------------------------------------------------------------------*/
+//    private void fetchWallTrips(boolean showProgress, final boolean callSortingAfter) {
+//        try {
+//            SetApplicationLocal();
+//            if (showProgress)
+//                handleShowProgress(Farsi.Convert(getResources().getString(R.string.FetchingWallTrips)));
+//            new Thread() {
+//                @Override
+//                public void run() {
+//                    try {
+//
+//                        StringBuffer envelope = new StringBuffer(
+//                                "<?xml version=\"1.0\" encoding=\"utf-8\"?><soap:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\"><soap:Body><GetSpecializedWallTrips xmlns=\"http://Itcurves.net/\"><vLatitude>" + AVL_Service.pref
+//                                        .getString("LastLatitude", "0.000000")
+//                                        + "</vLatitude><vLongitude>"
+//                                        + AVL_Service.pref.getString("LastLongitude", "0.000000")
+//                                        + "</vLongitude><vVehicleNumber>"
+//                                        + AVL_Service.pref.getString("VehicleID", "0")
+//                                        + "</vVehicleNumber></GetSpecializedWallTrips></soap:Body></soap:Envelope>");
+//                        // StringBuffer envelope = new StringBuffer(
+//                        // "<?xml version=\"1.0\" encoding=\"utf-8\"?><soap:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\"><soap:Body><GetSpecializedWallTrips xmlns=\"http://Itcurves.net/\"><vLatitude>39.1432028263807</vLatitude><vLongitude>-77.2227812837809</vLongitude></GetSpecializedWallTrips></soap:Body></soap:Envelope>");
+//
+//                        // Calling Web Service and Parsing Response
+//                        WS_Response tempResponse = CallingWS.submit(AVL_Service.webServiceURL, AVL_Service.soapAction_SpecializedWallTrips, envelope.toString());
+//                        if (tempResponse != null && tempResponse.responseType != null && tempResponse.responseType.equalsIgnoreCase("GetSpecializedWallTripsResult")) {
+//                            if (WALLTrips != null && AVL_Service.SDEnableVoiceIfNewTripAddedOnWall) {
+//
+//                                synchronized (WALLTrips) {
+//                                    TempWALLTrips.clear();
+//                                    TempWALLTrips.addAll(WALLTrips);
+//
+//                                    WALLTrips.clear();
+//                                    WALLTrips.addAll(tempResponse.wallTrips);
+//                                    WALLTrips.notifyAll();
+//                                }
+//
+//                                if (WALLTrips.size() > 0 && TempWALLTrips.size() > 0) {
+//                                    for (int counter = 0; counter < WALLTrips.size(); counter++) {
+//                                        for (int counter1 = 0; counter1 < TempWALLTrips.size(); counter1++) {
+//                                            if ((WALLTrips.get(counter).tripNumber.equalsIgnoreCase(TempWALLTrips.get(counter1).tripNumber))) {
+//                                                // Toast.makeText(TaxiPlexer.this, "New Trip has been added to the wall.", Toast.LENGTH_LONG).show();
+//                                                break;
+//                                            } else if (counter1 == (TempWALLTrips.size() - 1))
+//                                                newWallTripSound = true;
+//                                        }
+//
+//                                    }
+//                                } else if (WALLTrips.size() > 0 && TempWALLTrips.size() == 0)
+//                                    newWallTripSound = true;
+//
+//                                if (newWallTripSound) {
+//                                    bidOfferSound.start();
+//                                    newWallTripSound = false;
+//                                }
+//                            } else {
+//                                synchronized (WALLTrips) {
+//                                    WALLTrips.clear();
+//                                    WALLTrips.addAll(tempResponse.wallTrips);
+//                                    WALLTrips.notifyAll();
+//                                }
+//                            }
+//                            msgHandler.obtainMessage(MsgType.wallTripsArray, tempResponse.wallTrips).sendToTarget();
+//                            lastUpdated = System.currentTimeMillis();
+//                        } else {
+//                            // exception("Fetch WallTrips Failed");
+//                            fetchSecondaryWallTrips();
+//                        }
+//                    } catch (Exception e) {
+//                        fetchSecondaryWallTrips();
+//
+//                    }
+//                    if (!callSortingAfter)
+//                        hideProgressDialog();
+//                }// run
+//
+//            }.start();
+//        } catch (Exception ex) {
+//            LogException("[Exception in fetching wall trips]" + "[fetchWallTrips]" + "[" + ex.getLocalizedMessage() + "]");
+//        }
+//
+//    }
 
     /*------------------------------------------------fetchWallTrips------------------------------------------------------------------------*/
     @Override
@@ -27554,95 +28019,95 @@ public class TaxiPlexer extends Activity
 
     }
 
-    /*------------------------------------------------fetchSecondaryWallTrips------------------------------------------------------------------------*/
-    private void fetchSecondaryWallTrips() {
-        try {
-
-            StringBuffer envelope = new StringBuffer(
-                    "<?xml version=\"1.0\" encoding=\"utf-8\"?><soap:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\"><soap:Body><GetWallTrips xmlns=\"http://Itcurves.net/\"><vVehicleNumber>"
-                            + AVL_Service.pref.getString("VehicleID", "0")
-                            + "</vVehicleNumber></GetWallTrips></soap:Body></soap:Envelope>");
-
-            // Calling Web Service and Parsing Response
-            WS_Response tempResponse = CallingWS.submit(AVL_Service.webServiceURL, AVL_Service.soapAction_WallTrips, envelope.toString());
-            if (tempResponse != null && tempResponse.responseType != null && tempResponse.responseType.equalsIgnoreCase("GetWallTripsResult")) {
-                if (WALLTrips != null && AVL_Service.SDEnableVoiceIfNewTripAddedOnWall) {
-
-                    synchronized (WALLTrips) {
-                        TempWALLTrips.clear();
-                        TempWALLTrips.addAll(WALLTrips);
-
-                        WALLTrips.clear();
-                        WALLTrips.addAll(tempResponse.wallTrips);
-                        WALLTrips.notifyAll();
-                    }
-
-                    if (WALLTrips.size() > 0 && TempWALLTrips.size() > 0) {
-                        for (int counter = 0; counter < WALLTrips.size(); counter++) {
-                            for (int counter1 = 0; counter1 < TempWALLTrips.size(); counter1++) {
-                                if ((WALLTrips.get(counter).tripNumber.equalsIgnoreCase(TempWALLTrips.get(counter1).tripNumber))) {
-                                    // Toast.makeText(TaxiPlexer.this, "New Trip has been added to the wall.", Toast.LENGTH_LONG).show();
-                                    break;
-                                } else if (counter1 == (TempWALLTrips.size() - 1))
-                                    newWallTripSound = true;
-                            }
-
-                        }
-                    } else if (WALLTrips.size() > 0 && TempWALLTrips.size() == 0)
-                        newWallTripSound = true;
-
-                    if (newWallTripSound) {
-                        bidOfferSound.start();
-                        newWallTripSound = false;
-                    }
-                } else {
-                    synchronized (WALLTrips) {
-                        WALLTrips.clear();
-                        WALLTrips.addAll(tempResponse.wallTrips);
-                        WALLTrips.notifyAll();
-                    }
-                }
-                msgHandler.obtainMessage(MsgType.wallTripsArray, tempResponse.wallTrips).sendToTarget();
-                lastUpdated = System.currentTimeMillis();
-            } else {
-                LogException("[fetching Secondary wall trips]" + "[fetchSecondaryWallTrips]");
-            }
-        } catch (Exception ex) {
-            exception("[Exception in fetching Secondary wall trips]" + "[fetchSecondaryWallTrips]" + "[" + ex.getLocalizedMessage() + "]");
-        }
-    }
+//    /*------------------------------------------------fetchSecondaryWallTrips------------------------------------------------------------------------*/
+//    private void fetchSecondaryWallTrips() {
+//        try {
+//
+//            StringBuffer envelope = new StringBuffer(
+//                    "<?xml version=\"1.0\" encoding=\"utf-8\"?><soap:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\"><soap:Body><GetWallTrips xmlns=\"http://Itcurves.net/\"><vVehicleNumber>"
+//                            + AVL_Service.pref.getString("VehicleID", "0")
+//                            + "</vVehicleNumber></GetWallTrips></soap:Body></soap:Envelope>");
+//
+//            // Calling Web Service and Parsing Response
+//            WS_Response tempResponse = CallingWS.submit(AVL_Service.webServiceURL, AVL_Service.soapAction_WallTrips, envelope.toString());
+//            if (tempResponse != null && tempResponse.responseType != null && tempResponse.responseType.equalsIgnoreCase("GetWallTripsResult")) {
+//                if (WALLTrips != null && AVL_Service.SDEnableVoiceIfNewTripAddedOnWall) {
+//
+//                    synchronized (WALLTrips) {
+//                        TempWALLTrips.clear();
+//                        TempWALLTrips.addAll(WALLTrips);
+//
+//                        WALLTrips.clear();
+//                        WALLTrips.addAll(tempResponse.wallTrips);
+//                        WALLTrips.notifyAll();
+//                    }
+//
+//                    if (WALLTrips.size() > 0 && TempWALLTrips.size() > 0) {
+//                        for (int counter = 0; counter < WALLTrips.size(); counter++) {
+//                            for (int counter1 = 0; counter1 < TempWALLTrips.size(); counter1++) {
+//                                if ((WALLTrips.get(counter).tripNumber.equalsIgnoreCase(TempWALLTrips.get(counter1).tripNumber))) {
+//                                    // Toast.makeText(TaxiPlexer.this, "New Trip has been added to the wall.", Toast.LENGTH_LONG).show();
+//                                    break;
+//                                } else if (counter1 == (TempWALLTrips.size() - 1))
+//                                    newWallTripSound = true;
+//                            }
+//
+//                        }
+//                    } else if (WALLTrips.size() > 0 && TempWALLTrips.size() == 0)
+//                        newWallTripSound = true;
+//
+//                    if (newWallTripSound) {
+//                        bidOfferSound.start();
+//                        newWallTripSound = false;
+//                    }
+//                } else {
+//                    synchronized (WALLTrips) {
+//                        WALLTrips.clear();
+//                        WALLTrips.addAll(tempResponse.wallTrips);
+//                        WALLTrips.notifyAll();
+//                    }
+//                }
+//                msgHandler.obtainMessage(MsgType.wallTripsArray, tempResponse.wallTrips).sendToTarget();
+//                lastUpdated = System.currentTimeMillis();
+//            } else {
+//                LogException("[fetching Secondary wall trips]" + "[fetchSecondaryWallTrips]");
+//            }
+//        } catch (Exception ex) {
+//            exception("[Exception in fetching Secondary wall trips]" + "[fetchSecondaryWallTrips]" + "[" + ex.getLocalizedMessage() + "]");
+//        }
+//    }
 
     /*------------------------------------------------fetchManifestWallTrips------------------------------------------------------------------------*/
-    private void fetchManifestWallTrips(boolean showProgress) {
-        try {
-            if (showProgress)
-                handleShowProgress(Farsi.Convert(getResources().getString(R.string.Fetching_Manifest_Wall)));
-            new Thread() {
-                @Override
-                public void run() {
-                    try {
-
-                        StringBuffer envelope = new StringBuffer(
-                                "<?xml version=\"1.0\" encoding=\"utf-8\"?><soap:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\"><soap:Body><GetManifestSummaryInfo xmlns=\"http://Itcurves.net/\" /></soap:Body></soap:Envelope>");
-                        // Calling Web Service and Parsing Response
-                        WS_Response tempResponse = CallingWS.submit(AVL_Service.webServiceURL, AVL_Service.soapAction_ManifestWallTrips, envelope.toString());
-                        if (tempResponse != null && tempResponse.responseType != null && tempResponse.responseType.equalsIgnoreCase("GetManifestSummaryInfoResult")) {
-                            msgHandler.obtainMessage(MsgType.manifestwallTripsArray, tempResponse.manifestWallTrips).sendToTarget();
-                            lastUpdated_MWall = System.currentTimeMillis();
-                        } else {
-                            exception("[fetching Manifest wall trips]" + "[fetchManifestWallTrips]");
-                        }
-                    } catch (Exception e) {
-                        exception("[Exception in fetching Manifest wall trips]" + "[fetchManifestWallTrips]" + "[" + e.getLocalizedMessage() + "]");
-                    }
-                    hideProgressDialog();
-                }// run
-
-            }.start();
-        } catch (Exception ex) {
-            LogException("[Exception in fetching Manifest wall trips]" + "[fetchManifestWallTrips]" + "[" + ex.getLocalizedMessage() + "]");
-        }
-    }
+//    private void fetchManifestWallTrips(boolean showProgress) {
+//        try {
+//            if (showProgress)
+//                handleShowProgress(Farsi.Convert(getResources().getString(R.string.Fetching_Manifest_Wall)));
+//            new Thread() {
+//                @Override
+//                public void run() {
+//                    try {
+//
+//                        StringBuffer envelope = new StringBuffer(
+//                                "<?xml version=\"1.0\" encoding=\"utf-8\"?><soap:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\"><soap:Body><GetManifestSummaryInfo xmlns=\"http://Itcurves.net/\" /></soap:Body></soap:Envelope>");
+//                        // Calling Web Service and Parsing Response
+//                        WS_Response tempResponse = CallingWS.submit(AVL_Service.webServiceURL, AVL_Service.soapAction_ManifestWallTrips, envelope.toString());
+//                        if (tempResponse != null && tempResponse.responseType != null && tempResponse.responseType.equalsIgnoreCase("GetManifestSummaryInfoResult")) {
+//                            msgHandler.obtainMessage(MsgType.manifestwallTripsArray, tempResponse.manifestWallTrips).sendToTarget();
+//                            lastUpdated_MWall = System.currentTimeMillis();
+//                        } else {
+//                            exception("[fetching Manifest wall trips]" + "[fetchManifestWallTrips]");
+//                        }
+//                    } catch (Exception e) {
+//                        exception("[Exception in fetching Manifest wall trips]" + "[fetchManifestWallTrips]" + "[" + e.getLocalizedMessage() + "]");
+//                    }
+//                    hideProgressDialog();
+//                }// run
+//
+//            }.start();
+//        } catch (Exception ex) {
+//            LogException("[Exception in fetching Manifest wall trips]" + "[fetchManifestWallTrips]" + "[" + ex.getLocalizedMessage() + "]");
+//        }
+//    }
 
     /*---------------------------------------------------------fetchBalnaceofDriver---------------------------------------------------------*/
     private void GetBalanceAndBlackListStatus(int ShowMessageType) {
@@ -27796,6 +28261,59 @@ public class TaxiPlexer extends Activity
 
     }
 
+
+    private void TopupCustomerBalanceBeforeLogin() {
+        showProgressDialog(Farsi.Convert(getResources().getString(R.string.Processing)));
+        final RestClient client = new RestClient(AVL_Service.InLoadAPI_URL + "/PPV/TopupBalance");
+        try {
+            client.AddParam("drivernoorcustomerphone", TopUpDriverID.getText().toString().trim());
+            client.AddParam("cardno", AVL_Service.pref.getString("TopUpCardNo", "0000"));
+            client.AddParam("persontype", "1");
+
+        } catch (JSONException e1) {
+            // TODO Auto-generated catch block
+            e1.printStackTrace();
+        }
+        client.AddHeader("Content-Type", "application/json");
+
+        new Thread() {
+            @Override
+            public void run() {
+                try {
+                    client.Execute(RestClient.RequestMethod.POST);
+                    final String response = client.getResponse();
+                    if (client.getResponseCode() == 200) {
+                        JSONObject mainObject = new JSONObject(response);
+                        final boolean IsUpdated = mainObject.getBoolean("IsUpdated");
+                        final String TopupAmount = mainObject.getString("TopupAmount");
+                        final String UpdatedAmount = mainObject.getString("UpdatedAmount");
+
+                        runOnUiThread(new Runnable() {
+                            public void run() {
+                                if(IsUpdated){
+                                    Toast.makeText(getApplicationContext(), "Account ToppedUp with " + TopupAmount, Toast.LENGTH_LONG).show();
+                                    tripRejectDialog.dismiss();
+                                } else{
+                                    Toast.makeText(getApplicationContext(), "Top Up Unsuccessfull", Toast.LENGTH_LONG).show();
+                                }
+
+                            }
+                        });
+
+                    }
+
+
+                } catch (Exception e) {
+                    exception("[Exception in TopupCustomerBalanceBeforeLogin]" + "[TopupCustomerBalanceBeforeLogin]" + "[" + e.getLocalizedMessage() + "]");
+                }
+                hideProgressDialog();
+            }// run
+
+        }.start();
+
+
+
+    }
     /*------------------------------------------------fetchMessageHistory------------------------------------------------------------------------*/
     private void fetchMessageHistory() {
         try {
@@ -27851,6 +28369,7 @@ public class TaxiPlexer extends Activity
                                 + AVL_Service.pref.getString("VehicleID", "0")
                                 + "</IVEHICLEID></GetAssignedAndPendingTripsInString></soap:Body></soap:Envelope>";
                         // Calling Web Service and Parsing Response
+
                         final WS_Response tempResponse = CallingWS.submit(AVL_Service.webServiceURL, AVL_Service.soapAction_TripDetail, envelope);
                         // WS_Response tempResponse = CallingWS.submit("http://192.168.4.51/MRMSWebService/MRMSGlobalService.asmx", AVL_Service.soapAction_TripDetail,
                         // envelope);
@@ -27868,8 +28387,10 @@ public class TaxiPlexer extends Activity
                                 runOnUiThread(new Runnable() {
                                     public void run() {
                                         Toast.makeText(TaxiPlexer.this, "Trip List is synschronized with Back Office", Toast.LENGTH_LONG).show();
+
                                     }
                                 });
+
                                 synchronized (arrayListOftrips) {
                                     arrayListOftrips.removeAll(arrayListOftrips);
                                     arrayListOftrips.notifyAll();
@@ -29958,6 +30479,18 @@ public class TaxiPlexer extends Activity
                     ScreenSharingWrapper.getInstance().startTeamViewerSession(this);
                 break;
             case LOGOFF :
+                if(myOutWriter!=null && fOut!=null && myFile!=null) {
+                    try {
+                        myOutWriter.close();
+                        fOut.close();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+
+                    myOutWriter = null;
+                    fOut = null;
+                    myFile = null;
+                }
                 if(AVL_Service.s != null){
                     try {
                         AVL_Service.s.close();
@@ -29967,6 +30500,19 @@ public class TaxiPlexer extends Activity
                 }
                 if(AVL_Service.SoftMeterThread !=null)
                     AVL_Service.SoftMeterThread.interrupt();
+                if (AVL_Service.pref.getBoolean("ShowWallTrips", true) || AVL_Service.showManifestWallOnSD) {
+                    Account newAccount = new Account("dummyaccount", "itcurves.ncs.provider");
+                    AccountManager accountManager = (AccountManager) this.getSystemService(ACCOUNT_SERVICE);
+                    accountManager.addAccountExplicitly(newAccount, null, null);
+                    ContentResolver mResolver = getContentResolver();
+                    ContentResolver.setIsSyncable(newAccount, "itcurves.ncs.provider", 0);
+                    ContentResolver.setSyncAutomatically(newAccount, "itcurves.ncs.provider", false);
+
+                    ContentResolver.removePeriodicSync(
+                            newAccount,
+                            "itcurves.ncs.provider",
+                            Bundle.EMPTY);
+                }
                 // if (AVL_Service.SDEnableMeterLocking && AVL_Service.pref.getBoolean("PulsarMeter", false) && (Meter == null || !Meter.isConnectionAlive())) {
                 // EndShiftThenLock(_quitApp);
                 // // showToastMessageFromString("Device not connected to meter. Retry after connecting");
@@ -30053,6 +30599,18 @@ public class TaxiPlexer extends Activity
                 showDialog(SERVERS);
                 break;
             case MENU_ITEM_QUIT :
+                if(myOutWriter!=null && fOut!=null && myFile!=null) {
+                    try {
+                        myOutWriter.close();
+                        fOut.close();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+
+                    myOutWriter = null;
+                    fOut = null;
+                    myFile = null;
+                }
                 if(AVL_Service.s != null){
                     try {
                         AVL_Service.s.close();
@@ -30062,6 +30620,19 @@ public class TaxiPlexer extends Activity
                 }
                 if (ScreenSharingWrapper.mIsSessionRunning)
                     ScreenSharingWrapper.session1.stop();
+                if (AVL_Service.pref.getBoolean("ShowWallTrips", true) || AVL_Service.showManifestWallOnSD) {
+                    Account newAccount = new Account("dummyaccount", "itcurves.ncs.provider");
+                    AccountManager accountManager = (AccountManager) this.getSystemService(ACCOUNT_SERVICE);
+                    accountManager.addAccountExplicitly(newAccount, null, null);
+                    ContentResolver mResolver = getContentResolver();
+                    ContentResolver.setIsSyncable(newAccount, "itcurves.ncs.provider", 0);
+                    ContentResolver.setSyncAutomatically(newAccount, "itcurves.ncs.provider", false);
+
+                    ContentResolver.removePeriodicSync(
+                            newAccount,
+                            "itcurves.ncs.provider",
+                            Bundle.EMPTY);
+                }
                 if (serviceHandle.loggedIn()) {
                     if (AVL_Service.SDEnableMeterLocking && AVL_Service.pref.getBoolean("PulsarMeter", false)) {
                         if (Meter == null) {
@@ -30136,7 +30707,7 @@ public class TaxiPlexer extends Activity
                         + Farsi.Convert(getResources().getString(R.string.Versions))
                         + AVL_Service.appVersion
                         + "<br>"
-                        + "Dev : 6.39_90<br>" // 6.30_14 for diamond //6.32_09 for regencytest//6.33_01 for UnoinTaxi
+                        + "Dev : 6.46_05<br>"
                         + AVL_Service.pref.getString("NTEPNumber", "12-XXP")
                         + "<br>"
                         + "DPI: "
@@ -33151,6 +33722,7 @@ public class TaxiPlexer extends Activity
             dialog.setMessage(Farsi.Convert(getResources().getString(R.string.Loading)));
             dialog.setCancelable(false);
 
+
             // set listener what call when service is initialized. First configuration may take more time.
             abtoPhone.setInitializeListener(new OnInitializeListener() {
                 @Override
@@ -33265,8 +33837,11 @@ public class TaxiPlexer extends Activity
 
             // Add account
             abtoPhone.getConfig().setCodecPriority(Codec.G729, (short) 1);
+            abtoPhone.getConfig().setCodecPriority(Codec.G722, (short) 2);
+
 
             accId = (int) abtoPhone.getConfig().addAccount(AVL_Service.SDAsteriskServer, SDAsteriskExt, SDAsteriskPwd, null, SDAsteriskExt, 300, true);
+//            accId = (int) abtoPhone.getConfig().addAccount("192.168.4.100", "4275", "1211", null, "4275", 300, true);
             AudioManager audioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
             // audioManager.setStreamVolume(AudioManager.STREAM_VOICE_CALL, 20, 0);
             abtoPhone.setSpeakerLevel(audioManager.getStreamMaxVolume(AudioManager.STREAM_VOICE_CALL));
@@ -33293,5 +33868,79 @@ public class TaxiPlexer extends Activity
         return String.format("%0"+length+"d", Integer.parseInt(string));
     }
 
+    private String tempDir;	// Binder given to clients
+    private OutputStreamWriter myOutWriter = null;
+    private FileOutputStream fOut = null;
+    private File myFile = null;
+
+    private void openTxtFileforWriting(){
+        try {
+            tempDir = Environment.getExternalStorageDirectory() + "/CabDispatch/";
+            ContextWrapper cw = new ContextWrapper(TaxiPlexer.this);
+            File directory = cw.getDir("CabDispatch", Context.MODE_PRIVATE);
+
+            prepareDirectory();
+            myFile = new File(tempDir, "lastTripData"+ System.currentTimeMillis() +".txt");
+            myFile.createNewFile();
+            fOut = new FileOutputStream(myFile);
+            myOutWriter = 	new OutputStreamWriter(fOut);
+
+
+        } catch (Exception e) {
+            e.printStackTrace();
+
+        }
+    }
+    private boolean prepareDirectory() {
+        try {
+            if (makedirs()) {
+                return true;
+            } else {
+                return false;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+
+            return false;
+        }
+    }
+
+    private boolean makedirs() {
+        File tempdir = new File(tempDir);
+        if (!tempdir.exists())
+            tempdir.mkdirs();
+
+
+        return (tempdir.isDirectory());
+    }
+
+
+    class PInfo {
+        private String appname = "";
+        private String pname = "";
+        private String versionName = "";
+        private int versionCode = 0;
+        private Drawable icon;
+
+    }
+
+    private ArrayList<PInfo> getInstalledApps(boolean getSysPackages) {
+        ArrayList<PInfo> res = new ArrayList<PInfo>();
+        List<PackageInfo> packs = getPackageManager().getInstalledPackages(0);
+        for(int i=0;i<packs.size();i++) {
+            PackageInfo p = packs.get(i);
+            if ((!getSysPackages) && (p.versionName == null)) {
+                continue ;
+            }
+            PInfo newInfo = new PInfo();
+            newInfo.appname = p.applicationInfo.loadLabel(getPackageManager()).toString();
+            newInfo.pname = p.packageName;
+            newInfo.versionName = p.versionName;
+            newInfo.versionCode = p.versionCode;
+            newInfo.icon = p.applicationInfo.loadIcon(getPackageManager());
+            res.add(newInfo);
+        }
+        return res;
+    }
 
 }

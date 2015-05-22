@@ -82,7 +82,22 @@
 							 	 android:id="@+id/caller_speaker_button"
 								 android:layout_marginRight="5dip"/>
 				</LinearLayout>
-
+                <TextView android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dip"
+                    android:textColor="@android:color/darker_gray"
+                    android:textSize="25dip"
+                    android:id="@+id/stats"
+                    android:layout_gravity="center_horizontal">
+                </TextView>
+                <TextView android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dip"
+                    android:textColor="@android:color/darker_gray"
+                    android:textSize="25dip"
+                    android:id="@+id/Codecs"
+                    android:layout_gravity="center_horizontal">
+                </TextView>
 			</LinearLayout>
 		</ScrollView>
 	</LinearLayout>
@@ -176,5 +191,7 @@
 			</TableLayout>
 
 		</LinearLayout>
+
 	</LinearLayout>
+
 </AbsoluteLayout>

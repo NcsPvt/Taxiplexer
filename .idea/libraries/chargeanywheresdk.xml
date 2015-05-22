@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="chargeanywheresdk">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/app/libs/chargeanywheresdk.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

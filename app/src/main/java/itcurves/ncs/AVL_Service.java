@@ -214,6 +214,7 @@ public class AVL_Service extends Service implements GoogleApiClient.ConnectionCa
     public static int WallRefreshTimer;
     public static int SDEnableOdometerInput;
     public static boolean SDEnableReceiptEmail;
+    public static boolean SDEnableStatsForVoip;
 
 	// public static String addressFromMRMS;
 	protected static String packetRcvd;
@@ -295,6 +296,17 @@ public class AVL_Service extends Service implements GoogleApiClient.ConnectionCa
 
     protected GoogleApiClient mGoogleApiClient;
     LocationRequest mLocationRequest;
+
+
+    static void callTaxiPlexerWall(){
+        for (IMessageListener list : AVL_Service.msg_listeners.values())
+            list.receivedWallTrips(TaxiPlexer.WALLTrips);
+    }
+
+    static void callTaxiPlexerManifestWall(ArrayList<ManifestWallTrip> manifestWallTripArray){
+        for (IMessageListener list : AVL_Service.msg_listeners.values())
+            list.receivedManifestWallTrips(manifestWallTripArray);
+    }
 	/*--------------------------------------------------------------connectToServer-----------------------------------------------------------------------------*/
 	public static boolean connectToServer(String address) {
 
@@ -661,19 +673,15 @@ public class AVL_Service extends Service implements GoogleApiClient.ConnectionCa
 	}
 
 	/*------------------------------------------------startLocationListeners-------------------------------------------------------------------------------*/
-	protected void startLocationListeners() {
+    protected void startLocationListeners() {
 
-		if (!locationUpdates) {
-			locManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 5, 0, locationListener1);
-			locManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 5, 0, locationListener1);
-		}
-		locationUpdates = true;
-	}
-
-    protected void startLocationUpdates() {
-        LocationServices.FusedLocationApi.requestLocationUpdates(
-                mGoogleApiClient, mLocationRequest, locationListener);
+        if (!locationUpdates) {
+            locManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 0, locationListener);
+            locManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, locationListener);
+        }
+        locationUpdates = true;
     }
+
 
 	/*--------------------------------------------------------------handleKillMsg-------------------------------------------------------------------------------*/
 	protected void handleKillMsg() { // Updated
@@ -1319,73 +1327,7 @@ public class AVL_Service extends Service implements GoogleApiClient.ConnectionCa
 	}
 
 	/*--------------------------------------------------------------Location Listener---------------------------------------------------------------*/
-    com.google.android.gms.location.LocationListener locationListener = new com.google.android.gms.location.LocationListener() {
-
-
-
-		public void onLocationChanged(Location currentLocation) {
-
-			if (currentLocation.getProvider().equalsIgnoreCase(LocationManager.GPS_PROVIDER))
-				TaxiPlexer.is_GPS_AVAILABLE = true;
-			else
-				TaxiPlexer.is_GPS_AVAILABLE = false;
-
-			if (lastLocation == null) {
-				lastLocation = currentLocation;
-				if (isNetworkReachable) {
-					msgHandler.obtainMessage(MsgType.ReverseGeoCode, Float.MAX_VALUE).sendToTarget();
-				}// if network connected
-			} else if (isBetterLocation(currentLocation, lastLocation)) {
-//            } else  {
-				LocationAge = System.currentTimeMillis();
-				pref.edit().putString("LastLatitude", Double.toString(currentLocation.getLatitude())).putString("LastLongitude", Double.toString(currentLocation.getLongitude())).putString(
-					"Accuracy",
-					StringUtil.truncate(decimalFormat.format(currentLocation.getAccuracy()), 4)).putString("Alt", "1").putString("Speed", decimalFormat.format(currentLocation.getSpeed() * 2.24)) // to
-					// miles
-					// per
-					// hour
-					.commit();
-
-				current_Direction = currentLocation.getBearing();
-				if (currentLocation.getBearing() < 15)
-					pref.edit().putString("Direction", "North").commit();
-				else if (currentLocation.getBearing() < 55)
-					pref.edit().putString("Direction", "NE").commit();
-				else if (currentLocation.getBearing() < 105)
-					pref.edit().putString("Direction", "East").commit();
-				else if (currentLocation.getBearing() < 145)
-					pref.edit().putString("Direction", "SE").commit();
-				else if (currentLocation.getBearing() < 195)
-					pref.edit().putString("Direction", "South").commit();
-				else if (currentLocation.getBearing() < 235)
-					pref.edit().putString("Direction", "SW").commit();
-				else if (currentLocation.getBearing() < 285)
-					pref.edit().putString("Direction", "West").commit();
-				else if (currentLocation.getBearing() < 315)
-					pref.edit().putString("Direction", "NW").commit();
-				else if (currentLocation.getBearing() < 360)
-					pref.edit().putString("Direction", "North").commit();
-
-				if (currentLocation.distanceTo(lastLocation) > (pref.getFloat(Constants.PREF_GPSAt, 600) / 2)) {
-					float dist = currentLocation.distanceTo(lastLocation);
-					lastLocation = currentLocation;
-					if (isNetworkReachable) {
-						// reset the timer based AVL reporting
-						msgHandler.obtainMessage(MsgType.ReverseGeoCode, dist).sendToTarget();
-					}
-				} else {
-					lastLocation = currentLocation;
-					if (loggedIn)
-						for (IMessageListener list : AVL_Service.msg_listeners.values())
-							list.receivedLocationChange(address);
-				}
-
-			}// if isBetterLocation
-		} // onLocationChanged
-
-	}; // LocationListener
-
-    LocationListener locationListener1 = new LocationListener() {
+    LocationListener locationListener = new LocationListener() {
 
         public void onStatusChanged(String provider, int status, Bundle extras) {
 
@@ -1449,9 +1391,67 @@ public class AVL_Service extends Service implements GoogleApiClient.ConnectionCa
 
         public void onLocationChanged(Location currentLocation) {
 
+            if (currentLocation.getProvider().equalsIgnoreCase(LocationManager.GPS_PROVIDER))
+                TaxiPlexer.is_GPS_AVAILABLE = true;
+            else
+                TaxiPlexer.is_GPS_AVAILABLE = false;
+
+            if (lastLocation == null) {
+                lastLocation = currentLocation;
+                if (isNetworkReachable) {
+                    msgHandler.obtainMessage(MsgType.ReverseGeoCode, Float.MAX_VALUE).sendToTarget();
+                }// if network connected
+            } else if (isBetterLocation(currentLocation, lastLocation)) {
+
+                LocationAge = System.currentTimeMillis();
+                pref.edit().putString("LastLatitude", Double.toString(currentLocation.getLatitude())).putString("LastLongitude", Double.toString(currentLocation.getLongitude())).putString(
+                        "Accuracy",
+                        StringUtil.truncate(decimalFormat.format(currentLocation.getAccuracy()), 4)).putString("Alt", "1").putString("Speed", decimalFormat.format(currentLocation.getSpeed() * 2.24)) // to
+                        // miles
+                        // per
+                        // hour
+                        .commit();
+
+                current_Direction = currentLocation.getBearing();
+                if (currentLocation.getBearing() < 15)
+                    pref.edit().putString("Direction", "North").commit();
+                else if (currentLocation.getBearing() < 55)
+                    pref.edit().putString("Direction", "NE").commit();
+                else if (currentLocation.getBearing() < 105)
+                    pref.edit().putString("Direction", "East").commit();
+                else if (currentLocation.getBearing() < 145)
+                    pref.edit().putString("Direction", "SE").commit();
+                else if (currentLocation.getBearing() < 195)
+                    pref.edit().putString("Direction", "South").commit();
+                else if (currentLocation.getBearing() < 235)
+                    pref.edit().putString("Direction", "SW").commit();
+                else if (currentLocation.getBearing() < 285)
+                    pref.edit().putString("Direction", "West").commit();
+                else if (currentLocation.getBearing() < 315)
+                    pref.edit().putString("Direction", "NW").commit();
+                else if (currentLocation.getBearing() < 360)
+                    pref.edit().putString("Direction", "North").commit();
+
+                if (currentLocation.distanceTo(lastLocation) > (pref.getFloat(Constants.PREF_GPSAt, 600) / 2)) {
+                    float dist = currentLocation.distanceTo(lastLocation);
+                    lastLocation = currentLocation;
+                    if (isNetworkReachable) {
+                        // reset the timer based AVL reporting
+                        msgHandler.obtainMessage(MsgType.ReverseGeoCode, dist).sendToTarget();
+                    }
+                } else {
+                    lastLocation = currentLocation;
+                    if (loggedIn)
+                        for (IMessageListener list : AVL_Service.msg_listeners.values())
+                            list.receivedLocationChange(address);
+                }
+
+            }// if isBetterLocation
         } // onLocationChanged
 
     }; // LocationListener
+
+
 
 
      public static void sendMessageToSoftMeter(String msgBody, int msgType, String VehicleNum, String deviceID) {
@@ -1585,7 +1585,7 @@ public class AVL_Service extends Service implements GoogleApiClient.ConnectionCa
 
     @Override
     public void onConnected(Bundle bundle) {
-        startLocationUpdates();
+
     }
 
     @Override
@@ -2262,6 +2262,7 @@ public class AVL_Service extends Service implements GoogleApiClient.ConnectionCa
                     WallRefreshTimer = wsResponse.generalSettings.get_WallRefreshTimer();
                     SDEnableOdometerInput = wsResponse.generalSettings.get_SDEnableOdometerInput();
                     SDEnableReceiptEmail = wsResponse.generalSettings.get_SDEnableReceiptEmail();
+                    SDEnableStatsForVoip = wsResponse.generalSettings.get_SDEnableStatsForVoip();
 
 					status = true;
 				} else

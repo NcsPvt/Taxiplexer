@@ -646,4 +646,7 @@
     <string name="Processing_Dialie_Payment">تجهيز Dialie الدفع ...</string>
     <string name="Processing_Payment">معالجة الدفع ...</string>
     <string name="Registering_With_Caw">مع تجهيزCAW...</string>
+	<string name="TopUpView">اشحن رصيدك الشخصي</string>
+	<string name="Install_Try_Again">تثبيت التطبيق لينة متر وحاول مرة أخرى</string>
+	<string name="Customer_Account">حساب العميل</string>
 </resources>

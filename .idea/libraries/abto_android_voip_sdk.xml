@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="abto_android_voip_sdk">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/app/libs/abto_android_voip_sdk.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
